@@ -1,0 +1,471 @@
+<html>
+<head>
+</head>
+<body>
+
+<script language="Javascript">
+<!---
+var num_images_wave2d = 101;
+var img_width = 800;
+var img_height = 600;
+var interval = 250;
+var images_wave2d = new Array();
+
+function preload_images_wave2d()
+{
+   t = document.getElementById("progress");
+
+   t.innerHTML = "Preloading image ";
+   images_wave2d[0] = new Image(img_width, img_height);
+   images_wave2d[0].src = "tmp_gaussian0000.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[1] = new Image(img_width, img_height);
+   images_wave2d[1].src = "tmp_gaussian0001.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[2] = new Image(img_width, img_height);
+   images_wave2d[2].src = "tmp_gaussian0002.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[3] = new Image(img_width, img_height);
+   images_wave2d[3].src = "tmp_gaussian0003.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[4] = new Image(img_width, img_height);
+   images_wave2d[4].src = "tmp_gaussian0004.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[5] = new Image(img_width, img_height);
+   images_wave2d[5].src = "tmp_gaussian0005.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[6] = new Image(img_width, img_height);
+   images_wave2d[6].src = "tmp_gaussian0006.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[7] = new Image(img_width, img_height);
+   images_wave2d[7].src = "tmp_gaussian0007.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[8] = new Image(img_width, img_height);
+   images_wave2d[8].src = "tmp_gaussian0008.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[9] = new Image(img_width, img_height);
+   images_wave2d[9].src = "tmp_gaussian0009.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[10] = new Image(img_width, img_height);
+   images_wave2d[10].src = "tmp_gaussian0010.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[11] = new Image(img_width, img_height);
+   images_wave2d[11].src = "tmp_gaussian0011.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[12] = new Image(img_width, img_height);
+   images_wave2d[12].src = "tmp_gaussian0012.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[13] = new Image(img_width, img_height);
+   images_wave2d[13].src = "tmp_gaussian0013.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[14] = new Image(img_width, img_height);
+   images_wave2d[14].src = "tmp_gaussian0014.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[15] = new Image(img_width, img_height);
+   images_wave2d[15].src = "tmp_gaussian0015.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[16] = new Image(img_width, img_height);
+   images_wave2d[16].src = "tmp_gaussian0016.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[17] = new Image(img_width, img_height);
+   images_wave2d[17].src = "tmp_gaussian0017.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[18] = new Image(img_width, img_height);
+   images_wave2d[18].src = "tmp_gaussian0018.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[19] = new Image(img_width, img_height);
+   images_wave2d[19].src = "tmp_gaussian0019.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[20] = new Image(img_width, img_height);
+   images_wave2d[20].src = "tmp_gaussian0020.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[21] = new Image(img_width, img_height);
+   images_wave2d[21].src = "tmp_gaussian0021.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[22] = new Image(img_width, img_height);
+   images_wave2d[22].src = "tmp_gaussian0022.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[23] = new Image(img_width, img_height);
+   images_wave2d[23].src = "tmp_gaussian0023.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[24] = new Image(img_width, img_height);
+   images_wave2d[24].src = "tmp_gaussian0024.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[25] = new Image(img_width, img_height);
+   images_wave2d[25].src = "tmp_gaussian0025.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[26] = new Image(img_width, img_height);
+   images_wave2d[26].src = "tmp_gaussian0026.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[27] = new Image(img_width, img_height);
+   images_wave2d[27].src = "tmp_gaussian0027.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[28] = new Image(img_width, img_height);
+   images_wave2d[28].src = "tmp_gaussian0028.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[29] = new Image(img_width, img_height);
+   images_wave2d[29].src = "tmp_gaussian0029.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[30] = new Image(img_width, img_height);
+   images_wave2d[30].src = "tmp_gaussian0030.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[31] = new Image(img_width, img_height);
+   images_wave2d[31].src = "tmp_gaussian0031.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[32] = new Image(img_width, img_height);
+   images_wave2d[32].src = "tmp_gaussian0032.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[33] = new Image(img_width, img_height);
+   images_wave2d[33].src = "tmp_gaussian0033.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[34] = new Image(img_width, img_height);
+   images_wave2d[34].src = "tmp_gaussian0034.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[35] = new Image(img_width, img_height);
+   images_wave2d[35].src = "tmp_gaussian0035.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[36] = new Image(img_width, img_height);
+   images_wave2d[36].src = "tmp_gaussian0036.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[37] = new Image(img_width, img_height);
+   images_wave2d[37].src = "tmp_gaussian0037.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[38] = new Image(img_width, img_height);
+   images_wave2d[38].src = "tmp_gaussian0038.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[39] = new Image(img_width, img_height);
+   images_wave2d[39].src = "tmp_gaussian0039.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[40] = new Image(img_width, img_height);
+   images_wave2d[40].src = "tmp_gaussian0040.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[41] = new Image(img_width, img_height);
+   images_wave2d[41].src = "tmp_gaussian0041.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[42] = new Image(img_width, img_height);
+   images_wave2d[42].src = "tmp_gaussian0042.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[43] = new Image(img_width, img_height);
+   images_wave2d[43].src = "tmp_gaussian0043.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[44] = new Image(img_width, img_height);
+   images_wave2d[44].src = "tmp_gaussian0044.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[45] = new Image(img_width, img_height);
+   images_wave2d[45].src = "tmp_gaussian0045.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[46] = new Image(img_width, img_height);
+   images_wave2d[46].src = "tmp_gaussian0046.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[47] = new Image(img_width, img_height);
+   images_wave2d[47].src = "tmp_gaussian0047.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[48] = new Image(img_width, img_height);
+   images_wave2d[48].src = "tmp_gaussian0048.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[49] = new Image(img_width, img_height);
+   images_wave2d[49].src = "tmp_gaussian0049.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[50] = new Image(img_width, img_height);
+   images_wave2d[50].src = "tmp_gaussian0050.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[51] = new Image(img_width, img_height);
+   images_wave2d[51].src = "tmp_gaussian0051.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[52] = new Image(img_width, img_height);
+   images_wave2d[52].src = "tmp_gaussian0052.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[53] = new Image(img_width, img_height);
+   images_wave2d[53].src = "tmp_gaussian0053.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[54] = new Image(img_width, img_height);
+   images_wave2d[54].src = "tmp_gaussian0054.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[55] = new Image(img_width, img_height);
+   images_wave2d[55].src = "tmp_gaussian0055.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[56] = new Image(img_width, img_height);
+   images_wave2d[56].src = "tmp_gaussian0056.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[57] = new Image(img_width, img_height);
+   images_wave2d[57].src = "tmp_gaussian0057.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[58] = new Image(img_width, img_height);
+   images_wave2d[58].src = "tmp_gaussian0058.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[59] = new Image(img_width, img_height);
+   images_wave2d[59].src = "tmp_gaussian0059.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[60] = new Image(img_width, img_height);
+   images_wave2d[60].src = "tmp_gaussian0060.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[61] = new Image(img_width, img_height);
+   images_wave2d[61].src = "tmp_gaussian0061.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[62] = new Image(img_width, img_height);
+   images_wave2d[62].src = "tmp_gaussian0062.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[63] = new Image(img_width, img_height);
+   images_wave2d[63].src = "tmp_gaussian0063.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[64] = new Image(img_width, img_height);
+   images_wave2d[64].src = "tmp_gaussian0064.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[65] = new Image(img_width, img_height);
+   images_wave2d[65].src = "tmp_gaussian0065.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[66] = new Image(img_width, img_height);
+   images_wave2d[66].src = "tmp_gaussian0066.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[67] = new Image(img_width, img_height);
+   images_wave2d[67].src = "tmp_gaussian0067.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[68] = new Image(img_width, img_height);
+   images_wave2d[68].src = "tmp_gaussian0068.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[69] = new Image(img_width, img_height);
+   images_wave2d[69].src = "tmp_gaussian0069.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[70] = new Image(img_width, img_height);
+   images_wave2d[70].src = "tmp_gaussian0070.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[71] = new Image(img_width, img_height);
+   images_wave2d[71].src = "tmp_gaussian0071.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[72] = new Image(img_width, img_height);
+   images_wave2d[72].src = "tmp_gaussian0072.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[73] = new Image(img_width, img_height);
+   images_wave2d[73].src = "tmp_gaussian0073.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[74] = new Image(img_width, img_height);
+   images_wave2d[74].src = "tmp_gaussian0074.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[75] = new Image(img_width, img_height);
+   images_wave2d[75].src = "tmp_gaussian0075.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[76] = new Image(img_width, img_height);
+   images_wave2d[76].src = "tmp_gaussian0076.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[77] = new Image(img_width, img_height);
+   images_wave2d[77].src = "tmp_gaussian0077.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[78] = new Image(img_width, img_height);
+   images_wave2d[78].src = "tmp_gaussian0078.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[79] = new Image(img_width, img_height);
+   images_wave2d[79].src = "tmp_gaussian0079.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[80] = new Image(img_width, img_height);
+   images_wave2d[80].src = "tmp_gaussian0080.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[81] = new Image(img_width, img_height);
+   images_wave2d[81].src = "tmp_gaussian0081.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[82] = new Image(img_width, img_height);
+   images_wave2d[82].src = "tmp_gaussian0082.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[83] = new Image(img_width, img_height);
+   images_wave2d[83].src = "tmp_gaussian0083.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[84] = new Image(img_width, img_height);
+   images_wave2d[84].src = "tmp_gaussian0084.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[85] = new Image(img_width, img_height);
+   images_wave2d[85].src = "tmp_gaussian0085.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[86] = new Image(img_width, img_height);
+   images_wave2d[86].src = "tmp_gaussian0086.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[87] = new Image(img_width, img_height);
+   images_wave2d[87].src = "tmp_gaussian0087.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[88] = new Image(img_width, img_height);
+   images_wave2d[88].src = "tmp_gaussian0088.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[89] = new Image(img_width, img_height);
+   images_wave2d[89].src = "tmp_gaussian0089.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[90] = new Image(img_width, img_height);
+   images_wave2d[90].src = "tmp_gaussian0090.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[91] = new Image(img_width, img_height);
+   images_wave2d[91].src = "tmp_gaussian0091.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[92] = new Image(img_width, img_height);
+   images_wave2d[92].src = "tmp_gaussian0092.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[93] = new Image(img_width, img_height);
+   images_wave2d[93].src = "tmp_gaussian0093.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[94] = new Image(img_width, img_height);
+   images_wave2d[94].src = "tmp_gaussian0094.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[95] = new Image(img_width, img_height);
+   images_wave2d[95].src = "tmp_gaussian0095.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[96] = new Image(img_width, img_height);
+   images_wave2d[96].src = "tmp_gaussian0096.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[97] = new Image(img_width, img_height);
+   images_wave2d[97].src = "tmp_gaussian0097.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[98] = new Image(img_width, img_height);
+   images_wave2d[98].src = "tmp_gaussian0098.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[99] = new Image(img_width, img_height);
+   images_wave2d[99].src = "tmp_gaussian0099.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d[100] = new Image(img_width, img_height);
+   images_wave2d[100].src = "tmp_gaussian0100.png";
+        
+   t.innerHTML = "";
+}
+
+function tick_wave2d()
+{
+   if (frame_wave2d > num_images_wave2d - 1)
+       frame_wave2d = 0;
+
+   document.movie.src = images_wave2d[frame_wave2d].src;
+   frame_wave2d += 1;
+   tt = setTimeout("tick_wave2d()", interval);
+}
+
+function startup_wave2d()
+{
+   preload_images_wave2d();
+   frame_wave2d = 0;
+   setTimeout("tick_wave2d()", interval);
+}
+
+function stopit()
+{ clearTimeout(tt); }
+
+function restart_wave2d()
+{ tt = setTimeout("tick_wave2d()", interval); }
+
+function slower()
+{ interval = interval/0.7; }
+
+function faster()
+{ interval = interval*0.7; }
+
+// --->
+</script>
+
+<form>
+&nbsp;
+<input type="button" value="Start movie" onClick="startup_wave2d()">
+<input type="button" value="Pause movie" onClick="stopit()">
+<input type="button" value="Restart movie" onClick="restart_wave2d()">
+&nbsp;
+<input type="button" value="Slower" onClick="slower()">
+<input type="button" value="Faster" onClick="faster()">
+</form>
+
+<p><div ID="progress"></div></p>
+<img src="tmp_gaussian0000.png" name="movie" border=2/>
+
+</body>
+</html>
