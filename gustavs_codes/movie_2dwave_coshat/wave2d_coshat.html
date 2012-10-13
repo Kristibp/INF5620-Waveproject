@@ -1,0 +1,443 @@
+<html>
+<head>
+</head>
+<body>
+
+<script language="Javascript">
+<!---
+var num_images_wave2d_coshat = 94;
+var img_width = 800;
+var img_height = 600;
+var interval = 250;
+var images_wave2d_coshat = new Array();
+
+function preload_images_wave2d_coshat()
+{
+   t = document.getElementById("progress");
+
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[0] = new Image(img_width, img_height);
+   images_wave2d_coshat[0].src = "tmp_cos_hat0000.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[1] = new Image(img_width, img_height);
+   images_wave2d_coshat[1].src = "tmp_cos_hat0001.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[2] = new Image(img_width, img_height);
+   images_wave2d_coshat[2].src = "tmp_cos_hat0002.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[3] = new Image(img_width, img_height);
+   images_wave2d_coshat[3].src = "tmp_cos_hat0003.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[4] = new Image(img_width, img_height);
+   images_wave2d_coshat[4].src = "tmp_cos_hat0004.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[5] = new Image(img_width, img_height);
+   images_wave2d_coshat[5].src = "tmp_cos_hat0005.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[6] = new Image(img_width, img_height);
+   images_wave2d_coshat[6].src = "tmp_cos_hat0006.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[7] = new Image(img_width, img_height);
+   images_wave2d_coshat[7].src = "tmp_cos_hat0007.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[8] = new Image(img_width, img_height);
+   images_wave2d_coshat[8].src = "tmp_cos_hat0008.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[9] = new Image(img_width, img_height);
+   images_wave2d_coshat[9].src = "tmp_cos_hat0009.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[10] = new Image(img_width, img_height);
+   images_wave2d_coshat[10].src = "tmp_cos_hat0010.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[11] = new Image(img_width, img_height);
+   images_wave2d_coshat[11].src = "tmp_cos_hat0011.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[12] = new Image(img_width, img_height);
+   images_wave2d_coshat[12].src = "tmp_cos_hat0012.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[13] = new Image(img_width, img_height);
+   images_wave2d_coshat[13].src = "tmp_cos_hat0013.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[14] = new Image(img_width, img_height);
+   images_wave2d_coshat[14].src = "tmp_cos_hat0014.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[15] = new Image(img_width, img_height);
+   images_wave2d_coshat[15].src = "tmp_cos_hat0015.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[16] = new Image(img_width, img_height);
+   images_wave2d_coshat[16].src = "tmp_cos_hat0016.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[17] = new Image(img_width, img_height);
+   images_wave2d_coshat[17].src = "tmp_cos_hat0017.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[18] = new Image(img_width, img_height);
+   images_wave2d_coshat[18].src = "tmp_cos_hat0018.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[19] = new Image(img_width, img_height);
+   images_wave2d_coshat[19].src = "tmp_cos_hat0019.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[20] = new Image(img_width, img_height);
+   images_wave2d_coshat[20].src = "tmp_cos_hat0020.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[21] = new Image(img_width, img_height);
+   images_wave2d_coshat[21].src = "tmp_cos_hat0021.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[22] = new Image(img_width, img_height);
+   images_wave2d_coshat[22].src = "tmp_cos_hat0022.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[23] = new Image(img_width, img_height);
+   images_wave2d_coshat[23].src = "tmp_cos_hat0023.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[24] = new Image(img_width, img_height);
+   images_wave2d_coshat[24].src = "tmp_cos_hat0024.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[25] = new Image(img_width, img_height);
+   images_wave2d_coshat[25].src = "tmp_cos_hat0025.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[26] = new Image(img_width, img_height);
+   images_wave2d_coshat[26].src = "tmp_cos_hat0026.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[27] = new Image(img_width, img_height);
+   images_wave2d_coshat[27].src = "tmp_cos_hat0027.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[28] = new Image(img_width, img_height);
+   images_wave2d_coshat[28].src = "tmp_cos_hat0028.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[29] = new Image(img_width, img_height);
+   images_wave2d_coshat[29].src = "tmp_cos_hat0029.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[30] = new Image(img_width, img_height);
+   images_wave2d_coshat[30].src = "tmp_cos_hat0030.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[31] = new Image(img_width, img_height);
+   images_wave2d_coshat[31].src = "tmp_cos_hat0031.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[32] = new Image(img_width, img_height);
+   images_wave2d_coshat[32].src = "tmp_cos_hat0032.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[33] = new Image(img_width, img_height);
+   images_wave2d_coshat[33].src = "tmp_cos_hat0033.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[34] = new Image(img_width, img_height);
+   images_wave2d_coshat[34].src = "tmp_cos_hat0034.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[35] = new Image(img_width, img_height);
+   images_wave2d_coshat[35].src = "tmp_cos_hat0035.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[36] = new Image(img_width, img_height);
+   images_wave2d_coshat[36].src = "tmp_cos_hat0036.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[37] = new Image(img_width, img_height);
+   images_wave2d_coshat[37].src = "tmp_cos_hat0037.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[38] = new Image(img_width, img_height);
+   images_wave2d_coshat[38].src = "tmp_cos_hat0038.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[39] = new Image(img_width, img_height);
+   images_wave2d_coshat[39].src = "tmp_cos_hat0039.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[40] = new Image(img_width, img_height);
+   images_wave2d_coshat[40].src = "tmp_cos_hat0040.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[41] = new Image(img_width, img_height);
+   images_wave2d_coshat[41].src = "tmp_cos_hat0041.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[42] = new Image(img_width, img_height);
+   images_wave2d_coshat[42].src = "tmp_cos_hat0042.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[43] = new Image(img_width, img_height);
+   images_wave2d_coshat[43].src = "tmp_cos_hat0043.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[44] = new Image(img_width, img_height);
+   images_wave2d_coshat[44].src = "tmp_cos_hat0044.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[45] = new Image(img_width, img_height);
+   images_wave2d_coshat[45].src = "tmp_cos_hat0045.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[46] = new Image(img_width, img_height);
+   images_wave2d_coshat[46].src = "tmp_cos_hat0046.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[47] = new Image(img_width, img_height);
+   images_wave2d_coshat[47].src = "tmp_cos_hat0047.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[48] = new Image(img_width, img_height);
+   images_wave2d_coshat[48].src = "tmp_cos_hat0048.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[49] = new Image(img_width, img_height);
+   images_wave2d_coshat[49].src = "tmp_cos_hat0049.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[50] = new Image(img_width, img_height);
+   images_wave2d_coshat[50].src = "tmp_cos_hat0050.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[51] = new Image(img_width, img_height);
+   images_wave2d_coshat[51].src = "tmp_cos_hat0051.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[52] = new Image(img_width, img_height);
+   images_wave2d_coshat[52].src = "tmp_cos_hat0052.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[53] = new Image(img_width, img_height);
+   images_wave2d_coshat[53].src = "tmp_cos_hat0053.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[54] = new Image(img_width, img_height);
+   images_wave2d_coshat[54].src = "tmp_cos_hat0054.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[55] = new Image(img_width, img_height);
+   images_wave2d_coshat[55].src = "tmp_cos_hat0055.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[56] = new Image(img_width, img_height);
+   images_wave2d_coshat[56].src = "tmp_cos_hat0056.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[57] = new Image(img_width, img_height);
+   images_wave2d_coshat[57].src = "tmp_cos_hat0057.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[58] = new Image(img_width, img_height);
+   images_wave2d_coshat[58].src = "tmp_cos_hat0058.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[59] = new Image(img_width, img_height);
+   images_wave2d_coshat[59].src = "tmp_cos_hat0059.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[60] = new Image(img_width, img_height);
+   images_wave2d_coshat[60].src = "tmp_cos_hat0060.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[61] = new Image(img_width, img_height);
+   images_wave2d_coshat[61].src = "tmp_cos_hat0061.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[62] = new Image(img_width, img_height);
+   images_wave2d_coshat[62].src = "tmp_cos_hat0062.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[63] = new Image(img_width, img_height);
+   images_wave2d_coshat[63].src = "tmp_cos_hat0063.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[64] = new Image(img_width, img_height);
+   images_wave2d_coshat[64].src = "tmp_cos_hat0064.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[65] = new Image(img_width, img_height);
+   images_wave2d_coshat[65].src = "tmp_cos_hat0065.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[66] = new Image(img_width, img_height);
+   images_wave2d_coshat[66].src = "tmp_cos_hat0066.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[67] = new Image(img_width, img_height);
+   images_wave2d_coshat[67].src = "tmp_cos_hat0067.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[68] = new Image(img_width, img_height);
+   images_wave2d_coshat[68].src = "tmp_cos_hat0068.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[69] = new Image(img_width, img_height);
+   images_wave2d_coshat[69].src = "tmp_cos_hat0069.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[70] = new Image(img_width, img_height);
+   images_wave2d_coshat[70].src = "tmp_cos_hat0070.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[71] = new Image(img_width, img_height);
+   images_wave2d_coshat[71].src = "tmp_cos_hat0071.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[72] = new Image(img_width, img_height);
+   images_wave2d_coshat[72].src = "tmp_cos_hat0072.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[73] = new Image(img_width, img_height);
+   images_wave2d_coshat[73].src = "tmp_cos_hat0073.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[74] = new Image(img_width, img_height);
+   images_wave2d_coshat[74].src = "tmp_cos_hat0074.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[75] = new Image(img_width, img_height);
+   images_wave2d_coshat[75].src = "tmp_cos_hat0075.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[76] = new Image(img_width, img_height);
+   images_wave2d_coshat[76].src = "tmp_cos_hat0076.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[77] = new Image(img_width, img_height);
+   images_wave2d_coshat[77].src = "tmp_cos_hat0077.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[78] = new Image(img_width, img_height);
+   images_wave2d_coshat[78].src = "tmp_cos_hat0078.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[79] = new Image(img_width, img_height);
+   images_wave2d_coshat[79].src = "tmp_cos_hat0079.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[80] = new Image(img_width, img_height);
+   images_wave2d_coshat[80].src = "tmp_cos_hat0080.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[81] = new Image(img_width, img_height);
+   images_wave2d_coshat[81].src = "tmp_cos_hat0081.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[82] = new Image(img_width, img_height);
+   images_wave2d_coshat[82].src = "tmp_cos_hat0082.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[83] = new Image(img_width, img_height);
+   images_wave2d_coshat[83].src = "tmp_cos_hat0083.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[84] = new Image(img_width, img_height);
+   images_wave2d_coshat[84].src = "tmp_cos_hat0084.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[85] = new Image(img_width, img_height);
+   images_wave2d_coshat[85].src = "tmp_cos_hat0085.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[86] = new Image(img_width, img_height);
+   images_wave2d_coshat[86].src = "tmp_cos_hat0086.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[87] = new Image(img_width, img_height);
+   images_wave2d_coshat[87].src = "tmp_cos_hat0087.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[88] = new Image(img_width, img_height);
+   images_wave2d_coshat[88].src = "tmp_cos_hat0088.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[89] = new Image(img_width, img_height);
+   images_wave2d_coshat[89].src = "tmp_cos_hat0089.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[90] = new Image(img_width, img_height);
+   images_wave2d_coshat[90].src = "tmp_cos_hat0090.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[91] = new Image(img_width, img_height);
+   images_wave2d_coshat[91].src = "tmp_cos_hat0091.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[92] = new Image(img_width, img_height);
+   images_wave2d_coshat[92].src = "tmp_cos_hat0092.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave2d_coshat[93] = new Image(img_width, img_height);
+   images_wave2d_coshat[93].src = "tmp_cos_hat0093.png";
+        
+   t.innerHTML = "";
+}
+
+function tick_wave2d_coshat()
+{
+   if (frame_wave2d_coshat > num_images_wave2d_coshat - 1)
+       frame_wave2d_coshat = 0;
+
+   document.movie.src = images_wave2d_coshat[frame_wave2d_coshat].src;
+   frame_wave2d_coshat += 1;
+   tt = setTimeout("tick_wave2d_coshat()", interval);
+}
+
+function startup_wave2d_coshat()
+{
+   preload_images_wave2d_coshat();
+   frame_wave2d_coshat = 0;
+   setTimeout("tick_wave2d_coshat()", interval);
+}
+
+function stopit()
+{ clearTimeout(tt); }
+
+function restart_wave2d_coshat()
+{ tt = setTimeout("tick_wave2d_coshat()", interval); }
+
+function slower()
+{ interval = interval/0.7; }
+
+function faster()
+{ interval = interval*0.7; }
+
+// --->
+</script>
+
+<form>
+&nbsp;
+<input type="button" value="Start movie" onClick="startup_wave2d_coshat()">
+<input type="button" value="Pause movie" onClick="stopit()">
+<input type="button" value="Restart movie" onClick="restart_wave2d_coshat()">
+&nbsp;
+<input type="button" value="Slower" onClick="slower()">
+<input type="button" value="Faster" onClick="faster()">
+</form>
+
+<p><div ID="progress"></div></p>
+<img src="tmp_cos_hat0000.png" name="movie" border=2/>
+
+</body>
+</html>
