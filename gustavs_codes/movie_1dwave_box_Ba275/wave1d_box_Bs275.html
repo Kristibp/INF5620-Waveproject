@@ -1,0 +1,1191 @@
+<html>
+<head>
+</head>
+<body>
+
+<script language="Javascript">
+<!---
+var num_images_wave1d_box_Bs275 = 281;
+var img_width = 800;
+var img_height = 600;
+var interval = 250;
+var images_wave1d_box_Bs275 = new Array();
+
+function preload_images_wave1d_box_Bs275()
+{
+   t = document.getElementById("progress");
+
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[0] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[0].src = "tmp_1d_box0000.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[1] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[1].src = "tmp_1d_box0001.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[2] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[2].src = "tmp_1d_box0002.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[3] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[3].src = "tmp_1d_box0003.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[4] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[4].src = "tmp_1d_box0004.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[5] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[5].src = "tmp_1d_box0005.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[6] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[6].src = "tmp_1d_box0006.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[7] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[7].src = "tmp_1d_box0007.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[8] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[8].src = "tmp_1d_box0008.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[9] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[9].src = "tmp_1d_box0009.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[10] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[10].src = "tmp_1d_box0010.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[11] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[11].src = "tmp_1d_box0011.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[12] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[12].src = "tmp_1d_box0012.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[13] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[13].src = "tmp_1d_box0013.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[14] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[14].src = "tmp_1d_box0014.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[15] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[15].src = "tmp_1d_box0015.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[16] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[16].src = "tmp_1d_box0016.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[17] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[17].src = "tmp_1d_box0017.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[18] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[18].src = "tmp_1d_box0018.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[19] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[19].src = "tmp_1d_box0019.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[20] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[20].src = "tmp_1d_box0020.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[21] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[21].src = "tmp_1d_box0021.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[22] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[22].src = "tmp_1d_box0022.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[23] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[23].src = "tmp_1d_box0023.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[24] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[24].src = "tmp_1d_box0024.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[25] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[25].src = "tmp_1d_box0025.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[26] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[26].src = "tmp_1d_box0026.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[27] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[27].src = "tmp_1d_box0027.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[28] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[28].src = "tmp_1d_box0028.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[29] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[29].src = "tmp_1d_box0029.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[30] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[30].src = "tmp_1d_box0030.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[31] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[31].src = "tmp_1d_box0031.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[32] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[32].src = "tmp_1d_box0032.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[33] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[33].src = "tmp_1d_box0033.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[34] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[34].src = "tmp_1d_box0034.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[35] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[35].src = "tmp_1d_box0035.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[36] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[36].src = "tmp_1d_box0036.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[37] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[37].src = "tmp_1d_box0037.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[38] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[38].src = "tmp_1d_box0038.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[39] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[39].src = "tmp_1d_box0039.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[40] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[40].src = "tmp_1d_box0040.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[41] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[41].src = "tmp_1d_box0041.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[42] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[42].src = "tmp_1d_box0042.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[43] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[43].src = "tmp_1d_box0043.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[44] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[44].src = "tmp_1d_box0044.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[45] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[45].src = "tmp_1d_box0045.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[46] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[46].src = "tmp_1d_box0046.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[47] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[47].src = "tmp_1d_box0047.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[48] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[48].src = "tmp_1d_box0048.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[49] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[49].src = "tmp_1d_box0049.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[50] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[50].src = "tmp_1d_box0050.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[51] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[51].src = "tmp_1d_box0051.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[52] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[52].src = "tmp_1d_box0052.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[53] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[53].src = "tmp_1d_box0053.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[54] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[54].src = "tmp_1d_box0054.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[55] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[55].src = "tmp_1d_box0055.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[56] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[56].src = "tmp_1d_box0056.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[57] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[57].src = "tmp_1d_box0057.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[58] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[58].src = "tmp_1d_box0058.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[59] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[59].src = "tmp_1d_box0059.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[60] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[60].src = "tmp_1d_box0060.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[61] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[61].src = "tmp_1d_box0061.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[62] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[62].src = "tmp_1d_box0062.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[63] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[63].src = "tmp_1d_box0063.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[64] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[64].src = "tmp_1d_box0064.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[65] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[65].src = "tmp_1d_box0065.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[66] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[66].src = "tmp_1d_box0066.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[67] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[67].src = "tmp_1d_box0067.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[68] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[68].src = "tmp_1d_box0068.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[69] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[69].src = "tmp_1d_box0069.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[70] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[70].src = "tmp_1d_box0070.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[71] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[71].src = "tmp_1d_box0071.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[72] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[72].src = "tmp_1d_box0072.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[73] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[73].src = "tmp_1d_box0073.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[74] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[74].src = "tmp_1d_box0074.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[75] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[75].src = "tmp_1d_box0075.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[76] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[76].src = "tmp_1d_box0076.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[77] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[77].src = "tmp_1d_box0077.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[78] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[78].src = "tmp_1d_box0078.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[79] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[79].src = "tmp_1d_box0079.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[80] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[80].src = "tmp_1d_box0080.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[81] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[81].src = "tmp_1d_box0081.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[82] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[82].src = "tmp_1d_box0082.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[83] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[83].src = "tmp_1d_box0083.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[84] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[84].src = "tmp_1d_box0084.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[85] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[85].src = "tmp_1d_box0085.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[86] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[86].src = "tmp_1d_box0086.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[87] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[87].src = "tmp_1d_box0087.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[88] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[88].src = "tmp_1d_box0088.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[89] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[89].src = "tmp_1d_box0089.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[90] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[90].src = "tmp_1d_box0090.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[91] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[91].src = "tmp_1d_box0091.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[92] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[92].src = "tmp_1d_box0092.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[93] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[93].src = "tmp_1d_box0093.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[94] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[94].src = "tmp_1d_box0094.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[95] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[95].src = "tmp_1d_box0095.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[96] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[96].src = "tmp_1d_box0096.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[97] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[97].src = "tmp_1d_box0097.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[98] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[98].src = "tmp_1d_box0098.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[99] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[99].src = "tmp_1d_box0099.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[100] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[100].src = "tmp_1d_box0100.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[101] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[101].src = "tmp_1d_box0101.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[102] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[102].src = "tmp_1d_box0102.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[103] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[103].src = "tmp_1d_box0103.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[104] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[104].src = "tmp_1d_box0104.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[105] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[105].src = "tmp_1d_box0105.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[106] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[106].src = "tmp_1d_box0106.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[107] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[107].src = "tmp_1d_box0107.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[108] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[108].src = "tmp_1d_box0108.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[109] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[109].src = "tmp_1d_box0109.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[110] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[110].src = "tmp_1d_box0110.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[111] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[111].src = "tmp_1d_box0111.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[112] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[112].src = "tmp_1d_box0112.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[113] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[113].src = "tmp_1d_box0113.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[114] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[114].src = "tmp_1d_box0114.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[115] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[115].src = "tmp_1d_box0115.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[116] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[116].src = "tmp_1d_box0116.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[117] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[117].src = "tmp_1d_box0117.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[118] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[118].src = "tmp_1d_box0118.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[119] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[119].src = "tmp_1d_box0119.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[120] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[120].src = "tmp_1d_box0120.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[121] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[121].src = "tmp_1d_box0121.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[122] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[122].src = "tmp_1d_box0122.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[123] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[123].src = "tmp_1d_box0123.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[124] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[124].src = "tmp_1d_box0124.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[125] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[125].src = "tmp_1d_box0125.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[126] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[126].src = "tmp_1d_box0126.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[127] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[127].src = "tmp_1d_box0127.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[128] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[128].src = "tmp_1d_box0128.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[129] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[129].src = "tmp_1d_box0129.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[130] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[130].src = "tmp_1d_box0130.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[131] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[131].src = "tmp_1d_box0131.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[132] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[132].src = "tmp_1d_box0132.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[133] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[133].src = "tmp_1d_box0133.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[134] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[134].src = "tmp_1d_box0134.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[135] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[135].src = "tmp_1d_box0135.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[136] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[136].src = "tmp_1d_box0136.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[137] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[137].src = "tmp_1d_box0137.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[138] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[138].src = "tmp_1d_box0138.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[139] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[139].src = "tmp_1d_box0139.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[140] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[140].src = "tmp_1d_box0140.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[141] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[141].src = "tmp_1d_box0141.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[142] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[142].src = "tmp_1d_box0142.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[143] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[143].src = "tmp_1d_box0143.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[144] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[144].src = "tmp_1d_box0144.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[145] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[145].src = "tmp_1d_box0145.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[146] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[146].src = "tmp_1d_box0146.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[147] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[147].src = "tmp_1d_box0147.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[148] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[148].src = "tmp_1d_box0148.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[149] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[149].src = "tmp_1d_box0149.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[150] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[150].src = "tmp_1d_box0150.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[151] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[151].src = "tmp_1d_box0151.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[152] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[152].src = "tmp_1d_box0152.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[153] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[153].src = "tmp_1d_box0153.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[154] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[154].src = "tmp_1d_box0154.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[155] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[155].src = "tmp_1d_box0155.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[156] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[156].src = "tmp_1d_box0156.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[157] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[157].src = "tmp_1d_box0157.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[158] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[158].src = "tmp_1d_box0158.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[159] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[159].src = "tmp_1d_box0159.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[160] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[160].src = "tmp_1d_box0160.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[161] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[161].src = "tmp_1d_box0161.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[162] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[162].src = "tmp_1d_box0162.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[163] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[163].src = "tmp_1d_box0163.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[164] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[164].src = "tmp_1d_box0164.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[165] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[165].src = "tmp_1d_box0165.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[166] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[166].src = "tmp_1d_box0166.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[167] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[167].src = "tmp_1d_box0167.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[168] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[168].src = "tmp_1d_box0168.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[169] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[169].src = "tmp_1d_box0169.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[170] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[170].src = "tmp_1d_box0170.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[171] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[171].src = "tmp_1d_box0171.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[172] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[172].src = "tmp_1d_box0172.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[173] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[173].src = "tmp_1d_box0173.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[174] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[174].src = "tmp_1d_box0174.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[175] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[175].src = "tmp_1d_box0175.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[176] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[176].src = "tmp_1d_box0176.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[177] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[177].src = "tmp_1d_box0177.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[178] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[178].src = "tmp_1d_box0178.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[179] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[179].src = "tmp_1d_box0179.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[180] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[180].src = "tmp_1d_box0180.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[181] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[181].src = "tmp_1d_box0181.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[182] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[182].src = "tmp_1d_box0182.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[183] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[183].src = "tmp_1d_box0183.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[184] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[184].src = "tmp_1d_box0184.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[185] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[185].src = "tmp_1d_box0185.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[186] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[186].src = "tmp_1d_box0186.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[187] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[187].src = "tmp_1d_box0187.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[188] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[188].src = "tmp_1d_box0188.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[189] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[189].src = "tmp_1d_box0189.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[190] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[190].src = "tmp_1d_box0190.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[191] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[191].src = "tmp_1d_box0191.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[192] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[192].src = "tmp_1d_box0192.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[193] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[193].src = "tmp_1d_box0193.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[194] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[194].src = "tmp_1d_box0194.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[195] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[195].src = "tmp_1d_box0195.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[196] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[196].src = "tmp_1d_box0196.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[197] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[197].src = "tmp_1d_box0197.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[198] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[198].src = "tmp_1d_box0198.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[199] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[199].src = "tmp_1d_box0199.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[200] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[200].src = "tmp_1d_box0200.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[201] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[201].src = "tmp_1d_box0201.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[202] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[202].src = "tmp_1d_box0202.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[203] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[203].src = "tmp_1d_box0203.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[204] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[204].src = "tmp_1d_box0204.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[205] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[205].src = "tmp_1d_box0205.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[206] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[206].src = "tmp_1d_box0206.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[207] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[207].src = "tmp_1d_box0207.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[208] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[208].src = "tmp_1d_box0208.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[209] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[209].src = "tmp_1d_box0209.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[210] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[210].src = "tmp_1d_box0210.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[211] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[211].src = "tmp_1d_box0211.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[212] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[212].src = "tmp_1d_box0212.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[213] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[213].src = "tmp_1d_box0213.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[214] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[214].src = "tmp_1d_box0214.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[215] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[215].src = "tmp_1d_box0215.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[216] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[216].src = "tmp_1d_box0216.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[217] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[217].src = "tmp_1d_box0217.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[218] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[218].src = "tmp_1d_box0218.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[219] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[219].src = "tmp_1d_box0219.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[220] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[220].src = "tmp_1d_box0220.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[221] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[221].src = "tmp_1d_box0221.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[222] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[222].src = "tmp_1d_box0222.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[223] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[223].src = "tmp_1d_box0223.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[224] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[224].src = "tmp_1d_box0224.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[225] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[225].src = "tmp_1d_box0225.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[226] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[226].src = "tmp_1d_box0226.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[227] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[227].src = "tmp_1d_box0227.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[228] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[228].src = "tmp_1d_box0228.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[229] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[229].src = "tmp_1d_box0229.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[230] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[230].src = "tmp_1d_box0230.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[231] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[231].src = "tmp_1d_box0231.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[232] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[232].src = "tmp_1d_box0232.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[233] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[233].src = "tmp_1d_box0233.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[234] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[234].src = "tmp_1d_box0234.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[235] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[235].src = "tmp_1d_box0235.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[236] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[236].src = "tmp_1d_box0236.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[237] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[237].src = "tmp_1d_box0237.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[238] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[238].src = "tmp_1d_box0238.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[239] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[239].src = "tmp_1d_box0239.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[240] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[240].src = "tmp_1d_box0240.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[241] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[241].src = "tmp_1d_box0241.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[242] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[242].src = "tmp_1d_box0242.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[243] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[243].src = "tmp_1d_box0243.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[244] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[244].src = "tmp_1d_box0244.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[245] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[245].src = "tmp_1d_box0245.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[246] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[246].src = "tmp_1d_box0246.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[247] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[247].src = "tmp_1d_box0247.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[248] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[248].src = "tmp_1d_box0248.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[249] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[249].src = "tmp_1d_box0249.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[250] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[250].src = "tmp_1d_box0250.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[251] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[251].src = "tmp_1d_box0251.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[252] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[252].src = "tmp_1d_box0252.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[253] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[253].src = "tmp_1d_box0253.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[254] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[254].src = "tmp_1d_box0254.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[255] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[255].src = "tmp_1d_box0255.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[256] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[256].src = "tmp_1d_box0256.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[257] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[257].src = "tmp_1d_box0257.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[258] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[258].src = "tmp_1d_box0258.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[259] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[259].src = "tmp_1d_box0259.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[260] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[260].src = "tmp_1d_box0260.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[261] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[261].src = "tmp_1d_box0261.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[262] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[262].src = "tmp_1d_box0262.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[263] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[263].src = "tmp_1d_box0263.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[264] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[264].src = "tmp_1d_box0264.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[265] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[265].src = "tmp_1d_box0265.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[266] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[266].src = "tmp_1d_box0266.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[267] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[267].src = "tmp_1d_box0267.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[268] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[268].src = "tmp_1d_box0268.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[269] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[269].src = "tmp_1d_box0269.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[270] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[270].src = "tmp_1d_box0270.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[271] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[271].src = "tmp_1d_box0271.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[272] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[272].src = "tmp_1d_box0272.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[273] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[273].src = "tmp_1d_box0273.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[274] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[274].src = "tmp_1d_box0274.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[275] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[275].src = "tmp_1d_box0275.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[276] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[276].src = "tmp_1d_box0276.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[277] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[277].src = "tmp_1d_box0277.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[278] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[278].src = "tmp_1d_box0278.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[279] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[279].src = "tmp_1d_box0279.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_box_Bs275[280] = new Image(img_width, img_height);
+   images_wave1d_box_Bs275[280].src = "tmp_1d_box0280.png";
+        
+   t.innerHTML = "";
+}
+
+function tick_wave1d_box_Bs275()
+{
+   if (frame_wave1d_box_Bs275 > num_images_wave1d_box_Bs275 - 1)
+       frame_wave1d_box_Bs275 = 0;
+
+   document.movie.src = images_wave1d_box_Bs275[frame_wave1d_box_Bs275].src;
+   frame_wave1d_box_Bs275 += 1;
+   tt = setTimeout("tick_wave1d_box_Bs275()", interval);
+}
+
+function startup_wave1d_box_Bs275()
+{
+   preload_images_wave1d_box_Bs275();
+   frame_wave1d_box_Bs275 = 0;
+   setTimeout("tick_wave1d_box_Bs275()", interval);
+}
+
+function stopit()
+{ clearTimeout(tt); }
+
+function restart_wave1d_box_Bs275()
+{ tt = setTimeout("tick_wave1d_box_Bs275()", interval); }
+
+function slower()
+{ interval = interval/0.7; }
+
+function faster()
+{ interval = interval*0.7; }
+
+// --->
+</script>
+
+<form>
+&nbsp;
+<input type="button" value="Start movie" onClick="startup_wave1d_box_Bs275()">
+<input type="button" value="Pause movie" onClick="stopit()">
+<input type="button" value="Restart movie" onClick="restart_wave1d_box_Bs275()">
+&nbsp;
+<input type="button" value="Slower" onClick="slower()">
+<input type="button" value="Faster" onClick="faster()">
+</form>
+
+<p><div ID="progress"></div></p>
+<img src="tmp_1d_box0000.png" name="movie" border=2/>
+
+</body>
+</html>

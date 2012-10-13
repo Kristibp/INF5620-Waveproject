@@ -1,0 +1,1191 @@
+<html>
+<head>
+</head>
+<body>
+
+<script language="Javascript">
+<!---
+var num_images_wave1d_gaussian_Bs275_Nx100 = 281;
+var img_width = 800;
+var img_height = 600;
+var interval = 250;
+var images_wave1d_gaussian_Bs275_Nx100 = new Array();
+
+function preload_images_wave1d_gaussian_Bs275_Nx100()
+{
+   t = document.getElementById("progress");
+
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[0] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[0].src = "tmp_1d_gaussian0000.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[1] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[1].src = "tmp_1d_gaussian0001.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[2] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[2].src = "tmp_1d_gaussian0002.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[3] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[3].src = "tmp_1d_gaussian0003.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[4] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[4].src = "tmp_1d_gaussian0004.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[5] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[5].src = "tmp_1d_gaussian0005.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[6] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[6].src = "tmp_1d_gaussian0006.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[7] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[7].src = "tmp_1d_gaussian0007.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[8] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[8].src = "tmp_1d_gaussian0008.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[9] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[9].src = "tmp_1d_gaussian0009.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[10] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[10].src = "tmp_1d_gaussian0010.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[11] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[11].src = "tmp_1d_gaussian0011.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[12] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[12].src = "tmp_1d_gaussian0012.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[13] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[13].src = "tmp_1d_gaussian0013.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[14] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[14].src = "tmp_1d_gaussian0014.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[15] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[15].src = "tmp_1d_gaussian0015.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[16] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[16].src = "tmp_1d_gaussian0016.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[17] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[17].src = "tmp_1d_gaussian0017.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[18] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[18].src = "tmp_1d_gaussian0018.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[19] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[19].src = "tmp_1d_gaussian0019.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[20] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[20].src = "tmp_1d_gaussian0020.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[21] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[21].src = "tmp_1d_gaussian0021.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[22] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[22].src = "tmp_1d_gaussian0022.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[23] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[23].src = "tmp_1d_gaussian0023.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[24] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[24].src = "tmp_1d_gaussian0024.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[25] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[25].src = "tmp_1d_gaussian0025.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[26] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[26].src = "tmp_1d_gaussian0026.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[27] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[27].src = "tmp_1d_gaussian0027.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[28] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[28].src = "tmp_1d_gaussian0028.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[29] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[29].src = "tmp_1d_gaussian0029.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[30] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[30].src = "tmp_1d_gaussian0030.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[31] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[31].src = "tmp_1d_gaussian0031.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[32] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[32].src = "tmp_1d_gaussian0032.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[33] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[33].src = "tmp_1d_gaussian0033.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[34] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[34].src = "tmp_1d_gaussian0034.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[35] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[35].src = "tmp_1d_gaussian0035.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[36] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[36].src = "tmp_1d_gaussian0036.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[37] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[37].src = "tmp_1d_gaussian0037.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[38] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[38].src = "tmp_1d_gaussian0038.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[39] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[39].src = "tmp_1d_gaussian0039.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[40] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[40].src = "tmp_1d_gaussian0040.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[41] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[41].src = "tmp_1d_gaussian0041.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[42] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[42].src = "tmp_1d_gaussian0042.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[43] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[43].src = "tmp_1d_gaussian0043.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[44] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[44].src = "tmp_1d_gaussian0044.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[45] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[45].src = "tmp_1d_gaussian0045.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[46] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[46].src = "tmp_1d_gaussian0046.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[47] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[47].src = "tmp_1d_gaussian0047.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[48] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[48].src = "tmp_1d_gaussian0048.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[49] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[49].src = "tmp_1d_gaussian0049.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[50] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[50].src = "tmp_1d_gaussian0050.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[51] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[51].src = "tmp_1d_gaussian0051.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[52] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[52].src = "tmp_1d_gaussian0052.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[53] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[53].src = "tmp_1d_gaussian0053.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[54] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[54].src = "tmp_1d_gaussian0054.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[55] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[55].src = "tmp_1d_gaussian0055.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[56] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[56].src = "tmp_1d_gaussian0056.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[57] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[57].src = "tmp_1d_gaussian0057.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[58] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[58].src = "tmp_1d_gaussian0058.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[59] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[59].src = "tmp_1d_gaussian0059.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[60] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[60].src = "tmp_1d_gaussian0060.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[61] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[61].src = "tmp_1d_gaussian0061.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[62] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[62].src = "tmp_1d_gaussian0062.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[63] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[63].src = "tmp_1d_gaussian0063.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[64] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[64].src = "tmp_1d_gaussian0064.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[65] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[65].src = "tmp_1d_gaussian0065.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[66] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[66].src = "tmp_1d_gaussian0066.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[67] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[67].src = "tmp_1d_gaussian0067.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[68] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[68].src = "tmp_1d_gaussian0068.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[69] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[69].src = "tmp_1d_gaussian0069.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[70] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[70].src = "tmp_1d_gaussian0070.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[71] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[71].src = "tmp_1d_gaussian0071.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[72] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[72].src = "tmp_1d_gaussian0072.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[73] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[73].src = "tmp_1d_gaussian0073.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[74] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[74].src = "tmp_1d_gaussian0074.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[75] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[75].src = "tmp_1d_gaussian0075.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[76] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[76].src = "tmp_1d_gaussian0076.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[77] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[77].src = "tmp_1d_gaussian0077.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[78] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[78].src = "tmp_1d_gaussian0078.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[79] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[79].src = "tmp_1d_gaussian0079.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[80] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[80].src = "tmp_1d_gaussian0080.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[81] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[81].src = "tmp_1d_gaussian0081.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[82] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[82].src = "tmp_1d_gaussian0082.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[83] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[83].src = "tmp_1d_gaussian0083.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[84] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[84].src = "tmp_1d_gaussian0084.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[85] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[85].src = "tmp_1d_gaussian0085.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[86] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[86].src = "tmp_1d_gaussian0086.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[87] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[87].src = "tmp_1d_gaussian0087.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[88] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[88].src = "tmp_1d_gaussian0088.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[89] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[89].src = "tmp_1d_gaussian0089.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[90] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[90].src = "tmp_1d_gaussian0090.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[91] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[91].src = "tmp_1d_gaussian0091.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[92] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[92].src = "tmp_1d_gaussian0092.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[93] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[93].src = "tmp_1d_gaussian0093.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[94] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[94].src = "tmp_1d_gaussian0094.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[95] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[95].src = "tmp_1d_gaussian0095.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[96] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[96].src = "tmp_1d_gaussian0096.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[97] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[97].src = "tmp_1d_gaussian0097.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[98] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[98].src = "tmp_1d_gaussian0098.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[99] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[99].src = "tmp_1d_gaussian0099.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[100] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[100].src = "tmp_1d_gaussian0100.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[101] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[101].src = "tmp_1d_gaussian0101.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[102] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[102].src = "tmp_1d_gaussian0102.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[103] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[103].src = "tmp_1d_gaussian0103.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[104] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[104].src = "tmp_1d_gaussian0104.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[105] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[105].src = "tmp_1d_gaussian0105.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[106] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[106].src = "tmp_1d_gaussian0106.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[107] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[107].src = "tmp_1d_gaussian0107.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[108] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[108].src = "tmp_1d_gaussian0108.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[109] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[109].src = "tmp_1d_gaussian0109.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[110] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[110].src = "tmp_1d_gaussian0110.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[111] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[111].src = "tmp_1d_gaussian0111.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[112] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[112].src = "tmp_1d_gaussian0112.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[113] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[113].src = "tmp_1d_gaussian0113.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[114] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[114].src = "tmp_1d_gaussian0114.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[115] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[115].src = "tmp_1d_gaussian0115.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[116] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[116].src = "tmp_1d_gaussian0116.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[117] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[117].src = "tmp_1d_gaussian0117.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[118] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[118].src = "tmp_1d_gaussian0118.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[119] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[119].src = "tmp_1d_gaussian0119.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[120] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[120].src = "tmp_1d_gaussian0120.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[121] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[121].src = "tmp_1d_gaussian0121.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[122] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[122].src = "tmp_1d_gaussian0122.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[123] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[123].src = "tmp_1d_gaussian0123.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[124] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[124].src = "tmp_1d_gaussian0124.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[125] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[125].src = "tmp_1d_gaussian0125.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[126] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[126].src = "tmp_1d_gaussian0126.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[127] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[127].src = "tmp_1d_gaussian0127.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[128] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[128].src = "tmp_1d_gaussian0128.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[129] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[129].src = "tmp_1d_gaussian0129.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[130] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[130].src = "tmp_1d_gaussian0130.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[131] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[131].src = "tmp_1d_gaussian0131.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[132] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[132].src = "tmp_1d_gaussian0132.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[133] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[133].src = "tmp_1d_gaussian0133.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[134] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[134].src = "tmp_1d_gaussian0134.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[135] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[135].src = "tmp_1d_gaussian0135.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[136] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[136].src = "tmp_1d_gaussian0136.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[137] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[137].src = "tmp_1d_gaussian0137.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[138] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[138].src = "tmp_1d_gaussian0138.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[139] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[139].src = "tmp_1d_gaussian0139.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[140] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[140].src = "tmp_1d_gaussian0140.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[141] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[141].src = "tmp_1d_gaussian0141.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[142] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[142].src = "tmp_1d_gaussian0142.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[143] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[143].src = "tmp_1d_gaussian0143.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[144] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[144].src = "tmp_1d_gaussian0144.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[145] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[145].src = "tmp_1d_gaussian0145.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[146] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[146].src = "tmp_1d_gaussian0146.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[147] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[147].src = "tmp_1d_gaussian0147.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[148] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[148].src = "tmp_1d_gaussian0148.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[149] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[149].src = "tmp_1d_gaussian0149.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[150] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[150].src = "tmp_1d_gaussian0150.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[151] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[151].src = "tmp_1d_gaussian0151.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[152] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[152].src = "tmp_1d_gaussian0152.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[153] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[153].src = "tmp_1d_gaussian0153.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[154] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[154].src = "tmp_1d_gaussian0154.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[155] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[155].src = "tmp_1d_gaussian0155.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[156] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[156].src = "tmp_1d_gaussian0156.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[157] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[157].src = "tmp_1d_gaussian0157.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[158] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[158].src = "tmp_1d_gaussian0158.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[159] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[159].src = "tmp_1d_gaussian0159.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[160] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[160].src = "tmp_1d_gaussian0160.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[161] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[161].src = "tmp_1d_gaussian0161.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[162] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[162].src = "tmp_1d_gaussian0162.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[163] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[163].src = "tmp_1d_gaussian0163.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[164] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[164].src = "tmp_1d_gaussian0164.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[165] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[165].src = "tmp_1d_gaussian0165.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[166] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[166].src = "tmp_1d_gaussian0166.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[167] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[167].src = "tmp_1d_gaussian0167.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[168] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[168].src = "tmp_1d_gaussian0168.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[169] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[169].src = "tmp_1d_gaussian0169.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[170] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[170].src = "tmp_1d_gaussian0170.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[171] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[171].src = "tmp_1d_gaussian0171.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[172] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[172].src = "tmp_1d_gaussian0172.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[173] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[173].src = "tmp_1d_gaussian0173.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[174] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[174].src = "tmp_1d_gaussian0174.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[175] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[175].src = "tmp_1d_gaussian0175.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[176] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[176].src = "tmp_1d_gaussian0176.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[177] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[177].src = "tmp_1d_gaussian0177.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[178] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[178].src = "tmp_1d_gaussian0178.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[179] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[179].src = "tmp_1d_gaussian0179.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[180] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[180].src = "tmp_1d_gaussian0180.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[181] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[181].src = "tmp_1d_gaussian0181.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[182] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[182].src = "tmp_1d_gaussian0182.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[183] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[183].src = "tmp_1d_gaussian0183.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[184] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[184].src = "tmp_1d_gaussian0184.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[185] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[185].src = "tmp_1d_gaussian0185.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[186] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[186].src = "tmp_1d_gaussian0186.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[187] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[187].src = "tmp_1d_gaussian0187.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[188] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[188].src = "tmp_1d_gaussian0188.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[189] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[189].src = "tmp_1d_gaussian0189.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[190] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[190].src = "tmp_1d_gaussian0190.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[191] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[191].src = "tmp_1d_gaussian0191.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[192] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[192].src = "tmp_1d_gaussian0192.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[193] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[193].src = "tmp_1d_gaussian0193.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[194] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[194].src = "tmp_1d_gaussian0194.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[195] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[195].src = "tmp_1d_gaussian0195.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[196] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[196].src = "tmp_1d_gaussian0196.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[197] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[197].src = "tmp_1d_gaussian0197.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[198] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[198].src = "tmp_1d_gaussian0198.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[199] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[199].src = "tmp_1d_gaussian0199.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[200] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[200].src = "tmp_1d_gaussian0200.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[201] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[201].src = "tmp_1d_gaussian0201.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[202] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[202].src = "tmp_1d_gaussian0202.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[203] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[203].src = "tmp_1d_gaussian0203.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[204] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[204].src = "tmp_1d_gaussian0204.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[205] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[205].src = "tmp_1d_gaussian0205.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[206] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[206].src = "tmp_1d_gaussian0206.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[207] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[207].src = "tmp_1d_gaussian0207.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[208] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[208].src = "tmp_1d_gaussian0208.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[209] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[209].src = "tmp_1d_gaussian0209.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[210] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[210].src = "tmp_1d_gaussian0210.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[211] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[211].src = "tmp_1d_gaussian0211.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[212] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[212].src = "tmp_1d_gaussian0212.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[213] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[213].src = "tmp_1d_gaussian0213.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[214] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[214].src = "tmp_1d_gaussian0214.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[215] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[215].src = "tmp_1d_gaussian0215.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[216] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[216].src = "tmp_1d_gaussian0216.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[217] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[217].src = "tmp_1d_gaussian0217.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[218] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[218].src = "tmp_1d_gaussian0218.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[219] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[219].src = "tmp_1d_gaussian0219.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[220] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[220].src = "tmp_1d_gaussian0220.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[221] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[221].src = "tmp_1d_gaussian0221.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[222] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[222].src = "tmp_1d_gaussian0222.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[223] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[223].src = "tmp_1d_gaussian0223.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[224] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[224].src = "tmp_1d_gaussian0224.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[225] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[225].src = "tmp_1d_gaussian0225.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[226] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[226].src = "tmp_1d_gaussian0226.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[227] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[227].src = "tmp_1d_gaussian0227.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[228] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[228].src = "tmp_1d_gaussian0228.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[229] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[229].src = "tmp_1d_gaussian0229.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[230] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[230].src = "tmp_1d_gaussian0230.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[231] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[231].src = "tmp_1d_gaussian0231.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[232] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[232].src = "tmp_1d_gaussian0232.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[233] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[233].src = "tmp_1d_gaussian0233.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[234] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[234].src = "tmp_1d_gaussian0234.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[235] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[235].src = "tmp_1d_gaussian0235.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[236] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[236].src = "tmp_1d_gaussian0236.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[237] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[237].src = "tmp_1d_gaussian0237.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[238] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[238].src = "tmp_1d_gaussian0238.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[239] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[239].src = "tmp_1d_gaussian0239.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[240] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[240].src = "tmp_1d_gaussian0240.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[241] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[241].src = "tmp_1d_gaussian0241.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[242] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[242].src = "tmp_1d_gaussian0242.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[243] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[243].src = "tmp_1d_gaussian0243.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[244] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[244].src = "tmp_1d_gaussian0244.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[245] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[245].src = "tmp_1d_gaussian0245.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[246] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[246].src = "tmp_1d_gaussian0246.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[247] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[247].src = "tmp_1d_gaussian0247.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[248] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[248].src = "tmp_1d_gaussian0248.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[249] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[249].src = "tmp_1d_gaussian0249.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[250] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[250].src = "tmp_1d_gaussian0250.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[251] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[251].src = "tmp_1d_gaussian0251.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[252] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[252].src = "tmp_1d_gaussian0252.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[253] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[253].src = "tmp_1d_gaussian0253.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[254] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[254].src = "tmp_1d_gaussian0254.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[255] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[255].src = "tmp_1d_gaussian0255.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[256] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[256].src = "tmp_1d_gaussian0256.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[257] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[257].src = "tmp_1d_gaussian0257.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[258] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[258].src = "tmp_1d_gaussian0258.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[259] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[259].src = "tmp_1d_gaussian0259.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[260] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[260].src = "tmp_1d_gaussian0260.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[261] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[261].src = "tmp_1d_gaussian0261.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[262] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[262].src = "tmp_1d_gaussian0262.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[263] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[263].src = "tmp_1d_gaussian0263.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[264] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[264].src = "tmp_1d_gaussian0264.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[265] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[265].src = "tmp_1d_gaussian0265.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[266] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[266].src = "tmp_1d_gaussian0266.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[267] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[267].src = "tmp_1d_gaussian0267.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[268] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[268].src = "tmp_1d_gaussian0268.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[269] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[269].src = "tmp_1d_gaussian0269.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[270] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[270].src = "tmp_1d_gaussian0270.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[271] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[271].src = "tmp_1d_gaussian0271.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[272] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[272].src = "tmp_1d_gaussian0272.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[273] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[273].src = "tmp_1d_gaussian0273.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[274] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[274].src = "tmp_1d_gaussian0274.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[275] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[275].src = "tmp_1d_gaussian0275.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[276] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[276].src = "tmp_1d_gaussian0276.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[277] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[277].src = "tmp_1d_gaussian0277.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[278] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[278].src = "tmp_1d_gaussian0278.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[279] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[279].src = "tmp_1d_gaussian0279.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_gaussian_Bs275_Nx100[280] = new Image(img_width, img_height);
+   images_wave1d_gaussian_Bs275_Nx100[280].src = "tmp_1d_gaussian0280.png";
+        
+   t.innerHTML = "";
+}
+
+function tick_wave1d_gaussian_Bs275_Nx100()
+{
+   if (frame_wave1d_gaussian_Bs275_Nx100 > num_images_wave1d_gaussian_Bs275_Nx100 - 1)
+       frame_wave1d_gaussian_Bs275_Nx100 = 0;
+
+   document.movie.src = images_wave1d_gaussian_Bs275_Nx100[frame_wave1d_gaussian_Bs275_Nx100].src;
+   frame_wave1d_gaussian_Bs275_Nx100 += 1;
+   tt = setTimeout("tick_wave1d_gaussian_Bs275_Nx100()", interval);
+}
+
+function startup_wave1d_gaussian_Bs275_Nx100()
+{
+   preload_images_wave1d_gaussian_Bs275_Nx100();
+   frame_wave1d_gaussian_Bs275_Nx100 = 0;
+   setTimeout("tick_wave1d_gaussian_Bs275_Nx100()", interval);
+}
+
+function stopit()
+{ clearTimeout(tt); }
+
+function restart_wave1d_gaussian_Bs275_Nx100()
+{ tt = setTimeout("tick_wave1d_gaussian_Bs275_Nx100()", interval); }
+
+function slower()
+{ interval = interval/0.7; }
+
+function faster()
+{ interval = interval*0.7; }
+
+// --->
+</script>
+
+<form>
+&nbsp;
+<input type="button" value="Start movie" onClick="startup_wave1d_gaussian_Bs275_Nx100()">
+<input type="button" value="Pause movie" onClick="stopit()">
+<input type="button" value="Restart movie" onClick="restart_wave1d_gaussian_Bs275_Nx100()">
+&nbsp;
+<input type="button" value="Slower" onClick="slower()">
+<input type="button" value="Faster" onClick="faster()">
+</form>
+
+<p><div ID="progress"></div></p>
+<img src="tmp_1d_gaussian0000.png" name="movie" border=2/>
+
+</body>
+</html>

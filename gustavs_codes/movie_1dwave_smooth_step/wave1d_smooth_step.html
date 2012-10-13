@@ -1,0 +1,1471 @@
+<html>
+<head>
+</head>
+<body>
+
+<script language="Javascript">
+<!---
+var num_images_wave1d_smooth_step = 351;
+var img_width = 800;
+var img_height = 600;
+var interval = 250;
+var images_wave1d_smooth_step = new Array();
+
+function preload_images_wave1d_smooth_step()
+{
+   t = document.getElementById("progress");
+
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[0] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[0].src = "tmp_1d_smooth_step0000.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[1] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[1].src = "tmp_1d_smooth_step0001.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[2] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[2].src = "tmp_1d_smooth_step0002.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[3] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[3].src = "tmp_1d_smooth_step0003.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[4] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[4].src = "tmp_1d_smooth_step0004.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[5] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[5].src = "tmp_1d_smooth_step0005.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[6] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[6].src = "tmp_1d_smooth_step0006.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[7] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[7].src = "tmp_1d_smooth_step0007.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[8] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[8].src = "tmp_1d_smooth_step0008.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[9] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[9].src = "tmp_1d_smooth_step0009.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[10] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[10].src = "tmp_1d_smooth_step0010.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[11] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[11].src = "tmp_1d_smooth_step0011.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[12] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[12].src = "tmp_1d_smooth_step0012.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[13] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[13].src = "tmp_1d_smooth_step0013.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[14] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[14].src = "tmp_1d_smooth_step0014.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[15] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[15].src = "tmp_1d_smooth_step0015.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[16] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[16].src = "tmp_1d_smooth_step0016.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[17] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[17].src = "tmp_1d_smooth_step0017.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[18] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[18].src = "tmp_1d_smooth_step0018.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[19] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[19].src = "tmp_1d_smooth_step0019.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[20] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[20].src = "tmp_1d_smooth_step0020.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[21] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[21].src = "tmp_1d_smooth_step0021.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[22] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[22].src = "tmp_1d_smooth_step0022.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[23] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[23].src = "tmp_1d_smooth_step0023.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[24] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[24].src = "tmp_1d_smooth_step0024.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[25] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[25].src = "tmp_1d_smooth_step0025.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[26] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[26].src = "tmp_1d_smooth_step0026.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[27] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[27].src = "tmp_1d_smooth_step0027.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[28] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[28].src = "tmp_1d_smooth_step0028.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[29] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[29].src = "tmp_1d_smooth_step0029.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[30] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[30].src = "tmp_1d_smooth_step0030.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[31] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[31].src = "tmp_1d_smooth_step0031.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[32] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[32].src = "tmp_1d_smooth_step0032.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[33] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[33].src = "tmp_1d_smooth_step0033.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[34] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[34].src = "tmp_1d_smooth_step0034.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[35] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[35].src = "tmp_1d_smooth_step0035.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[36] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[36].src = "tmp_1d_smooth_step0036.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[37] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[37].src = "tmp_1d_smooth_step0037.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[38] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[38].src = "tmp_1d_smooth_step0038.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[39] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[39].src = "tmp_1d_smooth_step0039.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[40] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[40].src = "tmp_1d_smooth_step0040.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[41] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[41].src = "tmp_1d_smooth_step0041.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[42] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[42].src = "tmp_1d_smooth_step0042.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[43] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[43].src = "tmp_1d_smooth_step0043.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[44] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[44].src = "tmp_1d_smooth_step0044.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[45] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[45].src = "tmp_1d_smooth_step0045.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[46] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[46].src = "tmp_1d_smooth_step0046.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[47] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[47].src = "tmp_1d_smooth_step0047.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[48] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[48].src = "tmp_1d_smooth_step0048.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[49] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[49].src = "tmp_1d_smooth_step0049.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[50] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[50].src = "tmp_1d_smooth_step0050.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[51] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[51].src = "tmp_1d_smooth_step0051.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[52] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[52].src = "tmp_1d_smooth_step0052.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[53] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[53].src = "tmp_1d_smooth_step0053.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[54] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[54].src = "tmp_1d_smooth_step0054.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[55] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[55].src = "tmp_1d_smooth_step0055.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[56] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[56].src = "tmp_1d_smooth_step0056.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[57] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[57].src = "tmp_1d_smooth_step0057.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[58] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[58].src = "tmp_1d_smooth_step0058.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[59] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[59].src = "tmp_1d_smooth_step0059.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[60] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[60].src = "tmp_1d_smooth_step0060.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[61] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[61].src = "tmp_1d_smooth_step0061.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[62] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[62].src = "tmp_1d_smooth_step0062.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[63] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[63].src = "tmp_1d_smooth_step0063.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[64] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[64].src = "tmp_1d_smooth_step0064.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[65] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[65].src = "tmp_1d_smooth_step0065.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[66] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[66].src = "tmp_1d_smooth_step0066.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[67] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[67].src = "tmp_1d_smooth_step0067.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[68] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[68].src = "tmp_1d_smooth_step0068.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[69] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[69].src = "tmp_1d_smooth_step0069.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[70] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[70].src = "tmp_1d_smooth_step0070.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[71] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[71].src = "tmp_1d_smooth_step0071.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[72] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[72].src = "tmp_1d_smooth_step0072.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[73] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[73].src = "tmp_1d_smooth_step0073.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[74] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[74].src = "tmp_1d_smooth_step0074.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[75] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[75].src = "tmp_1d_smooth_step0075.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[76] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[76].src = "tmp_1d_smooth_step0076.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[77] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[77].src = "tmp_1d_smooth_step0077.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[78] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[78].src = "tmp_1d_smooth_step0078.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[79] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[79].src = "tmp_1d_smooth_step0079.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[80] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[80].src = "tmp_1d_smooth_step0080.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[81] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[81].src = "tmp_1d_smooth_step0081.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[82] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[82].src = "tmp_1d_smooth_step0082.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[83] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[83].src = "tmp_1d_smooth_step0083.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[84] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[84].src = "tmp_1d_smooth_step0084.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[85] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[85].src = "tmp_1d_smooth_step0085.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[86] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[86].src = "tmp_1d_smooth_step0086.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[87] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[87].src = "tmp_1d_smooth_step0087.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[88] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[88].src = "tmp_1d_smooth_step0088.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[89] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[89].src = "tmp_1d_smooth_step0089.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[90] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[90].src = "tmp_1d_smooth_step0090.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[91] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[91].src = "tmp_1d_smooth_step0091.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[92] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[92].src = "tmp_1d_smooth_step0092.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[93] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[93].src = "tmp_1d_smooth_step0093.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[94] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[94].src = "tmp_1d_smooth_step0094.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[95] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[95].src = "tmp_1d_smooth_step0095.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[96] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[96].src = "tmp_1d_smooth_step0096.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[97] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[97].src = "tmp_1d_smooth_step0097.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[98] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[98].src = "tmp_1d_smooth_step0098.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[99] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[99].src = "tmp_1d_smooth_step0099.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[100] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[100].src = "tmp_1d_smooth_step0100.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[101] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[101].src = "tmp_1d_smooth_step0101.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[102] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[102].src = "tmp_1d_smooth_step0102.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[103] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[103].src = "tmp_1d_smooth_step0103.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[104] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[104].src = "tmp_1d_smooth_step0104.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[105] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[105].src = "tmp_1d_smooth_step0105.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[106] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[106].src = "tmp_1d_smooth_step0106.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[107] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[107].src = "tmp_1d_smooth_step0107.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[108] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[108].src = "tmp_1d_smooth_step0108.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[109] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[109].src = "tmp_1d_smooth_step0109.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[110] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[110].src = "tmp_1d_smooth_step0110.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[111] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[111].src = "tmp_1d_smooth_step0111.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[112] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[112].src = "tmp_1d_smooth_step0112.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[113] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[113].src = "tmp_1d_smooth_step0113.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[114] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[114].src = "tmp_1d_smooth_step0114.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[115] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[115].src = "tmp_1d_smooth_step0115.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[116] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[116].src = "tmp_1d_smooth_step0116.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[117] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[117].src = "tmp_1d_smooth_step0117.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[118] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[118].src = "tmp_1d_smooth_step0118.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[119] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[119].src = "tmp_1d_smooth_step0119.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[120] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[120].src = "tmp_1d_smooth_step0120.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[121] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[121].src = "tmp_1d_smooth_step0121.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[122] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[122].src = "tmp_1d_smooth_step0122.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[123] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[123].src = "tmp_1d_smooth_step0123.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[124] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[124].src = "tmp_1d_smooth_step0124.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[125] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[125].src = "tmp_1d_smooth_step0125.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[126] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[126].src = "tmp_1d_smooth_step0126.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[127] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[127].src = "tmp_1d_smooth_step0127.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[128] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[128].src = "tmp_1d_smooth_step0128.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[129] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[129].src = "tmp_1d_smooth_step0129.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[130] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[130].src = "tmp_1d_smooth_step0130.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[131] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[131].src = "tmp_1d_smooth_step0131.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[132] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[132].src = "tmp_1d_smooth_step0132.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[133] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[133].src = "tmp_1d_smooth_step0133.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[134] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[134].src = "tmp_1d_smooth_step0134.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[135] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[135].src = "tmp_1d_smooth_step0135.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[136] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[136].src = "tmp_1d_smooth_step0136.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[137] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[137].src = "tmp_1d_smooth_step0137.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[138] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[138].src = "tmp_1d_smooth_step0138.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[139] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[139].src = "tmp_1d_smooth_step0139.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[140] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[140].src = "tmp_1d_smooth_step0140.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[141] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[141].src = "tmp_1d_smooth_step0141.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[142] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[142].src = "tmp_1d_smooth_step0142.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[143] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[143].src = "tmp_1d_smooth_step0143.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[144] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[144].src = "tmp_1d_smooth_step0144.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[145] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[145].src = "tmp_1d_smooth_step0145.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[146] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[146].src = "tmp_1d_smooth_step0146.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[147] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[147].src = "tmp_1d_smooth_step0147.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[148] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[148].src = "tmp_1d_smooth_step0148.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[149] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[149].src = "tmp_1d_smooth_step0149.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[150] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[150].src = "tmp_1d_smooth_step0150.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[151] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[151].src = "tmp_1d_smooth_step0151.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[152] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[152].src = "tmp_1d_smooth_step0152.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[153] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[153].src = "tmp_1d_smooth_step0153.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[154] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[154].src = "tmp_1d_smooth_step0154.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[155] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[155].src = "tmp_1d_smooth_step0155.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[156] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[156].src = "tmp_1d_smooth_step0156.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[157] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[157].src = "tmp_1d_smooth_step0157.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[158] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[158].src = "tmp_1d_smooth_step0158.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[159] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[159].src = "tmp_1d_smooth_step0159.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[160] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[160].src = "tmp_1d_smooth_step0160.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[161] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[161].src = "tmp_1d_smooth_step0161.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[162] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[162].src = "tmp_1d_smooth_step0162.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[163] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[163].src = "tmp_1d_smooth_step0163.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[164] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[164].src = "tmp_1d_smooth_step0164.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[165] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[165].src = "tmp_1d_smooth_step0165.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[166] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[166].src = "tmp_1d_smooth_step0166.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[167] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[167].src = "tmp_1d_smooth_step0167.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[168] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[168].src = "tmp_1d_smooth_step0168.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[169] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[169].src = "tmp_1d_smooth_step0169.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[170] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[170].src = "tmp_1d_smooth_step0170.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[171] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[171].src = "tmp_1d_smooth_step0171.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[172] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[172].src = "tmp_1d_smooth_step0172.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[173] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[173].src = "tmp_1d_smooth_step0173.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[174] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[174].src = "tmp_1d_smooth_step0174.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[175] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[175].src = "tmp_1d_smooth_step0175.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[176] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[176].src = "tmp_1d_smooth_step0176.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[177] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[177].src = "tmp_1d_smooth_step0177.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[178] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[178].src = "tmp_1d_smooth_step0178.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[179] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[179].src = "tmp_1d_smooth_step0179.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[180] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[180].src = "tmp_1d_smooth_step0180.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[181] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[181].src = "tmp_1d_smooth_step0181.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[182] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[182].src = "tmp_1d_smooth_step0182.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[183] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[183].src = "tmp_1d_smooth_step0183.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[184] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[184].src = "tmp_1d_smooth_step0184.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[185] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[185].src = "tmp_1d_smooth_step0185.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[186] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[186].src = "tmp_1d_smooth_step0186.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[187] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[187].src = "tmp_1d_smooth_step0187.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[188] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[188].src = "tmp_1d_smooth_step0188.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[189] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[189].src = "tmp_1d_smooth_step0189.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[190] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[190].src = "tmp_1d_smooth_step0190.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[191] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[191].src = "tmp_1d_smooth_step0191.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[192] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[192].src = "tmp_1d_smooth_step0192.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[193] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[193].src = "tmp_1d_smooth_step0193.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[194] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[194].src = "tmp_1d_smooth_step0194.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[195] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[195].src = "tmp_1d_smooth_step0195.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[196] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[196].src = "tmp_1d_smooth_step0196.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[197] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[197].src = "tmp_1d_smooth_step0197.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[198] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[198].src = "tmp_1d_smooth_step0198.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[199] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[199].src = "tmp_1d_smooth_step0199.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[200] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[200].src = "tmp_1d_smooth_step0200.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[201] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[201].src = "tmp_1d_smooth_step0201.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[202] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[202].src = "tmp_1d_smooth_step0202.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[203] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[203].src = "tmp_1d_smooth_step0203.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[204] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[204].src = "tmp_1d_smooth_step0204.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[205] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[205].src = "tmp_1d_smooth_step0205.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[206] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[206].src = "tmp_1d_smooth_step0206.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[207] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[207].src = "tmp_1d_smooth_step0207.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[208] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[208].src = "tmp_1d_smooth_step0208.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[209] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[209].src = "tmp_1d_smooth_step0209.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[210] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[210].src = "tmp_1d_smooth_step0210.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[211] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[211].src = "tmp_1d_smooth_step0211.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[212] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[212].src = "tmp_1d_smooth_step0212.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[213] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[213].src = "tmp_1d_smooth_step0213.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[214] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[214].src = "tmp_1d_smooth_step0214.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[215] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[215].src = "tmp_1d_smooth_step0215.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[216] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[216].src = "tmp_1d_smooth_step0216.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[217] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[217].src = "tmp_1d_smooth_step0217.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[218] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[218].src = "tmp_1d_smooth_step0218.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[219] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[219].src = "tmp_1d_smooth_step0219.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[220] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[220].src = "tmp_1d_smooth_step0220.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[221] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[221].src = "tmp_1d_smooth_step0221.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[222] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[222].src = "tmp_1d_smooth_step0222.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[223] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[223].src = "tmp_1d_smooth_step0223.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[224] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[224].src = "tmp_1d_smooth_step0224.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[225] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[225].src = "tmp_1d_smooth_step0225.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[226] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[226].src = "tmp_1d_smooth_step0226.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[227] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[227].src = "tmp_1d_smooth_step0227.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[228] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[228].src = "tmp_1d_smooth_step0228.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[229] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[229].src = "tmp_1d_smooth_step0229.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[230] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[230].src = "tmp_1d_smooth_step0230.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[231] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[231].src = "tmp_1d_smooth_step0231.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[232] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[232].src = "tmp_1d_smooth_step0232.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[233] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[233].src = "tmp_1d_smooth_step0233.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[234] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[234].src = "tmp_1d_smooth_step0234.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[235] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[235].src = "tmp_1d_smooth_step0235.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[236] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[236].src = "tmp_1d_smooth_step0236.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[237] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[237].src = "tmp_1d_smooth_step0237.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[238] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[238].src = "tmp_1d_smooth_step0238.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[239] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[239].src = "tmp_1d_smooth_step0239.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[240] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[240].src = "tmp_1d_smooth_step0240.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[241] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[241].src = "tmp_1d_smooth_step0241.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[242] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[242].src = "tmp_1d_smooth_step0242.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[243] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[243].src = "tmp_1d_smooth_step0243.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[244] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[244].src = "tmp_1d_smooth_step0244.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[245] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[245].src = "tmp_1d_smooth_step0245.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[246] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[246].src = "tmp_1d_smooth_step0246.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[247] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[247].src = "tmp_1d_smooth_step0247.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[248] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[248].src = "tmp_1d_smooth_step0248.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[249] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[249].src = "tmp_1d_smooth_step0249.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[250] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[250].src = "tmp_1d_smooth_step0250.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[251] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[251].src = "tmp_1d_smooth_step0251.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[252] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[252].src = "tmp_1d_smooth_step0252.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[253] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[253].src = "tmp_1d_smooth_step0253.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[254] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[254].src = "tmp_1d_smooth_step0254.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[255] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[255].src = "tmp_1d_smooth_step0255.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[256] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[256].src = "tmp_1d_smooth_step0256.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[257] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[257].src = "tmp_1d_smooth_step0257.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[258] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[258].src = "tmp_1d_smooth_step0258.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[259] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[259].src = "tmp_1d_smooth_step0259.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[260] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[260].src = "tmp_1d_smooth_step0260.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[261] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[261].src = "tmp_1d_smooth_step0261.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[262] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[262].src = "tmp_1d_smooth_step0262.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[263] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[263].src = "tmp_1d_smooth_step0263.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[264] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[264].src = "tmp_1d_smooth_step0264.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[265] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[265].src = "tmp_1d_smooth_step0265.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[266] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[266].src = "tmp_1d_smooth_step0266.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[267] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[267].src = "tmp_1d_smooth_step0267.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[268] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[268].src = "tmp_1d_smooth_step0268.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[269] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[269].src = "tmp_1d_smooth_step0269.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[270] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[270].src = "tmp_1d_smooth_step0270.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[271] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[271].src = "tmp_1d_smooth_step0271.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[272] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[272].src = "tmp_1d_smooth_step0272.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[273] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[273].src = "tmp_1d_smooth_step0273.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[274] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[274].src = "tmp_1d_smooth_step0274.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[275] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[275].src = "tmp_1d_smooth_step0275.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[276] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[276].src = "tmp_1d_smooth_step0276.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[277] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[277].src = "tmp_1d_smooth_step0277.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[278] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[278].src = "tmp_1d_smooth_step0278.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[279] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[279].src = "tmp_1d_smooth_step0279.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[280] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[280].src = "tmp_1d_smooth_step0280.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[281] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[281].src = "tmp_1d_smooth_step0281.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[282] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[282].src = "tmp_1d_smooth_step0282.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[283] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[283].src = "tmp_1d_smooth_step0283.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[284] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[284].src = "tmp_1d_smooth_step0284.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[285] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[285].src = "tmp_1d_smooth_step0285.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[286] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[286].src = "tmp_1d_smooth_step0286.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[287] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[287].src = "tmp_1d_smooth_step0287.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[288] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[288].src = "tmp_1d_smooth_step0288.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[289] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[289].src = "tmp_1d_smooth_step0289.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[290] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[290].src = "tmp_1d_smooth_step0290.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[291] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[291].src = "tmp_1d_smooth_step0291.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[292] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[292].src = "tmp_1d_smooth_step0292.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[293] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[293].src = "tmp_1d_smooth_step0293.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[294] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[294].src = "tmp_1d_smooth_step0294.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[295] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[295].src = "tmp_1d_smooth_step0295.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[296] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[296].src = "tmp_1d_smooth_step0296.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[297] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[297].src = "tmp_1d_smooth_step0297.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[298] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[298].src = "tmp_1d_smooth_step0298.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[299] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[299].src = "tmp_1d_smooth_step0299.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[300] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[300].src = "tmp_1d_smooth_step0300.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[301] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[301].src = "tmp_1d_smooth_step0301.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[302] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[302].src = "tmp_1d_smooth_step0302.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[303] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[303].src = "tmp_1d_smooth_step0303.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[304] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[304].src = "tmp_1d_smooth_step0304.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[305] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[305].src = "tmp_1d_smooth_step0305.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[306] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[306].src = "tmp_1d_smooth_step0306.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[307] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[307].src = "tmp_1d_smooth_step0307.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[308] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[308].src = "tmp_1d_smooth_step0308.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[309] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[309].src = "tmp_1d_smooth_step0309.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[310] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[310].src = "tmp_1d_smooth_step0310.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[311] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[311].src = "tmp_1d_smooth_step0311.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[312] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[312].src = "tmp_1d_smooth_step0312.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[313] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[313].src = "tmp_1d_smooth_step0313.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[314] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[314].src = "tmp_1d_smooth_step0314.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[315] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[315].src = "tmp_1d_smooth_step0315.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[316] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[316].src = "tmp_1d_smooth_step0316.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[317] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[317].src = "tmp_1d_smooth_step0317.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[318] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[318].src = "tmp_1d_smooth_step0318.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[319] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[319].src = "tmp_1d_smooth_step0319.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[320] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[320].src = "tmp_1d_smooth_step0320.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[321] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[321].src = "tmp_1d_smooth_step0321.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[322] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[322].src = "tmp_1d_smooth_step0322.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[323] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[323].src = "tmp_1d_smooth_step0323.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[324] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[324].src = "tmp_1d_smooth_step0324.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[325] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[325].src = "tmp_1d_smooth_step0325.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[326] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[326].src = "tmp_1d_smooth_step0326.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[327] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[327].src = "tmp_1d_smooth_step0327.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[328] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[328].src = "tmp_1d_smooth_step0328.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[329] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[329].src = "tmp_1d_smooth_step0329.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[330] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[330].src = "tmp_1d_smooth_step0330.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[331] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[331].src = "tmp_1d_smooth_step0331.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[332] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[332].src = "tmp_1d_smooth_step0332.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[333] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[333].src = "tmp_1d_smooth_step0333.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[334] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[334].src = "tmp_1d_smooth_step0334.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[335] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[335].src = "tmp_1d_smooth_step0335.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[336] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[336].src = "tmp_1d_smooth_step0336.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[337] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[337].src = "tmp_1d_smooth_step0337.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[338] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[338].src = "tmp_1d_smooth_step0338.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[339] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[339].src = "tmp_1d_smooth_step0339.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[340] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[340].src = "tmp_1d_smooth_step0340.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[341] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[341].src = "tmp_1d_smooth_step0341.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[342] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[342].src = "tmp_1d_smooth_step0342.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[343] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[343].src = "tmp_1d_smooth_step0343.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[344] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[344].src = "tmp_1d_smooth_step0344.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[345] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[345].src = "tmp_1d_smooth_step0345.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[346] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[346].src = "tmp_1d_smooth_step0346.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[347] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[347].src = "tmp_1d_smooth_step0347.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[348] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[348].src = "tmp_1d_smooth_step0348.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[349] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[349].src = "tmp_1d_smooth_step0349.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave1d_smooth_step[350] = new Image(img_width, img_height);
+   images_wave1d_smooth_step[350].src = "tmp_1d_smooth_step0350.png";
+        
+   t.innerHTML = "";
+}
+
+function tick_wave1d_smooth_step()
+{
+   if (frame_wave1d_smooth_step > num_images_wave1d_smooth_step - 1)
+       frame_wave1d_smooth_step = 0;
+
+   document.movie.src = images_wave1d_smooth_step[frame_wave1d_smooth_step].src;
+   frame_wave1d_smooth_step += 1;
+   tt = setTimeout("tick_wave1d_smooth_step()", interval);
+}
+
+function startup_wave1d_smooth_step()
+{
+   preload_images_wave1d_smooth_step();
+   frame_wave1d_smooth_step = 0;
+   setTimeout("tick_wave1d_smooth_step()", interval);
+}
+
+function stopit()
+{ clearTimeout(tt); }
+
+function restart_wave1d_smooth_step()
+{ tt = setTimeout("tick_wave1d_smooth_step()", interval); }
+
+function slower()
+{ interval = interval/0.7; }
+
+function faster()
+{ interval = interval*0.7; }
+
+// --->
+</script>
+
+<form>
+&nbsp;
+<input type="button" value="Start movie" onClick="startup_wave1d_smooth_step()">
+<input type="button" value="Pause movie" onClick="stopit()">
+<input type="button" value="Restart movie" onClick="restart_wave1d_smooth_step()">
+&nbsp;
+<input type="button" value="Slower" onClick="slower()">
+<input type="button" value="Faster" onClick="faster()">
+</form>
+
+<p><div ID="progress"></div></p>
+<img src="tmp_1d_smooth_step0000.png" name="movie" border=2/>
+
+</body>
+</html>
