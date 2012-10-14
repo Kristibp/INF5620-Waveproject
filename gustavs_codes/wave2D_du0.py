@@ -28,11 +28,13 @@ compute errors, etc.
 
 """
 
+import sys
 import time
-from scitools.std import *
-from math import log
+from math import *
 from numpy import *
-
+import nose.tools as nt
+import scitools.std as st
+#from matplotlib.pyplot import *
 
 class Problem:
     def __init__(self, I, V, f, q, b, Lx, Ly, T):
@@ -60,7 +62,8 @@ class Solver:
     
     def __init__(self, problem, Nx, Ny, dt=0.01, \
                      user_action=None, version='scalar', \
-                     dt_safety_factor=0.9):
+                     dt_safety_factor=0.9, \
+                     q_average='arithmetic'):
         """
         Nx = number of grid points in space coordinate x
         Ny = number of grid points in space coordinate y
@@ -76,7 +79,8 @@ class Solver:
         self.user_action = user_action
         self.version = version
         self.dt_safety_factor = dt_safety_factor
-        
+        self.q_average = q_average
+
     def solve(self):
         self.dt, self.time_used, self.x, self.y, \
             self.xv, self.yv, self.u_last, \
@@ -103,7 +107,15 @@ class Solver:
         user_action = self.user_action
         version = self.version
         dt_safety_factor = self.dt_safety_factor
-        
+
+        if version == 'vectorized' and \
+                self.q_average == 'harmonic':
+            print ' '
+            print 'WARNING! The harmonic average is not yet'
+            print 'implemented for the vectorized version.'
+            print ' '
+            sys.exit()
+
         if version == 'cython':
             try:
                 #import pyximport; pyximport.install()
@@ -140,7 +152,7 @@ class Solver:
             advance = compiled_loops.advance_cwrap
         else:
             advance = compiled_loops.advance
-                
+            
         import time               # Measure CPU time
         t0 = time.clock()
         
@@ -182,7 +194,7 @@ class Solver:
         q_a[:,:] = q(xv, yv)
 
         max_q = float(q_a.max())
-
+        
         stability_limit = (1/sqrt(max_q))*(1/sqrt(1/dx**2 + 1/dy**2))
         print 'stability limit dt = ', stability_limit
         if dt <= 0:               
@@ -203,23 +215,49 @@ class Solver:
             user_action(u_1, x, xv, y, yv, t, 0)
             
         print '---'
+        
         #     General evaluation of u[i,j] for the first step
-        def u_step(i, j, ip1, im1, jp1, jm1, xip1, xim1, yjp1, yjm1):
+        #
+        def u_step_arithm(i, j, ip1, im1, jp1, jm1, xip1, xim1, yjp1, yjm1):
             uij = u_1[i,j] + (1.0 - tb)*dt*V(x[i], y[j]) \
                 + 0.5*Cx2*( (q(x[i], y[j]) + q(xip1, y[j])) \
-                *(u_1[ip1,j] - u_1[i,j]) \
-                - (q(xim1, y[j]) + q(x[i], y[j])) \
-                *(u_1[i,j] - u_1[im1,j]) ) \
-                + 0.5*Cy2*( (q(x[i], y[j]) + q(x[i], yjp1)) \
-                *(u_1[i,jp1] - u_1[i,j]) \
-                - (q(x[i], yjm1) + q(x[i], y[j])) \
-                *(u_1[i,j] - u_1[i,jm1]) ) + 0.5*f(x[i], y[j], t[0])*dt2
+                                *(u_1[ip1,j] - u_1[i,j]) \
+                                - (q(xim1, y[j]) + q(x[i], y[j])) \
+                                *(u_1[i,j] - u_1[im1,j]) ) \
+                                + 0.5*Cy2*( (q(x[i], y[j]) + q(x[i], yjp1)) \
+                                *(u_1[i,jp1] - u_1[i,j]) \
+                                - (q(x[i], yjm1) + q(x[i], y[j])) \
+                                *(u_1[i,j] - u_1[i,jm1]) ) \
+                                + 0.5*f(x[i], y[j], t[0])*dt2
         
             return uij
-    
+        
+        def u_step_harm(i, j, ip1, im1, jp1, jm1, xip1, xim1, yjp1, yjm1):
+            uij = u_1[i,j] + (1.0 - tb)*dt*V(x[i], y[j]) \
+                + 2.0*Cx2*(q(x[i], y[j])*q(xip1, y[j]) \
+                               /(q(x[i], y[j]) + q(xip1, y[j])) \
+                               *(u_1[ip1,j] - u_1[i,j]) \
+                               - q(xim1, y[j])*q(x[i], y[j]) \
+                               /(q(xim1, y[j]) + q(x[i], y[j])) \
+                               *(u_1[i,j] - u_1[im1,j])) \
+                + 2.0*Cy2*( q(x[i], y[j])*q(x[i], yjp1) \
+                                /(q(x[i], y[j]) + q(x[i], yjp1)) \
+                                *(u_1[i,jp1] - u_1[i,j]) \
+                                - q(x[i], yjm1)*q(x[i], y[j]) \
+                                /(q(x[i], yjm1) + q(x[i], y[j])) \
+                                *(u_1[i,j] - u_1[i,jm1]) ) \
+                                + 0.5*f(x[i], y[j], t[0])*dt2
+
+            return uij
+        
+        if self.q_average == 'arithmetic':
+            u_step = u_step_arithm
+        elif self.q_average == 'harmonic':
+            u_step = u_step_harm
+
         n = 0
         if version == 'scalar':
-            
+            print 'scalar'
             #     First step for interior points
             for i in range(1, Nx):
                 for j in range(1, Ny):
@@ -363,10 +401,10 @@ class Solver:
         if user_action is not None:
             user_action(u, x, xv, y, yv, t, 1)
             #print '>> u=',u
-        #print '###'
+        print '###'
         
         u_2[:,:] = u_1; u_1[:,:] = u
-    
+        
         for n in range(1, N):
             if version == 'scalar':
                 # use f(x,y,t) function
@@ -393,7 +431,7 @@ class Solver:
         #     so return the value
         return dt, t1 - t0, x, y, xv, yv, u, t[N]
     
-
+    
     def advance_vectorized(self, u, u_1, u_2, f_a, q_a, f, q, x, y, \
                                dx, dy, t, n, Cx2, Cy2, tb, dt2):
         """
@@ -403,16 +441,16 @@ class Solver:
         Nx = u.shape[0]-1;  Ny = u.shape[1]-1
         
         u[1:-1,1:-1] = ( 2.0*u_1[1:-1,1:-1] - (1.0-tb)*u_2[1:-1,1:-1] \
-                            + Cx2*( (q_a[1:-1,1:-1] + q_a[2:,1:-1]) \
-                                       *(u_1[2:,1:-1] - u_1[1:-1,1:-1]) \
-                                       - (q_a[:-2,1:-1] + q_a[1:-1,1:-1]) \
-                                        *(u_1[1:-1,1:-1] - u_1[:-2,1:-1]) ) \
-                            + Cy2*( (q_a[1:-1,1:-1] + q_a[1:-1,2:]) \
-                                        *(u_1[1:-1,2:] - u_1[1:-1,1:-1]) \
-                                        - (q_a[1:-1,:-2] + q_a[1:-1,1:-1]) \
-                                        *(u_1[1:-1,1:-1] - u_1[1:-1,:-2]) ) \
-                            + f_a[1:-1,1:-1]*dt2 )*(1.0/(1.0+tb))
-    
+                             + Cx2*( (q_a[1:-1,1:-1] + q_a[2:,1:-1]) \
+                                         *(u_1[2:,1:-1] - u_1[1:-1,1:-1]) \
+                                         - (q_a[:-2,1:-1] + q_a[1:-1,1:-1]) \
+                                         *(u_1[1:-1,1:-1] - u_1[:-2,1:-1]) ) \
+                             + Cy2*( (q_a[1:-1,1:-1] + q_a[1:-1,2:]) \
+                                         *(u_1[1:-1,2:] - u_1[1:-1,1:-1]) \
+                                         - (q_a[1:-1,:-2] + q_a[1:-1,1:-1]) \
+                                         *(u_1[1:-1,1:-1] - u_1[1:-1,:-2]) ) \
+                             + f_a[1:-1,1:-1]*dt2 )*(1.0/(1.0+tb))
+        
         u = self.advance_boundary(u, u_1, u_2, f, q, x, y, \
                                       dx, dy, t, n, Cx2, Cy2, tb, \
                                       dt2, Nx, Ny)
@@ -425,19 +463,42 @@ class Solver:
         Advance one time step in the finite difference scheme.
         This is a version with scalar summation.
         """
-
-        def u_step(i, j, ip1, im1, jp1, jm1, xip1, xim1, yjp1, yjm1):
+        
+        
+        def u_step_arithm(i, j, ip1, im1, jp1, jm1, xip1, xim1, yjp1, yjm1):
             uij = (2.0*u_1[i,j] - (1.0-tb)*u_2[i,j] \
-                   + Cx2*((q(x[i], y[j]) + q(xip1, y[j])) \
-                              *(u_1[ip1,j] - u_1[i,j]) \
-                              - (q(xim1, y[j]) + q(x[i], y[j])) \
-                              *(u_1[i,j] - u_1[im1,j])) \
-                   + Cy2*((q(x[i], y[j]) + q(x[i], yjp1)) \
-                              *(u_1[i,jp1] - u_1[i,j]) \
-                              - (q(x[i], yjm1) + q(x[i], y[j])) \
-                              *(u_1[i,j] - u_1[i,jm1])) \
-                   + f(x[i], y[j], t[n])*dt2)/(1.0 + tb)
+                       + Cx2*((q(x[i], y[j]) + q(xip1, y[j])) \
+                                  *(u_1[ip1,j] - u_1[i,j]) \
+                                  - (q(xim1, y[j]) + q(x[i], y[j])) \
+                                  *(u_1[i,j] - u_1[im1,j])) \
+                       + Cy2*((q(x[i], y[j]) + q(x[i], yjp1)) \
+                                  *(u_1[i,jp1] - u_1[i,j]) \
+                                  - (q(x[i], yjm1) + q(x[i], y[j])) \
+                                  *(u_1[i,j] - u_1[i,jm1])) \
+                       + f(x[i], y[j], t[n])*dt2)/(1.0 + tb)
             return uij
+            
+        def u_step_harm(i, j, ip1, im1, jp1, jm1, xip1, xim1, yjp1, yjm1):
+            uij = ( 2.0*u_1[i,j] - (1.0-tb)*u_2[i,j] \
+                        + 4.0*Cx2*(q(x[i], y[j])*q(xip1, y[j]) \
+                                       /(q(x[i], y[j]) + q(xip1, y[j])) \
+                                       *(u_1[ip1,j] - u_1[i,j]) \
+                                       - q(xim1, y[j])*q(x[i], y[j]) \
+                                       /(q(xim1, y[j]) + q(x[i], y[j])) \
+                                       *(u_1[i,j] - u_1[im1,j])) \
+                        + 4.0*Cy2*(q(x[i], y[j])*q(x[i], yjp1) \
+                                       /(q(x[i], y[j]) + q(x[i], yjp1)) \
+                                       *(u_1[i,jp1] - u_1[i,j]) \
+                                       - q(x[i], yjm1)*q(x[i], y[j]) \
+                                       /(q(x[i], yjm1) + q(x[i], y[j])) \
+                                       *(u_1[i,j] - u_1[i,jm1])) \
+                        + f(x[i], y[j], t[n])*dt2 )/(1.0 + tb)
+            return uij
+
+        if self.q_average == 'arithmetic':
+            u_step = u_step_arithm
+        elif self.q_average == 'harmonic':
+            u_step = u_step_harm
 
         Nx = u.shape[0]-1;  Ny = u.shape[1]-1
         #     Loop over interior points
@@ -466,20 +527,42 @@ class Solver:
                              dx, dy, t, n, Cx2, Cy2, tb, \
                              dt2, Nx, Ny):
 
-        def u_step(i, j, ip1, im1, jp1, jm1, xip1, xim1, yjp1, yjm1):
+        def u_step_arithm(i, j, ip1, im1, jp1, jm1, xip1, xim1, yjp1, yjm1):
             uij = (2.0*u_1[i,j] - (1.0-tb)*u_2[i,j] \
-                   + Cx2*((q(x[i], y[j]) + q(xip1, y[j])) \
-                              *(u_1[ip1,j] - u_1[i,j]) \
-                              - (q(xim1, y[j]) + q(x[i], y[j])) \
-                              *(u_1[i,j] - u_1[im1,j])) \
-                   + Cy2*((q(x[i], y[j]) + q(x[i], yjp1)) \
-                              *(u_1[i,jp1] - u_1[i,j]) \
-                              - (q(x[i], yjm1) + q(x[i], y[j])) \
-                              *(u_1[i,j] - u_1[i,jm1])) \
-                   + f(x[i], y[j], t[n])*dt2)/(1.0 + tb)
+                       + Cx2*((q(x[i], y[j]) + q(xip1, y[j])) \
+                                  *(u_1[ip1,j] - u_1[i,j]) \
+                                  - (q(xim1, y[j]) + q(x[i], y[j])) \
+                                  *(u_1[i,j] - u_1[im1,j])) \
+                       + Cy2*((q(x[i], y[j]) + q(x[i], yjp1)) \
+                                  *(u_1[i,jp1] - u_1[i,j]) \
+                                  - (q(x[i], yjm1) + q(x[i], y[j])) \
+                                  *(u_1[i,j] - u_1[i,jm1])) \
+                       + f(x[i], y[j], t[n])*dt2)/(1.0 + tb)
+            return uij
+    
+        def u_step_harm(i, j, ip1, im1, jp1, jm1, xip1, xim1, yjp1, yjm1):
+            uij = (2.0*u_1[i,j] - (1.0-tb)*u_2[i,j] \
+                       + 4.0*Cx2*(q(x[i], y[j])*q(xip1, y[j]) \
+                                      /(q(x[i], y[j]) + q(xip1, y[j])) \
+                                      *(u_1[ip1,j] - u_1[i,j]) \
+                                      - q(xim1, y[j])*q(x[i], y[j]) \
+                                      /(q(xim1, y[j]) + q(x[i], y[j])) \
+                                      *(u_1[i,j] - u_1[im1,j])) \
+                       + 4.0*Cy2*(q(x[i], y[j])*q(x[i], yjp1) \
+                                      /(q(x[i], y[j]) + q(x[i], yjp1)) \
+                                      *(u_1[i,jp1] - u_1[i,j]) \
+                                      - q(x[i], yjm1)*q(x[i], y[j]) \
+                                      /(q(x[i], yjm1) + q(x[i], y[j])) \
+                                      *(u_1[i,j] - u_1[i,jm1])) \
+                       + f(x[i], y[j], t[n])*dt2)/(1.0 + tb)
             return uij
 
+        if self.q_average == 'arithmetic':
+            u_step = u_step_arithm
+        elif self.q_average == 'harmonic':
+            u_step = u_step_harm
         
+            
         #     Boundary points
         j = 0
         for i in range(1, Nx):
@@ -591,28 +674,31 @@ class Solver:
 
 
 class Tests:
-    def __init__(self, option=None, version='scalar'):
+    def __init__(self, option=None, version='scalar', \
+                     q_average='arithmetic'):
         self.option = option
         self.version = version
+        self.q_average = q_average
+        
 
-    def do_test(self, option):
+    def do_tst(self, option):
         if option == 'constant':
             self.solver = self.test_constant()
         elif option == '1d_plug_x':
-            self.solver = self.test_1d_plug_x()
+            self.solver = self.tst_1d_plug_x()
         elif option == '1d_plug_y':
-            self.solver = self.test_1d_plug_y()
+            self.solver = self.tst_1d_plug_y()
         elif option == '1d_gaussian_x':
-            self.solver = self.test_1d_gaussian_x()
+            self.solver = self.tst_1d_gaussian_x()
         elif option == '1d_gaussian_y':
-            self.solver = self.test_1d_gaussian_y()
+            self.solver = self.tst_1d_gaussian_y()
         elif option == 'standing_wave':
-            self.solver = self.test_standing_wave()
+            self.solver = self.tst_standing_wave()
         elif option == 'convergence_sw':
             self.solver = self.test_convergence_sw()
         elif option == 'convergence_sw2':
-            self.solver = self.test_convergence_sw2()
-
+            self.solver = self.tst_convergence_sw2()
+            
     def test_constant(self):
         """
         Test with input that should give a constant solution 
@@ -626,11 +712,11 @@ class Tests:
         Nx = 5
         Ny = 5
         T = 0.4
-        dt = 0.1
+        dt = 0.05
         
         def q(x, y):
             return x**2 + y**2
-
+        
         def I(x, y):
             return u0
     
@@ -662,12 +748,16 @@ class Tests:
         #     Construct solver object
         solver = Solver(problem=problem, Nx=Nx, Ny=Ny,
                         dt=dt, user_action=action, 
-                        version=self.version)
+                        version=self.version, 
+                        q_average=self.q_average)
         #     Solve the PDE
         solver.solve()
         
+        diff = abs(solver.u_last-2.0).max()
+        nt.assert_almost_equal(diff, 0, delta=1E-14)
 
-    def test_1d_plug_x(self):
+
+    def tst_1d_plug_x(self):
         """
         Test the solver with a one-dimensional plug wave.
         """
@@ -680,6 +770,13 @@ class Tests:
         Ny = 3
         T = 2.0
         dt = 0.04
+        
+        Carnot = c*dt/(Lx/Nx)
+        if abs(Carnot - 1.0) > 1.0E-14:
+            print 'Carnot number must be 1.0'
+            print ' '
+            sys.exit()
+            
         print 'C=',c*dt/(Lx/Nx)
         
         def q(x, y):
@@ -714,9 +811,9 @@ class Tests:
             if t[n] == 0:
                 time.sleep(1)
             #mesh(x, y, u, title='t=%g' % t[n])
-            plot(x, u[:,1], title='t=%g' % t[n], ylim=[-2.4, 2.4])
+            st.plot(x, u[:,0], title='t=%g' % t[n], ylim=[-2.4, 2.4])
             filename = 'tmp_%04d.png' % n
-            savefig(filename)
+            st.savefig(filename)
         
             time.sleep(0.4)
   
@@ -727,12 +824,13 @@ class Tests:
         #     Construct solver object
         solver = Solver(problem=problem, Nx=Nx, Ny=Ny,
                         dt=dt, user_action=plot_u, 
-                        version=self.version)
+                        version=self.version,
+                        q_average=self.q_average)
         #     Solve the PDE
         solver.solve()
     
 
-    def test_1d_plug_y(self):
+    def tst_1d_plug_y(self):
         """
         Test the solver with a one-dimensional plug wave.
         """
@@ -745,7 +843,13 @@ class Tests:
         Ny = 50
         T = 2.0
         dt = 0.04
-        print 'C=',c*dt/(Ly/Ny)
+
+        Carnot = c*dt/(Ly/Ny)
+        if abs(Carnot - 1.0) > 1.0E-14:
+            print 'Carnot number must be 1.0'
+            print ' '
+            sys.exit()
+        print 'Carnot =', c*dt/(Ly/Ny)
         
         def q(x, y):
             return c**2
@@ -780,9 +884,9 @@ class Tests:
             if t[n] == 0:
                 time.sleep(1)
             #mesh(x, y, u, title='t=%g' % t[n])
-            plot(y, u[1,:], title='t=%g' % t[n], ylim=[-2.4, 2.4])
+            st.plot(y, u[1,:], title='t=%g' % t[n], ylim=[-2.4, 2.4])
             filename = 'tmp_%04d.png' % n
-            savefig(filename)
+            st.savefig(filename)
             
             time.sleep(0.4)
 
@@ -793,12 +897,13 @@ class Tests:
         #     Construct solver object
         solver = Solver(problem=problem, Nx=Nx, Ny=Ny,
                         dt=dt, user_action=plot_u, 
-                        version=self.version)
+                        version=self.version,
+                        q_average=self.q_average)
         #     Solve the PDE
         solver.solve()
 
 
-    def test_1d_gaussian_x(self):
+    def tst_1d_gaussian_x(self):
         """
         Test the solver with a one-dimensional gaussian wave.
         """
@@ -811,7 +916,7 @@ class Tests:
         Nx = 100
         Ny = 3
         T = 2.4
-        dt = 0.02
+        dt = 0.015
         print 'c=',c,',dt=',dt,',Nx=',Nx,',Lx=',Lx
         print 'C=',c*dt*Nx/Lx
         
@@ -841,9 +946,9 @@ class Tests:
         def plot_u(u, x, xv, y, yv, t, n):
             if t[n] == 0:
                 time.sleep(1)
-            plot(x, u[:,1],'--',x, u_exact(x, t[n], a, Lx),'o')
+            st.plot(x, u[:,1],'--',x, u_exact(x, t[n], a, Lx),'o')
             filename = 'tmp_%04d.png' % n
-            savefig(filename)
+            st.savefig(filename)
             time.sleep(0.1)
         
         #     Construct problem object
@@ -853,12 +958,13 @@ class Tests:
         #     Construct solver object
         solver = Solver(problem=problem, Nx=Nx, Ny=Ny,
                         dt=dt, user_action=plot_u, 
-                        version=self.version)
+                        version=self.version,
+                        q_average=self.q_average)
         #     Solve the PDE
         solver.solve()
         
         
-    def test_1d_gaussian_y(self):
+    def tst_1d_gaussian_y(self):
         """
         Test the solver with a one-dimensional gaussian wave.
         """
@@ -900,13 +1006,13 @@ class Tests:
             if t[n] == 0:
                 time.sleep(1)
             #mesh(x, y, u, title='t=%g' % t[n])
-            #plot(x, u[:,1], 'o', '-', title='t=%g' % t[n], ylim=[-2.4, 2.4])
-            #plot(x, u_exact(x, t[n], a, Lx), 'o', ylim=[-2.4, 2.4])
-            plot(y, u[1,:],'--',y, u_exact(y, t[n], a, Ly),'o')
+            #st.plot(x, u[:,1], 'o', '-', title='t=%g' % t[n], ylim=[-2.4, 2.4])
+            #st.plot(x, u_exact(x, t[n], a, Lx), 'o', ylim=[-2.4, 2.4])
+            st.plot(y, u[1,:],'--',y, u_exact(y, t[n], a, Ly),'o')
             #plt.plot(x, u_exact(x, t[n], a, Lx))
             #plt.show()
             filename = 'tmp_%04d.png' % n
-            savefig(filename)
+            st.savefig(filename)
             time.sleep(0.1)
 
         #     Construct problem object
@@ -916,12 +1022,13 @@ class Tests:
         #     Construct solver object
         solver = Solver(problem=problem, Nx=Nx, Ny=Ny,
                         dt=dt, user_action=plot_u, 
-                        version=self.version)
+                        version=self.version,
+                        q_average=self.q_average)
         #     Solve the PDE
         solver.solve()
         
         
-    def test_standing_wave(self):
+    def tst_standing_wave(self):
         """
         Test the solver with a manufactured solution, which
         here is the standing wave
@@ -989,7 +1096,8 @@ class Tests:
         #     Construct solver object
         solver = Solver(problem=problem, Nx=Nx, Ny=Ny,
                         dt=dt, user_action=print_u, 
-                        version=self.version)
+                        version=self.version,
+                        q_average=self.q_average)
         #     Solve the PDE
         solver.solve()
 
@@ -1062,7 +1170,7 @@ class Tests:
             print 
 
         errors = []
-        h_values = 0.01, 0.001, 0.0001, 0.00001
+        h_values = 0.01, 0.001#, 0.0001#, 0.00001
         #h_values = 0.1, 0.05, 0.01
         
         for h in h_values:
@@ -1078,7 +1186,8 @@ class Tests:
             #     Construct solver object
             solver = Solver(problem=problem, Nx=Nx, Ny=Ny,
                             dt=dt, user_action=None, 
-                            version=self.version)
+                            version=self.version,
+                            q_average=self.q_average)
             #     Solve the PDE
             solver.solve()
             
@@ -1097,9 +1206,13 @@ class Tests:
         
         for i in range(1, nh):
             print h_values[i-1], r[i-1]
+            
+        diff = abs(r[nh-2]-2.0)
+        #print 'diff = ', diff
+        nt.assert_almost_equal(diff, 0, delta=1E-1)
+        
 
-
-    def test_convergence_sw2(self):
+    def tst_convergence_sw2(self):
         """
         Test the solver with a manufactured solution, which
         here is the standing wave
@@ -1170,7 +1283,7 @@ class Tests:
             print 
 
         errors = []
-        h_values = 0.01, 0.001, 0.0001#, 0.00001
+        h_values = 0.01, 0.001#, 0.0001#, 0.00001
         #h_values = 0.1, 0.05, 0.01
         
         for h in h_values:
@@ -1186,7 +1299,8 @@ class Tests:
             #     Construct solver object
             solver = Solver(problem=problem, Nx=Nx, Ny=Ny,
                             dt=dt, user_action=None, 
-                            version=self.version)
+                            version=self.version,
+                            q_average=self.q_average)
             #     Solve the PDE
             solver.solve()
             
@@ -1206,13 +1320,30 @@ class Tests:
         for i in range(1, nh):
             print h_values[i-1], r[i-1]
 
+        diff = abs(r[nh-2]-2.0)
+        #print 'diff = ', diff
+        nt.assert_almost_equal(diff, 0, delta=1E-1)
+
 
           
 def main():    
-    t = Tests(version='vectorized')
-    #t.do_test('1d_gaussian_y') 
-    t.do_test('convergence_sw2')
-    #t.do_test('standing_wave')
+    #     Warning! q_average = 'harmonic'
+    #     is implemented properly only
+    #     for the scalar version.
+    #
+    t = Tests(version='scalar',
+              q_average='harmonic')
+    
+    #     Available tests:  
+    #
+    #     'constant', '1d_plug_x', '1d_plug_y',
+    #     '1d_gaussian_x', '1d_gaussian_y',
+    #     'standing_wave', 'convergence_sw',
+    #     'convergence_sw2'
+    #
+    #t.do_tst('1d_gaussian_y') 
+    #t.do_tst('constant')
+    t.do_tst('convergence_sw2')
     
 if __name__ == '__main__':
     main()
