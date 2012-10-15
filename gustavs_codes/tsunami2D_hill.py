@@ -1,3 +1,4 @@
+import scitools.std as st
 from wave2D_du0 import *
 
 #
@@ -8,25 +9,36 @@ from wave2D_du0 import *
 #cProfile.run('foo()')
 
 class Simulations:
-    def __init__(self, option=None, version='scalar'):
+    def __init__(self, option=None, version='scalar', \
+                     q_average='arithmetic'):
         self.option = option
         self.version = version
+        self.q_average = q_average
         
     def simulate(self, option):   
-        if option == 'gaussian_bottom':
-            self.solver = self.simulate_gaussian_bottom()
+        if option == 'gaussian':
+            self.solver = self.simulate_gaussian()
         elif option == 'cosine_hat':
             self.solver = self.simulate_cosine_hat()
         elif option == 'box':
             self.solver = self.simulate_box()
-            
-    def simulate_gaussian_bottom(self):
+        elif option == 'gaussian_1d':
+            self.solver = self.simulate_gaussian_1d()
+        elif option == 'box_1d':
+            self.solver = self.simulate_box_1d()
+        elif option == 'smooth_step':
+            self.solver = self.simulate_smooth_step()
+        elif option == 'exp_pol_1d':
+            self.solver = self.simulate_exp_pol_1d()
+
+    
+    def simulate_gaussian(self):
         """
         Simulate an earthquake-generated tsunami over a
         elliptic gaussian-shaped bottom.
         """
         
-        case = 2
+        case = 1
         
         if case == 1:
             
@@ -45,13 +57,13 @@ class Simulations:
             Im = 0.0
             Is = 40.2
             B0 = -500.0
-            Ba = 450.0
-            Bmx = 0.3*Lx
-            Bmy = 0.5*Ly
-            Bs = 100.0
-            bxy = 0.8
+            Ba = 400.0
+            Bmx = 0.5*Lx
+            Bmy = 0.8*Ly
+            Bs = 200.0
+            bxy = 1.8
             
-            zmin = -100.0
+            zmin = -500.0
             zmax = 150.0
         
         elif case == 2:
@@ -71,11 +83,11 @@ class Simulations:
             Im = 0.0
             Is = 40.2
             B0 = -500.0
-            Ba = 250.0
+            Ba =400.0
             Bmx = 0.3*Lx
-            Bmy = 0.5*Ly
+            Bmy = 0.2*Ly
             Bs = 50.0
-            bxy = 2.0
+            bxy = 1.5
             
             zmin = -500.0#-50.0
             zmax = 150.0
@@ -99,7 +111,7 @@ class Simulations:
             #surf(xv, yv, u, zlim=[-50.0, 300.0])
             #axis([0.0,400.0,0.0,430.0,-500.0,300.0])
             #show()
-            surf(xv, yv, u, zlim=[zmin, zmax])
+            st.surf(xv, yv, u, zlim=[zmin, zmax])
             #hold('on')
             
             #print 'xvshape = ',xv.shape[0],',yvshape = ', yv.shape[1]
@@ -107,12 +119,12 @@ class Simulations:
             b_a[:,:] = bottom(xv, yv)
             #print 'b_a.shape=',b_a.shape 
             #surf(xv, yv, b_a)
-            mesh(xv, yv, b_a, zlim=[zmin, zmax])
+            st.mesh(xv, yv, b_a, zlim=[zmin, zmax])
             #axis([0.0,400.0,0.0,430.0,-500.0,300.0])
             #show()
             #time.sleep(1.0)
             filename = 'tmp_gaussian2%04d.png' % n
-            savefig(filename)
+            st.savefig(filename)
         
         #     Construct problem object
         problem = Problem(I=I, V=None, f=None, q=q, b=0.0, Lx=Lx, 
@@ -130,13 +142,13 @@ class Simulations:
         Simulate an earthquake-generated tsunami over 
         a sea bottom with a cosine hat hill.
         """
-
+        
         Lx = 1000.0
         Ly = 430.0
-        Nx = 50
+        Nx = 80
         Ny = 40
         T = 14.0
-        dt = 0.15
+        dt = 0.1
         
         g = 9.81        # Acceleration of gravity (m/s^2)
             
@@ -146,7 +158,7 @@ class Simulations:
         Is = 40.2
         
         B0 = -300.0
-        Ba = 200.0
+        Ba = 250.0
         Bmx = 0.3*Lx
         Bmy = 0.5*Ly
         Bs = 200.0
@@ -191,7 +203,7 @@ class Simulations:
             #surf(xv, yv, u, zlim=[-50.0, 300.0])
             #axis([0.0,400.0,0.0,430.0,-500.0,300.0])
             #show()
-            surf(xv, yv, u, zlim=[zmin, zmax])
+            st.surf(xv, yv, u, zlim=[zmin, zmax])
             #hold('on')
             #1 + 1 
             #print 'xvshape = ',xv.shape[0],',yvshape = ', yv.shape[1]
@@ -224,7 +236,7 @@ class Simulations:
         t1 = time.clock()
         print 'used time: ', t1-t0 
 
-
+        
     def simulate_box(self):
         """
         Simulate an earthquake-generated tsunami over
@@ -235,21 +247,21 @@ class Simulations:
         Ly = 430.0
         Nx = 50
         Ny = 40
-        T = 10.0
+        T = 14.0
         dt = 0.15
         
         g = 9.81        # Acceleration of gravity (m/s^2)
-            
+        
         I0 = 0.0
         Ia = 140.0
         Im = 0.0
         Is = 40.2
         
         B0 = -300.0
-        Ba = 200.0
+        Ba = 400.0
         Bmx = 0.3*Lx
         Bmy = 0.5*Ly
-        Bs = 70.0
+        Bs = 35.0
         b = 1.3
             
         zmin = -320.0
@@ -292,7 +304,7 @@ class Simulations:
             #surf(xv, yv, u, zlim=[-50.0, 300.0])
             #axis([0.0,400.0,0.0,430.0,-500.0,300.0])
             #show()
-            surf(xv, yv, u, zlim=[zmin, zmax])
+            st.surf(xv, yv, u, zlim=[zmin, zmax])
             #show()
             #hold('on')
             #1 + 1 
@@ -306,13 +318,251 @@ class Simulations:
             #print 'b_a.shape=',b_a.shape 
             #surf(xv, yv, b_a)
             #mesh(xv, yv, b_a)
-            mesh(xv, yv, b_a, zlim=[zmin, zmax])
+            st.mesh(xv, yv, b_a, zlim=[zmin, zmax])
+            
+            #title('Bs = 40')
+            #axis([0.0,400.0,0.0,430.0,-500.0,300.0])
+            #show()
+            #time.sleep(5.0)
+            #filename = 'tmp_box%04d.png' % n
+            #savefig(filename)
+        
+
+        #     Construct problem object
+        problem = Problem(I=I, V=None, f=None, q=q, b=0.0, Lx=Lx, 
+                          Ly=Ly, T=T)
+        
+        #     Construct solver object
+        solver = Solver(problem=problem, Nx=Nx, Ny=Ny,
+                        dt=dt, user_action=plot_u, 
+                        version=self.version)
+        
+        #     Solve the PDE
+        solver.solve()   
+        
+        t1 = time.clock()
+        print 'used time: ', t1-t0 
+
+
+            
+    def simulate_box_1d(self):
+        """
+        Simulate an one-dimensional earthquake-generated 
+        tsunami over a sea bottom with a box-shaped hill.
+        """
+        
+        Lx = 800.0
+        Ly = 10.0
+        Nx = 200
+        Ny = 3
+        T = 14.0
+        dt = 0.04
+        
+        g = 9.81        # Acceleration of gravity (m/s^2)
+        
+        I0 = 0.0
+        Ia = 140.0
+        Im = 0.0
+        Is = 40.2
+        
+        B0 = -300.0
+        Ba = 275.0
+        Bmx = 0.75*Lx
+        Bs = 0.25*Lx
+            
+        zmin = -320.0
+        zmax = 150.0
+        
+        t0 = time.clock()
+
+        #     Initial water surface with tsunami
+        def I(x, y):
+            return I0 + Ia*exp(-((x-Im)/Is)**2)
+        
+        #     shape of sea bottom
+        def bottom(x, y):
+            if type(x) == float64:
+                if (x >= Bmx-Bs) and (x <= Bmx+Bs):
+                    b_value = B0 + Ba
+                else:
+                    b_value = B0
+            else:
+                b_value = zeros((x.shape[0], y.shape[1]))
+                for i in range(0, x.shape[0]):
+                    for j in range(0, y.shape[1]):
+                        xx = x[i,0]
+                        yy = y[0,j]
+                        if (xx >= Bmx-Bs) and (xx <= Bmx+Bs):
+                            b_value[i,j] = B0 + Ba
+                        else:
+                            b_value[i,j] = B0
+            return b_value
+        
+        def q(x, y):
+            return -g*bottom(x, y)
+
+
+        def plot_u(u, x, xv, y, yv, t, n):
+          
+            b_a = zeros((xv.shape[0],yv.shape[1]))
+            b_a[:,:] = bottom(xv, yv)
+            st.plot(xv[:,0], u[:,0], '-', xv[:,0], b_a[:,0], '--', ylim=[zmin, zmax])
+            #show()
+            #hold('on')
             
             #axis([0.0,400.0,0.0,430.0,-500.0,300.0])
             #show()
             #time.sleep(5.0)
-            filename = 'tmp_box%04d.png' % n
-            savefig(filename)
+            filename = 'tmp_1d_box%04d.png' % n
+            st.savefig(filename)
+        
+
+        #     Construct problem object
+        problem = Problem(I=I, V=None, f=None, q=q, b=0.0, Lx=Lx, 
+                          Ly=Ly, T=T)
+        
+        #     Construct solver object
+        solver = Solver(problem=problem, Nx=Nx, Ny=Ny,
+                        dt=dt, user_action=plot_u, 
+                        version=self.version)
+        
+        #     Solve the PDE
+        solver.solve()   
+        
+        t1 = time.clock()
+        print 'used time: ', t1-t0 
+
+
+    def simulate_smooth_step(self):
+        """
+        Simulate an one-dimensional earthquake-generated 
+        tsunami over a sea bottom with a box-shaped hill.
+        """
+        
+        Lx = 800.0
+        Ly = 10.0
+        Nx = 200
+        Ny = 3
+        T = 14.0
+        dt = 0.04
+        
+        g = 9.81        # Acceleration of gravity (m/s^2)
+        
+        I0 = 0.0
+        Ia = 140.0
+        Im = 0.0
+        Is = 40.2
+        
+        B0 = -300.0
+        Ba = 275.0
+        Bmx = 0.5*Lx
+        Bs = 0.005*Lx
+            
+        zmin = -320.0
+        zmax = 150.0
+        
+        t0 = time.clock()
+
+        #     Initial water surface with tsunami
+        def I(x, y):
+            return I0 + Ia*exp(-((x-Im)/Is)**2)
+      
+        #     Shape of sea bottom
+        def bottom(x, y):
+            return B0 + Ba/(1.0+exp(-(x-Bmx)/Bs))
+        
+        def q(x, y):
+            return -g*bottom(x, y)
+
+
+        def plot_u(u, x, xv, y, yv, t, n):
+          
+            b_a = zeros((xv.shape[0],yv.shape[1]))
+            b_a[:,:] = bottom(xv, yv)
+            st.plot(xv[:,0], u[:,0], '-', xv[:,0], b_a[:,0], '--', ylim=[zmin, zmax])
+            #show()
+            #hold('on')
+            
+            #axis([0.0,400.0,0.0,430.0,-500.0,300.0])
+            #show()
+            #time.sleep(5.0)
+            filename = 'tmp_1d_smooth_step%04d.png' % n
+            st.savefig(filename)
+        
+
+        #     Construct problem object
+        problem = Problem(I=I, V=None, f=None, q=q, b=0.0, Lx=Lx, 
+                          Ly=Ly, T=T)
+        
+        #     Construct solver object
+        solver = Solver(problem=problem, Nx=Nx, Ny=Ny,
+                        dt=dt, user_action=plot_u, 
+                        version=self.version)
+        
+        #     Solve the PDE
+        solver.solve()   
+        
+        t1 = time.clock()
+        print 'used time: ', t1-t0 
+
+
+                
+    def simulate_gaussian_1d(self):
+        """
+        Simulate an one-dimensional earthquake-generated 
+        tsunami over a sea bottom with a gaussian shaped hill.
+        """
+        
+        Lx = 800.0
+        Ly = 10.0
+        Nx = 200
+        Ny = 3
+        T = 14.0
+        dt = 0.04
+        
+        g = 9.81        # Acceleration of gravity (m/s^2)
+        
+        I0 = 0.0
+        Ia = 140.0
+        Im = 0.0
+        Is = 40.2
+        
+        B0 = -300.0
+        Ba = 275.0
+        Bmx = 0.5*Lx
+        Bs = 35.0
+            
+        zmin = -320.0
+        zmax = 150.0
+        
+        t0 = time.clock()
+
+        #     Initial water surface with tsunami
+        def I(x, y):
+            return I0 + Ia*exp(-((x-Im)/Is)**2)
+
+    
+        #     Shape of sea bottom
+        def bottom(x, y):
+            return B0 + Ba*exp(-((x-Bmx)/Bs)**2)
+        
+        def q(x, y):
+            return -g*bottom(x, y)
+
+
+        def plot_u(u, x, xv, y, yv, t, n):
+          
+            b_a = zeros((xv.shape[0],yv.shape[1]))
+            b_a[:,:] = bottom(xv, yv)
+            st.plot(xv[:,0], u[:,0], '-', xv[:,0], b_a[:,0], '--', ylim=[zmin, zmax])
+            #show()
+            #hold('on')
+            
+            #axis([0.0,400.0,0.0,430.0,-500.0,300.0])
+            #show()
+            #time.sleep(5.0)
+            filename = 'tmp_1d_gaussian%04d.png' % n
+            st.savefig(filename)
         
 
         #     Construct problem object
@@ -332,9 +582,118 @@ class Simulations:
 
 
 
+    def simulate_exp_pol_1d(self):
+        """
+        Simulate an one-dimensional earthquake-generated 
+        tsunami over a sea bottom with a box-shaped hill.
+        """
+        
+        Lx = 800.0
+        Ly = 10.0
+        Nx = 100
+        Ny = 3
+        T = 17.0
+        dt = 0.05
+        
+        g = 9.81        # Acceleration of gravity (m/s^2)
+        
+        I0 = 0.0
+        Ia = 140.0
+        Im = 0.0
+        Is = 40.2
+        
+        B0 = -300.0
+        Ba = 200.0
+        Bmx = 0.5*Lx
+        Bs = 0.1*Lx
+        
+        zmin = -320.0
+        zmax = 150.0
+        
+        t0 = time.clock()
+        
+        #     Initial water surface with tsunami
+        def I(x, y):
+            return I0 + Ia*exp(-((x-Im)/Is)**2)
+        
+        #     Shape of sea bottom
+        def bottom(x, y):
+            xp = (x-Bmx)/Bs
+            return B0 + Ba*(1 + 1.7*xp**2)*exp(-xp**2)
+        
+        def bottom2(x, y):
+            return B0 + 1.15*Ba/( (1.0+exp(-(x-290.0)/(0.025*Lx))) \
+                                *(1.0+exp((x-510.0)/(0.025*Lx))) )
+
+        #     shape of sea bottom
+        # def bottom3(x, y):
+        #     if type(x) == float64:
+        #         if ((x >= Bmx-Bs) and (x <= Bmx-Bs2)) \
+        #                 or ((x >= Bmx+Bs2))):
+        #             b_value = B0 + Ba
+        #         else:
+        #             b_value = B0
+        #     else:
+        #         b_value = zeros((x.shape[0], y.shape[1]))
+        #         for i in range(0, x.shape[0]):
+        #             for j in range(0, y.shape[1]):
+        #                 xx = x[i,0]
+        #                 yy = y[0,j]
+        #                 if (xx >= Bmx-Bs) and (xx <= Bmx+Bs):
+        #                     b_value[i,j] = B0 + Ba
+        #                 else:
+        #                     b_value[i,j] = B0
+        #     return b_value
+        
+
+        def q(x, y):
+            return -g*bottom3(x, y)
+        
+        def plot_u(u, x, xv, y, yv, t, n):
+          
+            b_a = zeros((xv.shape[0],yv.shape[1]))
+            b_a[:,:] = bottom(xv, yv)
+            b_a2 = zeros((xv.shape[0],yv.shape[1]))
+            b_a2[:,:] = bottom2(xv, yv)
+            #b_a3 = zeros((xv.shape[0],yv.shape[1]))
+            #b_a3[:,:] = bottom3(xv, yv)
+            st.plot(xv[:,0], u[:,0], '-', xv[:,0], b_a[:,0], \
+                     xv[:,0], b_a2[:,0], '--', \
+                     ylim=[zmin, zmax])
+            #show()
+            #hold('on')
+            
+            #axis([0.0,400.0,0.0,430.0,-500.0,300.0])
+            #show()
+            #time.sleep(5.0)
+            filename = 'tmp_1d_exp_pol%04d.png' % n
+            st.savefig(filename)
+            
+
+        #     Construct problem object
+        problem = Problem(I=I, V=None, f=None, q=q, b=0.0, Lx=Lx, 
+                          Ly=Ly, T=T)
+        
+        #     Construct solver object
+        solver = Solver(problem=problem, Nx=Nx, Ny=Ny,
+                        dt=dt, user_action=plot_u, 
+                        version=self.version)
+        
+        #     Solve the PDE
+        solver.solve()   
+        
+        t1 = time.clock()
+        print 'used time: ', t1-t0 
+
+
+
 def main(): 
-    sim = Simulations(version='vectorized')
-    sim.simulate('box')
+    sim = Simulations(version='vectorized',\
+                          q_average='arithmetic')
+    #sim.simulate('gaussian_1d')
+    sim.simulate('box_1d')
+    #sim.simulate('smooth_step')
+    #sim.simulate('exp_pol_1d')
 
 if __name__ == '__main__':
     main()
