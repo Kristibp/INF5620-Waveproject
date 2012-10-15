@@ -327,6 +327,37 @@ where $u_{e}(x, y, t)$ is the exact solution and $u_{h_{k} i,j}^{N}$ is the nume
   \caption{A picture from a one-dimensional simulation with a Gaussian-shaped hill at the seabed. This solution is smoohter than the result of the simulation with a box-sahped hill, but is partially quite sharp.} %\label{fig:}
 \end{figure}
 
+Even if the solution of the Gaussian case is partially sharp, the numerical result becomes quite smooth when adding more space grid points. In the directories \verb+movie_1dwave_gaussian_Bs275_Nx100+ and \newline \verb+movie_1dwave_gaussian_Bs275_Nx200+, there are simulation results obtained with the same Gaussian perturbation, whence the number of space grid points was 100 and 200 in the two runs, respectively. From these movies one clearly sees that the numerical solution becomes smooth when using a finer space mesh.
+
+We also did a comparison between two simulations with the same box perturbation and 100 versus 200 mesh grid points. As in the case with a Gaussian hill, the numerical solution improved with a finer mesh. However, it seems that the system with a box hill may have a solution that is not smooth for any number of space mesh points. It is difficult to say, based on these simulations, what is numerical noise and what is due to a mathematically oscillating or non-smooth function. A first step in investigating that could be to compare numbers for $u_{i,\ j}^{n}$ of simulations with different numbers of grid points, using large $N_{x}$. It would perhaps also be instructive to look for exact numerical solutions for simple cases with a discontinuous $q$ function. 
+ 
+Another question we asked was how the width of the box hill affects the quality of the numerical solution. A snap-shot from a simulation is shown in Fig. \ref{fig:box_1d_narrow}, and the movie is stored in the directory \verb+movie_1dwave_box_Ba275_Bs15_Nx200+. At least, the solution is more spectacular with a narrower box perturbation. Still, it is not possible to say whether this is due to numerical noise or an oscillating shape of the exact solution. Intuitively, it is plausible that a geometry with sharp forms gives rise to high-frequency components, which in turn may lead to sharp and/or oscillating solutions. Generally, we observed that there were very clear reflections of part of the wave at the discontinouity points of the $q$ function. When using smoother hills, the reflections became more spread out.
+
+\begin{figure} 
+  \centering
+  \includegraphics[scale=0.4]{gustavs_codes/movie_1dwave_box_Ba275_Bs15_Nx200/figure.pdf}
+  \caption{An example from a simulation with a narrow box hill. The resulting function is more spectacular than what was obtained with a wider box.} \label{fig:box_1d_narrow}
+\end{figure}
+
+The latter observation was studied closer using discontinuous and smooth step functions. The smooth step function was of the form 
+\begin{equation}
+  B(x, y) = B_{0} + \frac{B_{a}}{1 + \exp\left(-(x-B_{mx})/B_{s}\right)}, 
+\end{equation}
+where $B_{0}$, $B_{a}$, $B_{mx}$, and $B_{s}$ are parameters. These geometries might be used to simulate a tsunami approching a shore where the sea level decreases suddenly. The related movies are stored in the directories \verb+movie_1dwave_box_shore+ and \newline \verb+movie_1dwave_smooth_step+. We found that the reflected wave was sharper peaked in the case with a discontinuous step function, whereas the smooth step function gave a reflected wave more smeared out. However, both simulations had similar sharp oscillations behind the main wave. This oscillation may be a numerical artefact. One can also observe how the wave moves slower on the shallower water. This is natural, as the function $q(x, y)$ is proportional to both the depth of the sea, $B(x, y)$, and the squared of the wave velocity, $c^{2}$. From a physical point of view, the wave uses energy to keep the wave pulse higher, and therefore has less energy left for moving horisontally.
+
+\begin{figure} 
+  \centering
+  \includegraphics[scale=0.4]{gustavs_codes/movie_1dwave_smooth_step/figure.pdf}
+  \caption{A smooth step function is used at the shore. The reflected wave pulse is more smeared out than in the case with a sharp step function. This result shows oscillations behind the main pulse, which may be numerical noise.}
+\end{figure}
+
+\begin{figure} 
+  \centering
+  \includegraphics[scale=0.4]{gustavs_codes/movie_1dwave_box_shore/figure.pdf}
+  \caption{The shore is modelled using a sharp step function. In this case the reflected wave is sharp. As in the case with a smoother step function, here is also seen oscillations behind the main wave pulse.}
+\end{figure}
+ 
+
 \section{Conclusions}
 
 %\begin{figure}[!ht]
