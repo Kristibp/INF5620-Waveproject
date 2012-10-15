@@ -310,61 +310,22 @@ where $u_{e}(x, y, t)$ is the exact solution and $u_{h_{k} i,j}^{N}$ is the nume
     \end{center}
   \end{table}
 
+  \subsection{One-dimensional simulations}
+  
+  We did some simulations with one-dimensional systems to get a better view of 
+  the behaviour of the solutions. With the one-dimensional systems, it was also possible to use finer mesh grids. In the directories \verb+movie_1dwave_box_Ba250+ and \verb+movie_1dwave_gaussian_Bs250+ we have examples of simulations of one-dimensional systems with a box and a Gaussian shaped hill, respectively. With the same hight of the hill, the simulation with a Gaussian perturbation gave a smoother function $u(x, y, t)$ than what was the case with the box-shaped perturbation.  
 
+\begin{figure} 
+  \centering
+  \includegraphics[scale=0.4]{gustavs_codes/movie_1dwave_box_Ba250/figure.pdf}
+  \caption{A snapshot of a one-dimensional simulation with a box-shaped hill at the bottom of the sea. The solution is clearly not smooth, and has probably numerical noise.} %\label{fig:}
+\end{figure}
 
-%We define a set of numerical experiments where $I$, $a$, and $T$ are
-%fixed, while $\Delta t$ and $\theta$ are varied.
-%In particular, $I=1$, $a=2$, $\Delta t = 1.25, 0.75, 0.5, 0.1$.
-
-
-
-% Subsection with inline figure (figure without caption).
-
-%\subsection{The Backward Euler method}
-
-%\index{BE}
-
-
-%\begin{center}  % inline figure
-%  \centerline{\includegraphics[width=0.9\linewidth]{BE.png}}
-%\end{center}
-
-
-
-
-% Subsection with inline figure (figure without caption).
-
-%\subsection{The Crank-Nicolson method}
-
-%\index{CN}
-
-
-%\begin{center}  % inline figure
-%  \centerline{\includegraphics[width=0.9\linewidth]{CN.png}}
-%\end{center}
-
-
-
-
-% Subsection with inline figure (figure without caption).
-
-%\subsection{The Forward Euler method}
-
-%\index{FE}
-
-
-%\begin{center}  % inline figure
-%  \centerline{\includegraphics[width=0.9\linewidth]{FE.png}}
-%\end{center}
-
-%\subsection{Error vs $\Delta t$}
-
-% Exemplify referring to a figure with label and caption.
-
-%\index{error vs time step}
-
-%How $E$ varies with $\Delta t$ for $\theta=0,0.5,1$
-%is shown in Figure~\ref{fig:E}.
+\begin{figure} 
+  \centering
+  \includegraphics[scale=0.4]{gustavs_codes/movie_1dwave_gaussian_Bs250/figure.pdf}
+  \caption{A picture from a one-dimensional simulation with a Gaussian-shaped hill at the seabed. This solution is smoohter than the result of the simulation with a box-sahped hill, but is partially quite sharp.} %\label{fig:}
+\end{figure}
 
 \section{Conclusions}
 
