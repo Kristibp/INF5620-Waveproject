@@ -1,12 +1,3 @@
-%%
-%% Automatically generated ptex2tex (extended LaTeX) file
-%% from Doconce source
-%% http://code.google.com/p/doconce/
-%%
-
-
-
-
 %-------------------------- begin preamble --------------------------
 \documentclass[twoside]{article}
 
@@ -14,250 +5,87 @@
 
 \usepackage{relsize,epsfig,makeidx,amsmath,amsfonts}
 \usepackage[latin1]{inputenc}
-\usepackage{minted} % packages needed for verbatim environments
-
-
-% Hyperlinks in PDF:
-\usepackage[%
-    colorlinks=true,
-    linkcolor=black,
-    %linkcolor=blue,
-    citecolor=black,
-    filecolor=black,
-    %filecolor=blue,
-    urlcolor=black,
-    pdfmenubar=true,
-    pdftoolbar=true,
-    urlcolor=black,
-    %urlcolor=blue,
-    bookmarksdepth=3   % Uncomment (and tweak) for PDF bookmarks with more levels than the TOC
-            ]{hyperref}
-%\hyperbaseurl{}   % hyperlinks are relative to this root
-
-% Tricks for having figures close to where they are defined:
-% 1. define less restrictive rules for where to put figures
-\setcounter{topnumber}{2}
-\setcounter{bottomnumber}{2}
-\setcounter{totalnumber}{4}
-\renewcommand{\topfraction}{0.85}
-\renewcommand{\bottomfraction}{0.85}
-\renewcommand{\textfraction}{0.15}
-\renewcommand{\floatpagefraction}{0.7}
-% 2. ensure all figures are flushed before next section
-\usepackage[section]{placeins}
-% 3. enable begin{figure}[H] (often leads to ugly pagebreaks)
-%\usepackage{float}\restylefloat{figure}
-
-\newcommand{\inlinecomment}[2]{  ({\bf #1}: \emph{#2})  }
-%\newcommand{\inlinecomment}[2]{}  % turn off inline comments
-
-% insert custom LaTeX commands...
-
-\makeindex
-
+%%\usepackage{minted} % packages needed for verbatim environments
 \begin{document}
-%-------------------------- end preamble --------------------------
-
-
-
-
-
-% ----------------- title -------------------------
-
-\begin{center}
-{\LARGE\bf Effects of Hill Shapes \\ [1.5mm] on Tsunami Simulations}
-\end{center}
-
-
-
-
-% ----------------- author(s) -------------------------
-
-\begin{center}
-{\bf Kristian Pedersen and Gustav Baardsen} \\ [0mm]
-%{\bf Hans Petter Langtangen${}^{1, 2}$ (\texttt{hpl@simula.no})} \\ [0mm]
-\end{center}
-
-%\begin{center}
-% List of all institutions:
-%\centerline{{\small ${}^1$Center for Biomedical Computing, Simula Research Laboratory}}
-%\centerline{{\small ${}^2$Department of Informatics, University of Oslo.}}
-%\end{center}
-% ----------------- end author(s) -------------------------
-
-
-
-% ----------------- date -------------------------
-
-
-\begin{center}
-\today
-\end{center}
-
-\vspace{1cm}
-
-
-
-\begin{abstract}
-
-In this project we study how the shape of hills at the sea bottom
-affects numerical and physical properties of simulations of
- earthquake-generated tsunamis. The tsunamis are modelled using 
-two-dimensional wave equations, and a finite difference scheme is 
-used to solve the partial differential equations.
-
-
-\end{abstract}
-
-\tableofcontents
-
-
-
-% Section with multi-line equation.
 \section{Introduction}
-
+\label{Introduction}
+In this text we will addresses the two-dimensional, standard, linear wave equation, with damping and reflecting boundaries. We will develop a scheme for solving it and apply it to the problem of a tsunami over an uneven seabed. Especial focus will be put on the question of which kinds of seabeds causes numerical instability. 
 \section{Mathematical model}
-
-%% \label{math:problem}
-
-%% \index{model problem} \index{exponential decay}
-
-%% We address the initial-value problem
-
-%% \begin{align}
-%% u'(t) &= -au(t), \quad t \in (0,T], \label{ode}\\
-%% u(0)  &= I,                         \label{initial:value}
-%% \end{align}
-%% where $a$, $I$, and $T$ are prescribed parameters, and $u(t)$ is
-%% the unknown function to be estimated. This mathematical model
-%% is relevant for physical phenomena featuring exponential decay
-%% in time.
-
-% Section with single-line equation and a bullet list.
-
+\label{Model}
+For x,y in the domain $D = [0,L_y] \times [0,L_x]$ and $t \in [0,T]$ we will study the following set  of equations:
+\begin{align}
+u_tt + b u_t &= (q(x,y)u_x)_x + (q(x,y)u_y)_y +f(x,y,t), &x,y \in D, t \in [0, T] \\
+\frac{\delta u}{\delta n} &= 0 &x,y \in \delta D,  t \in [0, T] \\
+u(x,y,0) &= I(x,y) &x,y \in \delta D \\
+u_t(x,y,0) &= V(x,y) &x,y \in \delta D
+\end{align}
 
 \section{Numerical scheme}
+\label{Scheme}
+\subsection{Numerical scheme for the inner points}
+In operator notation we want to use the following scheme for inner points:
+\begin{align}
+[D_t D_t u + b D_2t u = D_x(q D_x u) + D_y (q D_y u) +f]_{i\, j}^n \label{PDE}
+\end{align}
 
-%% \label{numerical:problem}
+Calculating each summand we find:
 
-%% \index{mesh in time} \index{$\theta$-rule} \index{numerical scheme}
-%% \index{finite difference scheme}
+\begin{align}
+[D_t D_t u]_{i\, j}^n &= \frac{u^{n+1}_{i,j} - 2u^{n}_{i,j} + u^{n-1}_{i,j}}{\Delta t^2} \label{Dttu}\\
+[bD_2t u]_{i\, j}^n &= b\frac{u^{n+1}_{i,j} - u^{n-1}_{i,j}}{2\Delta t} \label{bD2tu}\\
+[D_x q D_x u]_{i\, j}^n &= \frac{q_{i +\frac{1}{2},j}(u^{n}_{i+1,j} - u^{n}_{i,j}) - q_{i -\frac{1}{2},j}(u^{n}_{i,j} - u^{n}_{i-1,j})}{\Delta x^2} \label{DxqDxu}\\
+[D_y q D_y u]_{i\, j}^n &= \frac{q_{i,j +\frac{1}{2}}(u^{n}_{i,j+1} - u^{n}_{i,j}) - q_{i ,j-\frac{1}{2}}(u^{n}_{i,j} - u^{n}_{i,j-1})}{\Delta x^2} \label{DyqDyu}\\
+[f]_{i\, j}^n &= f(x_i, y_i, t_i) \label{f}
+\end{align}
+Inserting these expressions in (\ref{PDE}) and solving for $u^{n+1}_{i,j}$ we get the following scheme for inner points:
+\begin{align*}
+u^{n+1}_{i,j} &= \frac{2u^{n}_{i,j} + (\frac{1}{2}b\Delta t-1.0) u^{n-1}_{i,j}}{1 + \frac{1}{2}b\Delta t} \\
+&+ \frac{\Delta t^2}{\Delta x^2(\frac{1}{2}b\Delta t-1.0)}({q_{i +\frac{1}{2},j}(u^{n}_{i+1,j} - u^{n}_{i,j}) - q_{i -\frac{1}{2},j}(u^{n}_{i,j} - u^{n}_{i-1,j})}) \\ 
+&+  (\frac{\Delta t^2}{\Delta y^2(\frac{1}{2}b\Delta t-1.0)} (q_{i,j +\frac{1}{2}}(u^{n}_{i,j+1} - u^{n}_{i,j}) - q_{i ,j-\frac{1}{2}}(u^{n}_{i,j} - u^{n}_{i,j-1}))\\
+ &+ \frac{\Delta t^2} {\frac{1}{2}b\Delta t-1.0} f(x_i, y_i, t_i)
+\end{align*}
 
-%% We introduce a mesh in time with points $0= t_0< t_1 \cdots < t_N=T$.
-%% For simplicity, we assume constant spacing $\Delta t$ between the
-%% mesh points: $\Delta t = t_{n}-t_{n-1}$, $n=1,\ldots,N$. Let
-%% $u^n$ be the numerical approximation to the exact solution at $t_n$.
+\subsection{Numerical scheme for the first time step}
+For the first time step $u^{n-1}_{i,j}$ isn't a part of the grid. To circumvent this problem we have to apply the intial condition $u_t(x,y,0) = V(x,y) \text{ for } x,y \in \delta D$. We discretize it and get:
+$$[D_{2t} u = V]_{i\,j}^0 \implies \frac{u_{i\,j}^1 - u_{i\,j}^{-1}}{2\Delta t} = V(x_i,y_j) \implies u_{i\,j}^{-1} = u_{i\,j}^{1} - 2\Delta t V(x_i,y_j)$$
+Inserting this in equation (\ref{Dttu}) and (\ref{bD2tu}) we get:
+\begin{align}
+[D_t D_t u]_{i\, j}^n &= 2(\frac{u^{n+1}_{i,j} - u^{n}_{i,j}}{\Delta t^2}  - \frac{V(x_i,y_i)}{\Delta t}) \\
+[bD_2t u]_{i\, j}^n &= b\frac{V(x_i,y_i)}{\Delta t} \label{bD2tu}
+\end{align}
+Inserting these expressions in (\ref{PDE}) and solving for $u^{n+1}_{i,j}$ we get the following scheme for inner points in the first time step:
+\begin{align*}
+u^{n+1}_{i,j} &= u^{n}_{i,j} + (1 - \frac{1}{2}b\Delta t)*\Delta t V^{n-1}_{i,j} \\
+&+ \frac{\Delta t^2}{2\Delta x^2}({q_{i +\frac{1}{2},j}(u^{n}_{i+1,j} - u^{n}_{i,j}) - q_{i -\frac{1}{2},j}(u^{n}_{i,j} - u^{n}_{i-1,j})}) \\ 
+&+  (\frac{\Delta t^2}{\Delta 2y^2} (q_{i,j +\frac{1}{2}}(u^{n}_{i,j+1} - u^{n}_{i,j}) - q_{i ,j-\frac{1}{2}}(u^{n}_{i,j} - u^{n}_{i,j-1}))\\
+ &+ \frac{\Delta t^2}{2} f(x_i, y_i, t_i)
+\end{align*}
 
-%% The $\theta$-rule is used to solve (\ref{ode}) numerically:
 
-%% \[
-%% u^{n+1} = \frac{1 - (1-\theta) a\Delta t}{1 + \theta a\Delta t}u^n,
-%% \]
-%% for $n=0,1,\ldots,N-1$. This scheme corresponds to
+\subsection{Numerical scheme for the boundary}
+On the boundary this scheme won't work as one, when adding or subtracting one from one of the indices, risks leaving grid. We discretize the Neumann condition to solve this problem:
+\begin{align}
+[D_{2x} u]_{0\, j}^n = [D_{2x} u]_{Nx\, j}^n = 0 & \quad \text{for j = 0,1..$N_y$, n = 0,1,..$N_t$} \\
+[D_{2y} u]_{i\, 0}^n = [D_{2y} u]_{0,Ny}^n = 0 & \quad \text{for i = 0,1..$N_y$, n = 0,1,..$N_t$}
+\end{align}
+Which leads to the equations:
+\begin{align}
+u_{1,j}^n = u_{-1,j}^n ,  u_{N_x-1,j}^n = u_{Nx+1,j}^n  & \quad \text{for j = 0,1..$N_y$, n = 0,1,..$N_t$} \\
+u_{i,1}^n = u_{i,-1}^n, u_{i,Ny+1}^n = u_{i,Nx+1}^n & \quad \text{for i = 0,1..$N_y$, n = 0,1,..$N_t$}
+\end{align}
+A scheme for the borders can now be found by applying each equality to the inner point scheme for its boundary. The corners are found by applying two equalities, one for each of the adjecent border.
 
-%% \begin{itemize}
-%%   \item The Forward Euler scheme when $\theta=0$
-
-%%   \item The Backward Euler scheme when $\theta=1$
-
-%%   \item The Crank-Nicolson scheme when $\theta=1/2$
-%% % Section with computer code taken from a part of
-%% % a file. The fromto: f@t syntax copies from the
-%% % regular expression f up to the line, but not
-%% % including, the regular expression t.
-%% \end{itemize}
-
-%% \noindent
-
+\subsection{Approximating q(x,y) outside the grid}
+To approximate the q function when evaluated outside the grid we will apply the arithmetic and harmonic mean:
+\begin{align}
+q_{i+\frac{1}{2},j} &= \frac{q_{i,j} + q_{i+1,j}}{2} \label{armean} \\
+q_{i+\frac{1}{2},j} &= 2 (\frac{1}{q_{i,j}} + \frac{1}{q_{i+1,j}})^{-1} \label{harmean}
+\end{align}
 
 \section{Implementation}
+We implemented the code in pure python. See the wave2D\_du0.py for the full code.
 
-%% The numerical method is implemented in a Python function:
-
-%% \begin{minted}[fontsize=\fontsize{9pt}{9pt},linenos=false,mathescape,baselinestretch=1.0,fontfamily=tt,xleftmargin=7mm]{python}
-%% def theta_rule(I, a, T, dt, theta):
-%%     """Solve u'=-a*u, u(0)=I, for t in (0,T] with steps of dt."""
-%%     N = int(round(T/float(dt)))  # no of intervals
-%%     u = zeros(N+1)
-%%     t = linspace(0, T, N+1)
-
-%%     u[0] = I
-%%     for n in range(0, N):
-%%         u[n+1] = (1 - (1-theta)*a*dt)/(1 + theta*dt*a)*u[n]
-%%     return u, t
-%% \end{minted}
-
-% Section with figures.
-
+TODO: Show the core of the program in minted enviroment
 
 \section{Numerical experiments}
-
-%\index{numerical experiments}
-
-%We define a set of numerical experiments where $I$, $a$, and $T$ are
-%fixed, while $\Delta t$ and $\theta$ are varied.
-%In particular, $I=1$, $a=2$, $\Delta t = 1.25, 0.75, 0.5, 0.1$.
-
-
-
-% Subsection with inline figure (figure without caption).
-
-%\subsection{The Backward Euler method}
-
-%\index{BE}
-
-
-%\begin{center}  % inline figure
-%  \centerline{\includegraphics[width=0.9\linewidth]{BE.png}}
-%\end{center}
-
-
-
-
-% Subsection with inline figure (figure without caption).
-
-%\subsection{The Crank-Nicolson method}
-
-%\index{CN}
-
-
-%\begin{center}  % inline figure
-%  \centerline{\includegraphics[width=0.9\linewidth]{CN.png}}
-%\end{center}
-
-
-
-
-% Subsection with inline figure (figure without caption).
-
-%\subsection{The Forward Euler method}
-
-%\index{FE}
-
-
-%\begin{center}  % inline figure
-%  \centerline{\includegraphics[width=0.9\linewidth]{FE.png}}
-%\end{center}
-
-%\subsection{Error vs $\Delta t$}
-
-% Exemplify referring to a figure with label and caption.
-
-%\index{error vs time step}
-
-%How $E$ varies with $\Delta t$ for $\theta=0,0.5,1$
-%is shown in Figure~\ref{fig:E}.
-
-\section{Conclusions}
-
-%\begin{figure}[!ht]
-%  \centerline{\includegraphics[width=0.9\linewidth]{error.png}}
-%  \caption{
-%  Error versus time step. \label{fig:E}
-%  }
-%\end{figure}
-%\clearpage % flush figures fig:E
-
-\printindex
-
 \end{document}
