@@ -1,0 +1,16 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}
+\BOOKMARK [1][-]{section.2}{Mathematical model}{}
+\BOOKMARK [1][-]{section.3}{Numerical scheme}{}
+\BOOKMARK [2][-]{subsection.3.1}{Numerical scheme for the inner points}{section.3}
+\BOOKMARK [2][-]{subsection.3.2}{Numerical scheme for the first time step}{section.3}
+\BOOKMARK [2][-]{subsection.3.3}{Numerical scheme for the boundary}{section.3}
+\BOOKMARK [2][-]{subsection.3.4}{Approximating q\(x,y\) outside the grid}{section.3}
+\BOOKMARK [1][-]{section.4}{Implementation}{}
+\BOOKMARK [1][-]{section.5}{Numerical experiments}{}
+\BOOKMARK [2][-]{subsection.5.1}{Verification}{section.5}
+\BOOKMARK [2][-]{subsection.5.2}{One-dimensional simulations}{section.5}
+\BOOKMARK [2][-]{subsection.5.3}{One-dimensional hill w/ gap simulations}{section.5}
+\BOOKMARK [2][-]{subsection.5.4}{Plots of hills w/ gap}{section.5}
+\BOOKMARK [2][-]{subsection.5.5}{One-dimensional hill w/ gap simulation conclusions}{section.5}
+\BOOKMARK [2][-]{subsection.5.6}{Two-dimensional simulations}{section.5}
+\BOOKMARK [1][-]{section.6}{Conclusions}{}

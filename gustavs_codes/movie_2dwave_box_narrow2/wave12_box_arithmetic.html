@@ -1,0 +1,2071 @@
+<html>
+<head>
+</head>
+<body>
+
+<script language="Javascript">
+<!---
+var num_images_wave12_box_arithmetic = 501;
+var img_width = 800;
+var img_height = 600;
+var interval = 250;
+var images_wave12_box_arithmetic = new Array();
+
+function preload_images_wave12_box_arithmetic()
+{
+   t = document.getElementById("progress");
+
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[0] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[0].src = "tmp_1d_box0000.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[1] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[1].src = "tmp_1d_box0001.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[2] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[2].src = "tmp_1d_box0002.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[3] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[3].src = "tmp_1d_box0003.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[4] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[4].src = "tmp_1d_box0004.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[5] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[5].src = "tmp_1d_box0005.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[6] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[6].src = "tmp_1d_box0006.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[7] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[7].src = "tmp_1d_box0007.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[8] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[8].src = "tmp_1d_box0008.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[9] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[9].src = "tmp_1d_box0009.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[10] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[10].src = "tmp_1d_box0010.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[11] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[11].src = "tmp_1d_box0011.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[12] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[12].src = "tmp_1d_box0012.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[13] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[13].src = "tmp_1d_box0013.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[14] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[14].src = "tmp_1d_box0014.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[15] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[15].src = "tmp_1d_box0015.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[16] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[16].src = "tmp_1d_box0016.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[17] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[17].src = "tmp_1d_box0017.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[18] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[18].src = "tmp_1d_box0018.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[19] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[19].src = "tmp_1d_box0019.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[20] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[20].src = "tmp_1d_box0020.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[21] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[21].src = "tmp_1d_box0021.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[22] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[22].src = "tmp_1d_box0022.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[23] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[23].src = "tmp_1d_box0023.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[24] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[24].src = "tmp_1d_box0024.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[25] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[25].src = "tmp_1d_box0025.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[26] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[26].src = "tmp_1d_box0026.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[27] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[27].src = "tmp_1d_box0027.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[28] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[28].src = "tmp_1d_box0028.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[29] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[29].src = "tmp_1d_box0029.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[30] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[30].src = "tmp_1d_box0030.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[31] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[31].src = "tmp_1d_box0031.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[32] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[32].src = "tmp_1d_box0032.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[33] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[33].src = "tmp_1d_box0033.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[34] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[34].src = "tmp_1d_box0034.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[35] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[35].src = "tmp_1d_box0035.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[36] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[36].src = "tmp_1d_box0036.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[37] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[37].src = "tmp_1d_box0037.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[38] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[38].src = "tmp_1d_box0038.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[39] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[39].src = "tmp_1d_box0039.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[40] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[40].src = "tmp_1d_box0040.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[41] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[41].src = "tmp_1d_box0041.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[42] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[42].src = "tmp_1d_box0042.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[43] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[43].src = "tmp_1d_box0043.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[44] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[44].src = "tmp_1d_box0044.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[45] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[45].src = "tmp_1d_box0045.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[46] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[46].src = "tmp_1d_box0046.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[47] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[47].src = "tmp_1d_box0047.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[48] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[48].src = "tmp_1d_box0048.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[49] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[49].src = "tmp_1d_box0049.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[50] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[50].src = "tmp_1d_box0050.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[51] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[51].src = "tmp_1d_box0051.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[52] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[52].src = "tmp_1d_box0052.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[53] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[53].src = "tmp_1d_box0053.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[54] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[54].src = "tmp_1d_box0054.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[55] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[55].src = "tmp_1d_box0055.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[56] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[56].src = "tmp_1d_box0056.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[57] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[57].src = "tmp_1d_box0057.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[58] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[58].src = "tmp_1d_box0058.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[59] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[59].src = "tmp_1d_box0059.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[60] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[60].src = "tmp_1d_box0060.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[61] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[61].src = "tmp_1d_box0061.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[62] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[62].src = "tmp_1d_box0062.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[63] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[63].src = "tmp_1d_box0063.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[64] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[64].src = "tmp_1d_box0064.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[65] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[65].src = "tmp_1d_box0065.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[66] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[66].src = "tmp_1d_box0066.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[67] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[67].src = "tmp_1d_box0067.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[68] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[68].src = "tmp_1d_box0068.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[69] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[69].src = "tmp_1d_box0069.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[70] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[70].src = "tmp_1d_box0070.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[71] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[71].src = "tmp_1d_box0071.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[72] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[72].src = "tmp_1d_box0072.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[73] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[73].src = "tmp_1d_box0073.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[74] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[74].src = "tmp_1d_box0074.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[75] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[75].src = "tmp_1d_box0075.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[76] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[76].src = "tmp_1d_box0076.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[77] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[77].src = "tmp_1d_box0077.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[78] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[78].src = "tmp_1d_box0078.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[79] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[79].src = "tmp_1d_box0079.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[80] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[80].src = "tmp_1d_box0080.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[81] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[81].src = "tmp_1d_box0081.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[82] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[82].src = "tmp_1d_box0082.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[83] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[83].src = "tmp_1d_box0083.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[84] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[84].src = "tmp_1d_box0084.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[85] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[85].src = "tmp_1d_box0085.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[86] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[86].src = "tmp_1d_box0086.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[87] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[87].src = "tmp_1d_box0087.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[88] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[88].src = "tmp_1d_box0088.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[89] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[89].src = "tmp_1d_box0089.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[90] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[90].src = "tmp_1d_box0090.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[91] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[91].src = "tmp_1d_box0091.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[92] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[92].src = "tmp_1d_box0092.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[93] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[93].src = "tmp_1d_box0093.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[94] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[94].src = "tmp_1d_box0094.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[95] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[95].src = "tmp_1d_box0095.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[96] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[96].src = "tmp_1d_box0096.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[97] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[97].src = "tmp_1d_box0097.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[98] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[98].src = "tmp_1d_box0098.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[99] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[99].src = "tmp_1d_box0099.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[100] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[100].src = "tmp_1d_box0100.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[101] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[101].src = "tmp_1d_box0101.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[102] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[102].src = "tmp_1d_box0102.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[103] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[103].src = "tmp_1d_box0103.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[104] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[104].src = "tmp_1d_box0104.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[105] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[105].src = "tmp_1d_box0105.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[106] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[106].src = "tmp_1d_box0106.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[107] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[107].src = "tmp_1d_box0107.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[108] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[108].src = "tmp_1d_box0108.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[109] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[109].src = "tmp_1d_box0109.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[110] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[110].src = "tmp_1d_box0110.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[111] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[111].src = "tmp_1d_box0111.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[112] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[112].src = "tmp_1d_box0112.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[113] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[113].src = "tmp_1d_box0113.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[114] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[114].src = "tmp_1d_box0114.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[115] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[115].src = "tmp_1d_box0115.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[116] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[116].src = "tmp_1d_box0116.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[117] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[117].src = "tmp_1d_box0117.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[118] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[118].src = "tmp_1d_box0118.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[119] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[119].src = "tmp_1d_box0119.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[120] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[120].src = "tmp_1d_box0120.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[121] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[121].src = "tmp_1d_box0121.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[122] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[122].src = "tmp_1d_box0122.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[123] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[123].src = "tmp_1d_box0123.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[124] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[124].src = "tmp_1d_box0124.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[125] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[125].src = "tmp_1d_box0125.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[126] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[126].src = "tmp_1d_box0126.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[127] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[127].src = "tmp_1d_box0127.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[128] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[128].src = "tmp_1d_box0128.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[129] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[129].src = "tmp_1d_box0129.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[130] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[130].src = "tmp_1d_box0130.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[131] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[131].src = "tmp_1d_box0131.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[132] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[132].src = "tmp_1d_box0132.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[133] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[133].src = "tmp_1d_box0133.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[134] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[134].src = "tmp_1d_box0134.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[135] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[135].src = "tmp_1d_box0135.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[136] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[136].src = "tmp_1d_box0136.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[137] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[137].src = "tmp_1d_box0137.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[138] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[138].src = "tmp_1d_box0138.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[139] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[139].src = "tmp_1d_box0139.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[140] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[140].src = "tmp_1d_box0140.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[141] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[141].src = "tmp_1d_box0141.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[142] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[142].src = "tmp_1d_box0142.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[143] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[143].src = "tmp_1d_box0143.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[144] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[144].src = "tmp_1d_box0144.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[145] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[145].src = "tmp_1d_box0145.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[146] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[146].src = "tmp_1d_box0146.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[147] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[147].src = "tmp_1d_box0147.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[148] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[148].src = "tmp_1d_box0148.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[149] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[149].src = "tmp_1d_box0149.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[150] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[150].src = "tmp_1d_box0150.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[151] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[151].src = "tmp_1d_box0151.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[152] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[152].src = "tmp_1d_box0152.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[153] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[153].src = "tmp_1d_box0153.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[154] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[154].src = "tmp_1d_box0154.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[155] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[155].src = "tmp_1d_box0155.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[156] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[156].src = "tmp_1d_box0156.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[157] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[157].src = "tmp_1d_box0157.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[158] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[158].src = "tmp_1d_box0158.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[159] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[159].src = "tmp_1d_box0159.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[160] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[160].src = "tmp_1d_box0160.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[161] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[161].src = "tmp_1d_box0161.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[162] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[162].src = "tmp_1d_box0162.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[163] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[163].src = "tmp_1d_box0163.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[164] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[164].src = "tmp_1d_box0164.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[165] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[165].src = "tmp_1d_box0165.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[166] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[166].src = "tmp_1d_box0166.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[167] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[167].src = "tmp_1d_box0167.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[168] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[168].src = "tmp_1d_box0168.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[169] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[169].src = "tmp_1d_box0169.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[170] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[170].src = "tmp_1d_box0170.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[171] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[171].src = "tmp_1d_box0171.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[172] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[172].src = "tmp_1d_box0172.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[173] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[173].src = "tmp_1d_box0173.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[174] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[174].src = "tmp_1d_box0174.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[175] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[175].src = "tmp_1d_box0175.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[176] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[176].src = "tmp_1d_box0176.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[177] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[177].src = "tmp_1d_box0177.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[178] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[178].src = "tmp_1d_box0178.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[179] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[179].src = "tmp_1d_box0179.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[180] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[180].src = "tmp_1d_box0180.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[181] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[181].src = "tmp_1d_box0181.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[182] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[182].src = "tmp_1d_box0182.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[183] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[183].src = "tmp_1d_box0183.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[184] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[184].src = "tmp_1d_box0184.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[185] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[185].src = "tmp_1d_box0185.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[186] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[186].src = "tmp_1d_box0186.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[187] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[187].src = "tmp_1d_box0187.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[188] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[188].src = "tmp_1d_box0188.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[189] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[189].src = "tmp_1d_box0189.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[190] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[190].src = "tmp_1d_box0190.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[191] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[191].src = "tmp_1d_box0191.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[192] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[192].src = "tmp_1d_box0192.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[193] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[193].src = "tmp_1d_box0193.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[194] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[194].src = "tmp_1d_box0194.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[195] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[195].src = "tmp_1d_box0195.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[196] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[196].src = "tmp_1d_box0196.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[197] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[197].src = "tmp_1d_box0197.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[198] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[198].src = "tmp_1d_box0198.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[199] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[199].src = "tmp_1d_box0199.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[200] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[200].src = "tmp_1d_box0200.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[201] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[201].src = "tmp_1d_box0201.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[202] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[202].src = "tmp_1d_box0202.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[203] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[203].src = "tmp_1d_box0203.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[204] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[204].src = "tmp_1d_box0204.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[205] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[205].src = "tmp_1d_box0205.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[206] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[206].src = "tmp_1d_box0206.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[207] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[207].src = "tmp_1d_box0207.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[208] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[208].src = "tmp_1d_box0208.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[209] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[209].src = "tmp_1d_box0209.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[210] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[210].src = "tmp_1d_box0210.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[211] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[211].src = "tmp_1d_box0211.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[212] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[212].src = "tmp_1d_box0212.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[213] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[213].src = "tmp_1d_box0213.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[214] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[214].src = "tmp_1d_box0214.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[215] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[215].src = "tmp_1d_box0215.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[216] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[216].src = "tmp_1d_box0216.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[217] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[217].src = "tmp_1d_box0217.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[218] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[218].src = "tmp_1d_box0218.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[219] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[219].src = "tmp_1d_box0219.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[220] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[220].src = "tmp_1d_box0220.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[221] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[221].src = "tmp_1d_box0221.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[222] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[222].src = "tmp_1d_box0222.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[223] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[223].src = "tmp_1d_box0223.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[224] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[224].src = "tmp_1d_box0224.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[225] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[225].src = "tmp_1d_box0225.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[226] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[226].src = "tmp_1d_box0226.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[227] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[227].src = "tmp_1d_box0227.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[228] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[228].src = "tmp_1d_box0228.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[229] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[229].src = "tmp_1d_box0229.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[230] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[230].src = "tmp_1d_box0230.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[231] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[231].src = "tmp_1d_box0231.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[232] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[232].src = "tmp_1d_box0232.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[233] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[233].src = "tmp_1d_box0233.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[234] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[234].src = "tmp_1d_box0234.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[235] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[235].src = "tmp_1d_box0235.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[236] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[236].src = "tmp_1d_box0236.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[237] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[237].src = "tmp_1d_box0237.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[238] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[238].src = "tmp_1d_box0238.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[239] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[239].src = "tmp_1d_box0239.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[240] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[240].src = "tmp_1d_box0240.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[241] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[241].src = "tmp_1d_box0241.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[242] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[242].src = "tmp_1d_box0242.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[243] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[243].src = "tmp_1d_box0243.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[244] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[244].src = "tmp_1d_box0244.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[245] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[245].src = "tmp_1d_box0245.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[246] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[246].src = "tmp_1d_box0246.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[247] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[247].src = "tmp_1d_box0247.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[248] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[248].src = "tmp_1d_box0248.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[249] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[249].src = "tmp_1d_box0249.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[250] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[250].src = "tmp_1d_box0250.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[251] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[251].src = "tmp_1d_box0251.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[252] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[252].src = "tmp_1d_box0252.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[253] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[253].src = "tmp_1d_box0253.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[254] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[254].src = "tmp_1d_box0254.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[255] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[255].src = "tmp_1d_box0255.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[256] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[256].src = "tmp_1d_box0256.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[257] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[257].src = "tmp_1d_box0257.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[258] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[258].src = "tmp_1d_box0258.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[259] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[259].src = "tmp_1d_box0259.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[260] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[260].src = "tmp_1d_box0260.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[261] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[261].src = "tmp_1d_box0261.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[262] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[262].src = "tmp_1d_box0262.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[263] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[263].src = "tmp_1d_box0263.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[264] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[264].src = "tmp_1d_box0264.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[265] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[265].src = "tmp_1d_box0265.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[266] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[266].src = "tmp_1d_box0266.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[267] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[267].src = "tmp_1d_box0267.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[268] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[268].src = "tmp_1d_box0268.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[269] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[269].src = "tmp_1d_box0269.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[270] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[270].src = "tmp_1d_box0270.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[271] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[271].src = "tmp_1d_box0271.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[272] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[272].src = "tmp_1d_box0272.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[273] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[273].src = "tmp_1d_box0273.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[274] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[274].src = "tmp_1d_box0274.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[275] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[275].src = "tmp_1d_box0275.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[276] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[276].src = "tmp_1d_box0276.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[277] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[277].src = "tmp_1d_box0277.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[278] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[278].src = "tmp_1d_box0278.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[279] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[279].src = "tmp_1d_box0279.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[280] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[280].src = "tmp_1d_box0280.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[281] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[281].src = "tmp_1d_box0281.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[282] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[282].src = "tmp_1d_box0282.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[283] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[283].src = "tmp_1d_box0283.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[284] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[284].src = "tmp_1d_box0284.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[285] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[285].src = "tmp_1d_box0285.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[286] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[286].src = "tmp_1d_box0286.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[287] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[287].src = "tmp_1d_box0287.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[288] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[288].src = "tmp_1d_box0288.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[289] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[289].src = "tmp_1d_box0289.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[290] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[290].src = "tmp_1d_box0290.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[291] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[291].src = "tmp_1d_box0291.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[292] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[292].src = "tmp_1d_box0292.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[293] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[293].src = "tmp_1d_box0293.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[294] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[294].src = "tmp_1d_box0294.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[295] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[295].src = "tmp_1d_box0295.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[296] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[296].src = "tmp_1d_box0296.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[297] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[297].src = "tmp_1d_box0297.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[298] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[298].src = "tmp_1d_box0298.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[299] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[299].src = "tmp_1d_box0299.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[300] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[300].src = "tmp_1d_box0300.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[301] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[301].src = "tmp_1d_box0301.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[302] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[302].src = "tmp_1d_box0302.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[303] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[303].src = "tmp_1d_box0303.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[304] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[304].src = "tmp_1d_box0304.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[305] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[305].src = "tmp_1d_box0305.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[306] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[306].src = "tmp_1d_box0306.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[307] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[307].src = "tmp_1d_box0307.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[308] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[308].src = "tmp_1d_box0308.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[309] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[309].src = "tmp_1d_box0309.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[310] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[310].src = "tmp_1d_box0310.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[311] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[311].src = "tmp_1d_box0311.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[312] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[312].src = "tmp_1d_box0312.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[313] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[313].src = "tmp_1d_box0313.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[314] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[314].src = "tmp_1d_box0314.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[315] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[315].src = "tmp_1d_box0315.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[316] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[316].src = "tmp_1d_box0316.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[317] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[317].src = "tmp_1d_box0317.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[318] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[318].src = "tmp_1d_box0318.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[319] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[319].src = "tmp_1d_box0319.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[320] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[320].src = "tmp_1d_box0320.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[321] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[321].src = "tmp_1d_box0321.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[322] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[322].src = "tmp_1d_box0322.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[323] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[323].src = "tmp_1d_box0323.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[324] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[324].src = "tmp_1d_box0324.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[325] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[325].src = "tmp_1d_box0325.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[326] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[326].src = "tmp_1d_box0326.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[327] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[327].src = "tmp_1d_box0327.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[328] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[328].src = "tmp_1d_box0328.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[329] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[329].src = "tmp_1d_box0329.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[330] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[330].src = "tmp_1d_box0330.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[331] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[331].src = "tmp_1d_box0331.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[332] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[332].src = "tmp_1d_box0332.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[333] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[333].src = "tmp_1d_box0333.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[334] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[334].src = "tmp_1d_box0334.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[335] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[335].src = "tmp_1d_box0335.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[336] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[336].src = "tmp_1d_box0336.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[337] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[337].src = "tmp_1d_box0337.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[338] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[338].src = "tmp_1d_box0338.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[339] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[339].src = "tmp_1d_box0339.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[340] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[340].src = "tmp_1d_box0340.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[341] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[341].src = "tmp_1d_box0341.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[342] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[342].src = "tmp_1d_box0342.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[343] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[343].src = "tmp_1d_box0343.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[344] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[344].src = "tmp_1d_box0344.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[345] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[345].src = "tmp_1d_box0345.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[346] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[346].src = "tmp_1d_box0346.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[347] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[347].src = "tmp_1d_box0347.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[348] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[348].src = "tmp_1d_box0348.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[349] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[349].src = "tmp_1d_box0349.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[350] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[350].src = "tmp_1d_box0350.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[351] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[351].src = "tmp_1d_box0351.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[352] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[352].src = "tmp_1d_box0352.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[353] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[353].src = "tmp_1d_box0353.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[354] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[354].src = "tmp_1d_box0354.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[355] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[355].src = "tmp_1d_box0355.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[356] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[356].src = "tmp_1d_box0356.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[357] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[357].src = "tmp_1d_box0357.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[358] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[358].src = "tmp_1d_box0358.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[359] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[359].src = "tmp_1d_box0359.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[360] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[360].src = "tmp_1d_box0360.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[361] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[361].src = "tmp_1d_box0361.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[362] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[362].src = "tmp_1d_box0362.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[363] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[363].src = "tmp_1d_box0363.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[364] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[364].src = "tmp_1d_box0364.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[365] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[365].src = "tmp_1d_box0365.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[366] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[366].src = "tmp_1d_box0366.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[367] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[367].src = "tmp_1d_box0367.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[368] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[368].src = "tmp_1d_box0368.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[369] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[369].src = "tmp_1d_box0369.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[370] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[370].src = "tmp_1d_box0370.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[371] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[371].src = "tmp_1d_box0371.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[372] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[372].src = "tmp_1d_box0372.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[373] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[373].src = "tmp_1d_box0373.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[374] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[374].src = "tmp_1d_box0374.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[375] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[375].src = "tmp_1d_box0375.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[376] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[376].src = "tmp_1d_box0376.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[377] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[377].src = "tmp_1d_box0377.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[378] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[378].src = "tmp_1d_box0378.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[379] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[379].src = "tmp_1d_box0379.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[380] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[380].src = "tmp_1d_box0380.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[381] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[381].src = "tmp_1d_box0381.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[382] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[382].src = "tmp_1d_box0382.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[383] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[383].src = "tmp_1d_box0383.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[384] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[384].src = "tmp_1d_box0384.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[385] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[385].src = "tmp_1d_box0385.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[386] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[386].src = "tmp_1d_box0386.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[387] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[387].src = "tmp_1d_box0387.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[388] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[388].src = "tmp_1d_box0388.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[389] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[389].src = "tmp_1d_box0389.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[390] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[390].src = "tmp_1d_box0390.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[391] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[391].src = "tmp_1d_box0391.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[392] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[392].src = "tmp_1d_box0392.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[393] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[393].src = "tmp_1d_box0393.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[394] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[394].src = "tmp_1d_box0394.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[395] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[395].src = "tmp_1d_box0395.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[396] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[396].src = "tmp_1d_box0396.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[397] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[397].src = "tmp_1d_box0397.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[398] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[398].src = "tmp_1d_box0398.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[399] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[399].src = "tmp_1d_box0399.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[400] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[400].src = "tmp_1d_box0400.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[401] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[401].src = "tmp_1d_box0401.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[402] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[402].src = "tmp_1d_box0402.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[403] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[403].src = "tmp_1d_box0403.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[404] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[404].src = "tmp_1d_box0404.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[405] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[405].src = "tmp_1d_box0405.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[406] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[406].src = "tmp_1d_box0406.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[407] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[407].src = "tmp_1d_box0407.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[408] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[408].src = "tmp_1d_box0408.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[409] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[409].src = "tmp_1d_box0409.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[410] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[410].src = "tmp_1d_box0410.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[411] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[411].src = "tmp_1d_box0411.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[412] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[412].src = "tmp_1d_box0412.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[413] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[413].src = "tmp_1d_box0413.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[414] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[414].src = "tmp_1d_box0414.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[415] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[415].src = "tmp_1d_box0415.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[416] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[416].src = "tmp_1d_box0416.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[417] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[417].src = "tmp_1d_box0417.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[418] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[418].src = "tmp_1d_box0418.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[419] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[419].src = "tmp_1d_box0419.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[420] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[420].src = "tmp_1d_box0420.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[421] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[421].src = "tmp_1d_box0421.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[422] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[422].src = "tmp_1d_box0422.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[423] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[423].src = "tmp_1d_box0423.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[424] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[424].src = "tmp_1d_box0424.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[425] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[425].src = "tmp_1d_box0425.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[426] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[426].src = "tmp_1d_box0426.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[427] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[427].src = "tmp_1d_box0427.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[428] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[428].src = "tmp_1d_box0428.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[429] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[429].src = "tmp_1d_box0429.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[430] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[430].src = "tmp_1d_box0430.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[431] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[431].src = "tmp_1d_box0431.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[432] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[432].src = "tmp_1d_box0432.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[433] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[433].src = "tmp_1d_box0433.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[434] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[434].src = "tmp_1d_box0434.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[435] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[435].src = "tmp_1d_box0435.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[436] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[436].src = "tmp_1d_box0436.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[437] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[437].src = "tmp_1d_box0437.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[438] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[438].src = "tmp_1d_box0438.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[439] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[439].src = "tmp_1d_box0439.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[440] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[440].src = "tmp_1d_box0440.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[441] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[441].src = "tmp_1d_box0441.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[442] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[442].src = "tmp_1d_box0442.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[443] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[443].src = "tmp_1d_box0443.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[444] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[444].src = "tmp_1d_box0444.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[445] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[445].src = "tmp_1d_box0445.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[446] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[446].src = "tmp_1d_box0446.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[447] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[447].src = "tmp_1d_box0447.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[448] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[448].src = "tmp_1d_box0448.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[449] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[449].src = "tmp_1d_box0449.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[450] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[450].src = "tmp_1d_box0450.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[451] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[451].src = "tmp_1d_box0451.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[452] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[452].src = "tmp_1d_box0452.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[453] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[453].src = "tmp_1d_box0453.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[454] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[454].src = "tmp_1d_box0454.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[455] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[455].src = "tmp_1d_box0455.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[456] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[456].src = "tmp_1d_box0456.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[457] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[457].src = "tmp_1d_box0457.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[458] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[458].src = "tmp_1d_box0458.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[459] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[459].src = "tmp_1d_box0459.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[460] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[460].src = "tmp_1d_box0460.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[461] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[461].src = "tmp_1d_box0461.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[462] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[462].src = "tmp_1d_box0462.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[463] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[463].src = "tmp_1d_box0463.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[464] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[464].src = "tmp_1d_box0464.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[465] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[465].src = "tmp_1d_box0465.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[466] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[466].src = "tmp_1d_box0466.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[467] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[467].src = "tmp_1d_box0467.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[468] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[468].src = "tmp_1d_box0468.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[469] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[469].src = "tmp_1d_box0469.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[470] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[470].src = "tmp_1d_box0470.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[471] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[471].src = "tmp_1d_box0471.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[472] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[472].src = "tmp_1d_box0472.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[473] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[473].src = "tmp_1d_box0473.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[474] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[474].src = "tmp_1d_box0474.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[475] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[475].src = "tmp_1d_box0475.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[476] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[476].src = "tmp_1d_box0476.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[477] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[477].src = "tmp_1d_box0477.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[478] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[478].src = "tmp_1d_box0478.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[479] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[479].src = "tmp_1d_box0479.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[480] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[480].src = "tmp_1d_box0480.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[481] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[481].src = "tmp_1d_box0481.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[482] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[482].src = "tmp_1d_box0482.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[483] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[483].src = "tmp_1d_box0483.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[484] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[484].src = "tmp_1d_box0484.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[485] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[485].src = "tmp_1d_box0485.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[486] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[486].src = "tmp_1d_box0486.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[487] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[487].src = "tmp_1d_box0487.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[488] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[488].src = "tmp_1d_box0488.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[489] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[489].src = "tmp_1d_box0489.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[490] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[490].src = "tmp_1d_box0490.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[491] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[491].src = "tmp_1d_box0491.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[492] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[492].src = "tmp_1d_box0492.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[493] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[493].src = "tmp_1d_box0493.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[494] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[494].src = "tmp_1d_box0494.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[495] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[495].src = "tmp_1d_box0495.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[496] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[496].src = "tmp_1d_box0496.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[497] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[497].src = "tmp_1d_box0497.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[498] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[498].src = "tmp_1d_box0498.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[499] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[499].src = "tmp_1d_box0499.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_wave12_box_arithmetic[500] = new Image(img_width, img_height);
+   images_wave12_box_arithmetic[500].src = "tmp_1d_box0500.png";
+        
+   t.innerHTML = "";
+}
+
+function tick_wave12_box_arithmetic()
+{
+   if (frame_wave12_box_arithmetic > num_images_wave12_box_arithmetic - 1)
+       frame_wave12_box_arithmetic = 0;
+
+   document.movie.src = images_wave12_box_arithmetic[frame_wave12_box_arithmetic].src;
+   frame_wave12_box_arithmetic += 1;
+   tt = setTimeout("tick_wave12_box_arithmetic()", interval);
+}
+
+function startup_wave12_box_arithmetic()
+{
+   preload_images_wave12_box_arithmetic();
+   frame_wave12_box_arithmetic = 0;
+   setTimeout("tick_wave12_box_arithmetic()", interval);
+}
+
+function stopit()
+{ clearTimeout(tt); }
+
+function restart_wave12_box_arithmetic()
+{ tt = setTimeout("tick_wave12_box_arithmetic()", interval); }
+
+function slower()
+{ interval = interval/0.7; }
+
+function faster()
+{ interval = interval*0.7; }
+
+// --->
+</script>
+
+<form>
+&nbsp;
+<input type="button" value="Start movie" onClick="startup_wave12_box_arithmetic()">
+<input type="button" value="Pause movie" onClick="stopit()">
+<input type="button" value="Restart movie" onClick="restart_wave12_box_arithmetic()">
+&nbsp;
+<input type="button" value="Slower" onClick="slower()">
+<input type="button" value="Faster" onClick="faster()">
+</form>
+
+<p><div ID="progress"></div></p>
+<img src="tmp_1d_box0000.png" name="movie" border=2/>
+
+</body>
+</html>
