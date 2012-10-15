@@ -1,0 +1,1623 @@
+<html>
+<head>
+</head>
+<body>
+
+<script language="Javascript">
+<!---
+var num_images_gaussian_1gap = 389;
+var img_width = 800;
+var img_height = 600;
+var interval = 250;
+var images_gaussian_1gap = new Array();
+
+function preload_images_gaussian_1gap()
+{
+   t = document.getElementById("progress");
+
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[0] = new Image(img_width, img_height);
+   images_gaussian_1gap[0].src = "tmp_1d_box_slit0000.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[1] = new Image(img_width, img_height);
+   images_gaussian_1gap[1].src = "tmp_1d_box_slit0001.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[2] = new Image(img_width, img_height);
+   images_gaussian_1gap[2].src = "tmp_1d_box_slit0002.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[3] = new Image(img_width, img_height);
+   images_gaussian_1gap[3].src = "tmp_1d_box_slit0003.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[4] = new Image(img_width, img_height);
+   images_gaussian_1gap[4].src = "tmp_1d_box_slit0004.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[5] = new Image(img_width, img_height);
+   images_gaussian_1gap[5].src = "tmp_1d_box_slit0005.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[6] = new Image(img_width, img_height);
+   images_gaussian_1gap[6].src = "tmp_1d_box_slit0006.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[7] = new Image(img_width, img_height);
+   images_gaussian_1gap[7].src = "tmp_1d_box_slit0007.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[8] = new Image(img_width, img_height);
+   images_gaussian_1gap[8].src = "tmp_1d_box_slit0008.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[9] = new Image(img_width, img_height);
+   images_gaussian_1gap[9].src = "tmp_1d_box_slit0009.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[10] = new Image(img_width, img_height);
+   images_gaussian_1gap[10].src = "tmp_1d_box_slit0010.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[11] = new Image(img_width, img_height);
+   images_gaussian_1gap[11].src = "tmp_1d_box_slit0011.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[12] = new Image(img_width, img_height);
+   images_gaussian_1gap[12].src = "tmp_1d_box_slit0012.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[13] = new Image(img_width, img_height);
+   images_gaussian_1gap[13].src = "tmp_1d_box_slit0013.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[14] = new Image(img_width, img_height);
+   images_gaussian_1gap[14].src = "tmp_1d_box_slit0014.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[15] = new Image(img_width, img_height);
+   images_gaussian_1gap[15].src = "tmp_1d_box_slit0015.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[16] = new Image(img_width, img_height);
+   images_gaussian_1gap[16].src = "tmp_1d_box_slit0016.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[17] = new Image(img_width, img_height);
+   images_gaussian_1gap[17].src = "tmp_1d_box_slit0017.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[18] = new Image(img_width, img_height);
+   images_gaussian_1gap[18].src = "tmp_1d_box_slit0018.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[19] = new Image(img_width, img_height);
+   images_gaussian_1gap[19].src = "tmp_1d_box_slit0019.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[20] = new Image(img_width, img_height);
+   images_gaussian_1gap[20].src = "tmp_1d_box_slit0020.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[21] = new Image(img_width, img_height);
+   images_gaussian_1gap[21].src = "tmp_1d_box_slit0021.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[22] = new Image(img_width, img_height);
+   images_gaussian_1gap[22].src = "tmp_1d_box_slit0022.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[23] = new Image(img_width, img_height);
+   images_gaussian_1gap[23].src = "tmp_1d_box_slit0023.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[24] = new Image(img_width, img_height);
+   images_gaussian_1gap[24].src = "tmp_1d_box_slit0024.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[25] = new Image(img_width, img_height);
+   images_gaussian_1gap[25].src = "tmp_1d_box_slit0025.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[26] = new Image(img_width, img_height);
+   images_gaussian_1gap[26].src = "tmp_1d_box_slit0026.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[27] = new Image(img_width, img_height);
+   images_gaussian_1gap[27].src = "tmp_1d_box_slit0027.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[28] = new Image(img_width, img_height);
+   images_gaussian_1gap[28].src = "tmp_1d_box_slit0028.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[29] = new Image(img_width, img_height);
+   images_gaussian_1gap[29].src = "tmp_1d_box_slit0029.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[30] = new Image(img_width, img_height);
+   images_gaussian_1gap[30].src = "tmp_1d_box_slit0030.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[31] = new Image(img_width, img_height);
+   images_gaussian_1gap[31].src = "tmp_1d_box_slit0031.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[32] = new Image(img_width, img_height);
+   images_gaussian_1gap[32].src = "tmp_1d_box_slit0032.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[33] = new Image(img_width, img_height);
+   images_gaussian_1gap[33].src = "tmp_1d_box_slit0033.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[34] = new Image(img_width, img_height);
+   images_gaussian_1gap[34].src = "tmp_1d_box_slit0034.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[35] = new Image(img_width, img_height);
+   images_gaussian_1gap[35].src = "tmp_1d_box_slit0035.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[36] = new Image(img_width, img_height);
+   images_gaussian_1gap[36].src = "tmp_1d_box_slit0036.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[37] = new Image(img_width, img_height);
+   images_gaussian_1gap[37].src = "tmp_1d_box_slit0037.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[38] = new Image(img_width, img_height);
+   images_gaussian_1gap[38].src = "tmp_1d_gaussian_slit0000.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[39] = new Image(img_width, img_height);
+   images_gaussian_1gap[39].src = "tmp_1d_gaussian_slit0001.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[40] = new Image(img_width, img_height);
+   images_gaussian_1gap[40].src = "tmp_1d_gaussian_slit0002.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[41] = new Image(img_width, img_height);
+   images_gaussian_1gap[41].src = "tmp_1d_gaussian_slit0003.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[42] = new Image(img_width, img_height);
+   images_gaussian_1gap[42].src = "tmp_1d_gaussian_slit0004.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[43] = new Image(img_width, img_height);
+   images_gaussian_1gap[43].src = "tmp_1d_gaussian_slit0005.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[44] = new Image(img_width, img_height);
+   images_gaussian_1gap[44].src = "tmp_1d_gaussian_slit0006.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[45] = new Image(img_width, img_height);
+   images_gaussian_1gap[45].src = "tmp_1d_gaussian_slit0007.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[46] = new Image(img_width, img_height);
+   images_gaussian_1gap[46].src = "tmp_1d_gaussian_slit0008.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[47] = new Image(img_width, img_height);
+   images_gaussian_1gap[47].src = "tmp_1d_gaussian_slit0009.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[48] = new Image(img_width, img_height);
+   images_gaussian_1gap[48].src = "tmp_1d_gaussian_slit0010.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[49] = new Image(img_width, img_height);
+   images_gaussian_1gap[49].src = "tmp_1d_gaussian_slit0011.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[50] = new Image(img_width, img_height);
+   images_gaussian_1gap[50].src = "tmp_1d_gaussian_slit0012.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[51] = new Image(img_width, img_height);
+   images_gaussian_1gap[51].src = "tmp_1d_gaussian_slit0013.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[52] = new Image(img_width, img_height);
+   images_gaussian_1gap[52].src = "tmp_1d_gaussian_slit0014.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[53] = new Image(img_width, img_height);
+   images_gaussian_1gap[53].src = "tmp_1d_gaussian_slit0015.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[54] = new Image(img_width, img_height);
+   images_gaussian_1gap[54].src = "tmp_1d_gaussian_slit0016.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[55] = new Image(img_width, img_height);
+   images_gaussian_1gap[55].src = "tmp_1d_gaussian_slit0017.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[56] = new Image(img_width, img_height);
+   images_gaussian_1gap[56].src = "tmp_1d_gaussian_slit0018.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[57] = new Image(img_width, img_height);
+   images_gaussian_1gap[57].src = "tmp_1d_gaussian_slit0019.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[58] = new Image(img_width, img_height);
+   images_gaussian_1gap[58].src = "tmp_1d_gaussian_slit0020.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[59] = new Image(img_width, img_height);
+   images_gaussian_1gap[59].src = "tmp_1d_gaussian_slit0021.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[60] = new Image(img_width, img_height);
+   images_gaussian_1gap[60].src = "tmp_1d_gaussian_slit0022.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[61] = new Image(img_width, img_height);
+   images_gaussian_1gap[61].src = "tmp_1d_gaussian_slit0023.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[62] = new Image(img_width, img_height);
+   images_gaussian_1gap[62].src = "tmp_1d_gaussian_slit0024.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[63] = new Image(img_width, img_height);
+   images_gaussian_1gap[63].src = "tmp_1d_gaussian_slit0025.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[64] = new Image(img_width, img_height);
+   images_gaussian_1gap[64].src = "tmp_1d_gaussian_slit0026.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[65] = new Image(img_width, img_height);
+   images_gaussian_1gap[65].src = "tmp_1d_gaussian_slit0027.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[66] = new Image(img_width, img_height);
+   images_gaussian_1gap[66].src = "tmp_1d_gaussian_slit0028.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[67] = new Image(img_width, img_height);
+   images_gaussian_1gap[67].src = "tmp_1d_gaussian_slit0029.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[68] = new Image(img_width, img_height);
+   images_gaussian_1gap[68].src = "tmp_1d_gaussian_slit0030.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[69] = new Image(img_width, img_height);
+   images_gaussian_1gap[69].src = "tmp_1d_gaussian_slit0031.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[70] = new Image(img_width, img_height);
+   images_gaussian_1gap[70].src = "tmp_1d_gaussian_slit0032.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[71] = new Image(img_width, img_height);
+   images_gaussian_1gap[71].src = "tmp_1d_gaussian_slit0033.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[72] = new Image(img_width, img_height);
+   images_gaussian_1gap[72].src = "tmp_1d_gaussian_slit0034.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[73] = new Image(img_width, img_height);
+   images_gaussian_1gap[73].src = "tmp_1d_gaussian_slit0035.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[74] = new Image(img_width, img_height);
+   images_gaussian_1gap[74].src = "tmp_1d_gaussian_slit0036.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[75] = new Image(img_width, img_height);
+   images_gaussian_1gap[75].src = "tmp_1d_gaussian_slit0037.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[76] = new Image(img_width, img_height);
+   images_gaussian_1gap[76].src = "tmp_1d_gaussian_slit0038.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[77] = new Image(img_width, img_height);
+   images_gaussian_1gap[77].src = "tmp_1d_gaussian_slit0039.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[78] = new Image(img_width, img_height);
+   images_gaussian_1gap[78].src = "tmp_1d_gaussian_slit0040.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[79] = new Image(img_width, img_height);
+   images_gaussian_1gap[79].src = "tmp_1d_gaussian_slit0041.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[80] = new Image(img_width, img_height);
+   images_gaussian_1gap[80].src = "tmp_1d_gaussian_slit0042.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[81] = new Image(img_width, img_height);
+   images_gaussian_1gap[81].src = "tmp_1d_gaussian_slit0043.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[82] = new Image(img_width, img_height);
+   images_gaussian_1gap[82].src = "tmp_1d_gaussian_slit0044.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[83] = new Image(img_width, img_height);
+   images_gaussian_1gap[83].src = "tmp_1d_gaussian_slit0045.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[84] = new Image(img_width, img_height);
+   images_gaussian_1gap[84].src = "tmp_1d_gaussian_slit0046.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[85] = new Image(img_width, img_height);
+   images_gaussian_1gap[85].src = "tmp_1d_gaussian_slit0047.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[86] = new Image(img_width, img_height);
+   images_gaussian_1gap[86].src = "tmp_1d_gaussian_slit0048.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[87] = new Image(img_width, img_height);
+   images_gaussian_1gap[87].src = "tmp_1d_gaussian_slit0049.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[88] = new Image(img_width, img_height);
+   images_gaussian_1gap[88].src = "tmp_1d_gaussian_slit0050.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[89] = new Image(img_width, img_height);
+   images_gaussian_1gap[89].src = "tmp_1d_gaussian_slit0051.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[90] = new Image(img_width, img_height);
+   images_gaussian_1gap[90].src = "tmp_1d_gaussian_slit0052.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[91] = new Image(img_width, img_height);
+   images_gaussian_1gap[91].src = "tmp_1d_gaussian_slit0053.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[92] = new Image(img_width, img_height);
+   images_gaussian_1gap[92].src = "tmp_1d_gaussian_slit0054.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[93] = new Image(img_width, img_height);
+   images_gaussian_1gap[93].src = "tmp_1d_gaussian_slit0055.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[94] = new Image(img_width, img_height);
+   images_gaussian_1gap[94].src = "tmp_1d_gaussian_slit0056.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[95] = new Image(img_width, img_height);
+   images_gaussian_1gap[95].src = "tmp_1d_gaussian_slit0057.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[96] = new Image(img_width, img_height);
+   images_gaussian_1gap[96].src = "tmp_1d_gaussian_slit0058.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[97] = new Image(img_width, img_height);
+   images_gaussian_1gap[97].src = "tmp_1d_gaussian_slit0059.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[98] = new Image(img_width, img_height);
+   images_gaussian_1gap[98].src = "tmp_1d_gaussian_slit0060.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[99] = new Image(img_width, img_height);
+   images_gaussian_1gap[99].src = "tmp_1d_gaussian_slit0061.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[100] = new Image(img_width, img_height);
+   images_gaussian_1gap[100].src = "tmp_1d_gaussian_slit0062.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[101] = new Image(img_width, img_height);
+   images_gaussian_1gap[101].src = "tmp_1d_gaussian_slit0063.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[102] = new Image(img_width, img_height);
+   images_gaussian_1gap[102].src = "tmp_1d_gaussian_slit0064.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[103] = new Image(img_width, img_height);
+   images_gaussian_1gap[103].src = "tmp_1d_gaussian_slit0065.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[104] = new Image(img_width, img_height);
+   images_gaussian_1gap[104].src = "tmp_1d_gaussian_slit0066.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[105] = new Image(img_width, img_height);
+   images_gaussian_1gap[105].src = "tmp_1d_gaussian_slit0067.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[106] = new Image(img_width, img_height);
+   images_gaussian_1gap[106].src = "tmp_1d_gaussian_slit0068.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[107] = new Image(img_width, img_height);
+   images_gaussian_1gap[107].src = "tmp_1d_gaussian_slit0069.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[108] = new Image(img_width, img_height);
+   images_gaussian_1gap[108].src = "tmp_1d_gaussian_slit0070.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[109] = new Image(img_width, img_height);
+   images_gaussian_1gap[109].src = "tmp_1d_gaussian_slit0071.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[110] = new Image(img_width, img_height);
+   images_gaussian_1gap[110].src = "tmp_1d_gaussian_slit0072.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[111] = new Image(img_width, img_height);
+   images_gaussian_1gap[111].src = "tmp_1d_gaussian_slit0073.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[112] = new Image(img_width, img_height);
+   images_gaussian_1gap[112].src = "tmp_1d_gaussian_slit0074.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[113] = new Image(img_width, img_height);
+   images_gaussian_1gap[113].src = "tmp_1d_gaussian_slit0075.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[114] = new Image(img_width, img_height);
+   images_gaussian_1gap[114].src = "tmp_1d_gaussian_slit0076.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[115] = new Image(img_width, img_height);
+   images_gaussian_1gap[115].src = "tmp_1d_gaussian_slit0077.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[116] = new Image(img_width, img_height);
+   images_gaussian_1gap[116].src = "tmp_1d_gaussian_slit0078.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[117] = new Image(img_width, img_height);
+   images_gaussian_1gap[117].src = "tmp_1d_gaussian_slit0079.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[118] = new Image(img_width, img_height);
+   images_gaussian_1gap[118].src = "tmp_1d_gaussian_slit0080.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[119] = new Image(img_width, img_height);
+   images_gaussian_1gap[119].src = "tmp_1d_gaussian_slit0081.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[120] = new Image(img_width, img_height);
+   images_gaussian_1gap[120].src = "tmp_1d_gaussian_slit0082.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[121] = new Image(img_width, img_height);
+   images_gaussian_1gap[121].src = "tmp_1d_gaussian_slit0083.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[122] = new Image(img_width, img_height);
+   images_gaussian_1gap[122].src = "tmp_1d_gaussian_slit0084.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[123] = new Image(img_width, img_height);
+   images_gaussian_1gap[123].src = "tmp_1d_gaussian_slit0085.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[124] = new Image(img_width, img_height);
+   images_gaussian_1gap[124].src = "tmp_1d_gaussian_slit0086.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[125] = new Image(img_width, img_height);
+   images_gaussian_1gap[125].src = "tmp_1d_gaussian_slit0087.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[126] = new Image(img_width, img_height);
+   images_gaussian_1gap[126].src = "tmp_1d_gaussian_slit0088.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[127] = new Image(img_width, img_height);
+   images_gaussian_1gap[127].src = "tmp_1d_gaussian_slit0089.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[128] = new Image(img_width, img_height);
+   images_gaussian_1gap[128].src = "tmp_1d_gaussian_slit0090.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[129] = new Image(img_width, img_height);
+   images_gaussian_1gap[129].src = "tmp_1d_gaussian_slit0091.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[130] = new Image(img_width, img_height);
+   images_gaussian_1gap[130].src = "tmp_1d_gaussian_slit0092.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[131] = new Image(img_width, img_height);
+   images_gaussian_1gap[131].src = "tmp_1d_gaussian_slit0093.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[132] = new Image(img_width, img_height);
+   images_gaussian_1gap[132].src = "tmp_1d_gaussian_slit0094.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[133] = new Image(img_width, img_height);
+   images_gaussian_1gap[133].src = "tmp_1d_gaussian_slit0095.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[134] = new Image(img_width, img_height);
+   images_gaussian_1gap[134].src = "tmp_1d_gaussian_slit0096.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[135] = new Image(img_width, img_height);
+   images_gaussian_1gap[135].src = "tmp_1d_gaussian_slit0097.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[136] = new Image(img_width, img_height);
+   images_gaussian_1gap[136].src = "tmp_1d_gaussian_slit0098.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[137] = new Image(img_width, img_height);
+   images_gaussian_1gap[137].src = "tmp_1d_gaussian_slit0099.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[138] = new Image(img_width, img_height);
+   images_gaussian_1gap[138].src = "tmp_1d_gaussian_slit0100.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[139] = new Image(img_width, img_height);
+   images_gaussian_1gap[139].src = "tmp_1d_gaussian_slit0101.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[140] = new Image(img_width, img_height);
+   images_gaussian_1gap[140].src = "tmp_1d_gaussian_slit0102.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[141] = new Image(img_width, img_height);
+   images_gaussian_1gap[141].src = "tmp_1d_gaussian_slit0103.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[142] = new Image(img_width, img_height);
+   images_gaussian_1gap[142].src = "tmp_1d_gaussian_slit0104.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[143] = new Image(img_width, img_height);
+   images_gaussian_1gap[143].src = "tmp_1d_gaussian_slit0105.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[144] = new Image(img_width, img_height);
+   images_gaussian_1gap[144].src = "tmp_1d_gaussian_slit0106.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[145] = new Image(img_width, img_height);
+   images_gaussian_1gap[145].src = "tmp_1d_gaussian_slit0107.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[146] = new Image(img_width, img_height);
+   images_gaussian_1gap[146].src = "tmp_1d_gaussian_slit0108.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[147] = new Image(img_width, img_height);
+   images_gaussian_1gap[147].src = "tmp_1d_gaussian_slit0109.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[148] = new Image(img_width, img_height);
+   images_gaussian_1gap[148].src = "tmp_1d_gaussian_slit0110.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[149] = new Image(img_width, img_height);
+   images_gaussian_1gap[149].src = "tmp_1d_gaussian_slit0111.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[150] = new Image(img_width, img_height);
+   images_gaussian_1gap[150].src = "tmp_1d_gaussian_slit0112.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[151] = new Image(img_width, img_height);
+   images_gaussian_1gap[151].src = "tmp_1d_gaussian_slit0113.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[152] = new Image(img_width, img_height);
+   images_gaussian_1gap[152].src = "tmp_1d_gaussian_slit0114.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[153] = new Image(img_width, img_height);
+   images_gaussian_1gap[153].src = "tmp_1d_gaussian_slit0115.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[154] = new Image(img_width, img_height);
+   images_gaussian_1gap[154].src = "tmp_1d_gaussian_slit0116.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[155] = new Image(img_width, img_height);
+   images_gaussian_1gap[155].src = "tmp_1d_gaussian_slit0117.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[156] = new Image(img_width, img_height);
+   images_gaussian_1gap[156].src = "tmp_1d_gaussian_slit0118.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[157] = new Image(img_width, img_height);
+   images_gaussian_1gap[157].src = "tmp_1d_gaussian_slit0119.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[158] = new Image(img_width, img_height);
+   images_gaussian_1gap[158].src = "tmp_1d_gaussian_slit0120.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[159] = new Image(img_width, img_height);
+   images_gaussian_1gap[159].src = "tmp_1d_gaussian_slit0121.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[160] = new Image(img_width, img_height);
+   images_gaussian_1gap[160].src = "tmp_1d_gaussian_slit0122.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[161] = new Image(img_width, img_height);
+   images_gaussian_1gap[161].src = "tmp_1d_gaussian_slit0123.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[162] = new Image(img_width, img_height);
+   images_gaussian_1gap[162].src = "tmp_1d_gaussian_slit0124.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[163] = new Image(img_width, img_height);
+   images_gaussian_1gap[163].src = "tmp_1d_gaussian_slit0125.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[164] = new Image(img_width, img_height);
+   images_gaussian_1gap[164].src = "tmp_1d_gaussian_slit0126.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[165] = new Image(img_width, img_height);
+   images_gaussian_1gap[165].src = "tmp_1d_gaussian_slit0127.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[166] = new Image(img_width, img_height);
+   images_gaussian_1gap[166].src = "tmp_1d_gaussian_slit0128.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[167] = new Image(img_width, img_height);
+   images_gaussian_1gap[167].src = "tmp_1d_gaussian_slit0129.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[168] = new Image(img_width, img_height);
+   images_gaussian_1gap[168].src = "tmp_1d_gaussian_slit0130.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[169] = new Image(img_width, img_height);
+   images_gaussian_1gap[169].src = "tmp_1d_gaussian_slit0131.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[170] = new Image(img_width, img_height);
+   images_gaussian_1gap[170].src = "tmp_1d_gaussian_slit0132.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[171] = new Image(img_width, img_height);
+   images_gaussian_1gap[171].src = "tmp_1d_gaussian_slit0133.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[172] = new Image(img_width, img_height);
+   images_gaussian_1gap[172].src = "tmp_1d_gaussian_slit0134.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[173] = new Image(img_width, img_height);
+   images_gaussian_1gap[173].src = "tmp_1d_gaussian_slit0135.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[174] = new Image(img_width, img_height);
+   images_gaussian_1gap[174].src = "tmp_1d_gaussian_slit0136.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[175] = new Image(img_width, img_height);
+   images_gaussian_1gap[175].src = "tmp_1d_gaussian_slit0137.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[176] = new Image(img_width, img_height);
+   images_gaussian_1gap[176].src = "tmp_1d_gaussian_slit0138.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[177] = new Image(img_width, img_height);
+   images_gaussian_1gap[177].src = "tmp_1d_gaussian_slit0139.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[178] = new Image(img_width, img_height);
+   images_gaussian_1gap[178].src = "tmp_1d_gaussian_slit0140.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[179] = new Image(img_width, img_height);
+   images_gaussian_1gap[179].src = "tmp_1d_gaussian_slit0141.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[180] = new Image(img_width, img_height);
+   images_gaussian_1gap[180].src = "tmp_1d_gaussian_slit0142.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[181] = new Image(img_width, img_height);
+   images_gaussian_1gap[181].src = "tmp_1d_gaussian_slit0143.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[182] = new Image(img_width, img_height);
+   images_gaussian_1gap[182].src = "tmp_1d_gaussian_slit0144.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[183] = new Image(img_width, img_height);
+   images_gaussian_1gap[183].src = "tmp_1d_gaussian_slit0145.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[184] = new Image(img_width, img_height);
+   images_gaussian_1gap[184].src = "tmp_1d_gaussian_slit0146.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[185] = new Image(img_width, img_height);
+   images_gaussian_1gap[185].src = "tmp_1d_gaussian_slit0147.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[186] = new Image(img_width, img_height);
+   images_gaussian_1gap[186].src = "tmp_1d_gaussian_slit0148.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[187] = new Image(img_width, img_height);
+   images_gaussian_1gap[187].src = "tmp_1d_gaussian_slit0149.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[188] = new Image(img_width, img_height);
+   images_gaussian_1gap[188].src = "tmp_1d_gaussian_slit0150.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[189] = new Image(img_width, img_height);
+   images_gaussian_1gap[189].src = "tmp_1d_gaussian_slit0151.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[190] = new Image(img_width, img_height);
+   images_gaussian_1gap[190].src = "tmp_1d_gaussian_slit0152.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[191] = new Image(img_width, img_height);
+   images_gaussian_1gap[191].src = "tmp_1d_gaussian_slit0153.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[192] = new Image(img_width, img_height);
+   images_gaussian_1gap[192].src = "tmp_1d_gaussian_slit0154.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[193] = new Image(img_width, img_height);
+   images_gaussian_1gap[193].src = "tmp_1d_gaussian_slit0155.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[194] = new Image(img_width, img_height);
+   images_gaussian_1gap[194].src = "tmp_1d_gaussian_slit0156.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[195] = new Image(img_width, img_height);
+   images_gaussian_1gap[195].src = "tmp_1d_gaussian_slit0157.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[196] = new Image(img_width, img_height);
+   images_gaussian_1gap[196].src = "tmp_1d_gaussian_slit0158.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[197] = new Image(img_width, img_height);
+   images_gaussian_1gap[197].src = "tmp_1d_gaussian_slit0159.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[198] = new Image(img_width, img_height);
+   images_gaussian_1gap[198].src = "tmp_1d_gaussian_slit0160.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[199] = new Image(img_width, img_height);
+   images_gaussian_1gap[199].src = "tmp_1d_gaussian_slit0161.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[200] = new Image(img_width, img_height);
+   images_gaussian_1gap[200].src = "tmp_1d_gaussian_slit0162.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[201] = new Image(img_width, img_height);
+   images_gaussian_1gap[201].src = "tmp_1d_gaussian_slit0163.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[202] = new Image(img_width, img_height);
+   images_gaussian_1gap[202].src = "tmp_1d_gaussian_slit0164.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[203] = new Image(img_width, img_height);
+   images_gaussian_1gap[203].src = "tmp_1d_gaussian_slit0165.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[204] = new Image(img_width, img_height);
+   images_gaussian_1gap[204].src = "tmp_1d_gaussian_slit0166.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[205] = new Image(img_width, img_height);
+   images_gaussian_1gap[205].src = "tmp_1d_gaussian_slit0167.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[206] = new Image(img_width, img_height);
+   images_gaussian_1gap[206].src = "tmp_1d_gaussian_slit0168.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[207] = new Image(img_width, img_height);
+   images_gaussian_1gap[207].src = "tmp_1d_gaussian_slit0169.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[208] = new Image(img_width, img_height);
+   images_gaussian_1gap[208].src = "tmp_1d_gaussian_slit0170.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[209] = new Image(img_width, img_height);
+   images_gaussian_1gap[209].src = "tmp_1d_gaussian_slit0171.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[210] = new Image(img_width, img_height);
+   images_gaussian_1gap[210].src = "tmp_1d_gaussian_slit0172.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[211] = new Image(img_width, img_height);
+   images_gaussian_1gap[211].src = "tmp_1d_gaussian_slit0173.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[212] = new Image(img_width, img_height);
+   images_gaussian_1gap[212].src = "tmp_1d_gaussian_slit0174.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[213] = new Image(img_width, img_height);
+   images_gaussian_1gap[213].src = "tmp_1d_gaussian_slit0175.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[214] = new Image(img_width, img_height);
+   images_gaussian_1gap[214].src = "tmp_1d_gaussian_slit0176.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[215] = new Image(img_width, img_height);
+   images_gaussian_1gap[215].src = "tmp_1d_gaussian_slit0177.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[216] = new Image(img_width, img_height);
+   images_gaussian_1gap[216].src = "tmp_1d_gaussian_slit0178.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[217] = new Image(img_width, img_height);
+   images_gaussian_1gap[217].src = "tmp_1d_gaussian_slit0179.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[218] = new Image(img_width, img_height);
+   images_gaussian_1gap[218].src = "tmp_1d_gaussian_slit0180.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[219] = new Image(img_width, img_height);
+   images_gaussian_1gap[219].src = "tmp_1d_gaussian_slit0181.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[220] = new Image(img_width, img_height);
+   images_gaussian_1gap[220].src = "tmp_1d_gaussian_slit0182.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[221] = new Image(img_width, img_height);
+   images_gaussian_1gap[221].src = "tmp_1d_gaussian_slit0183.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[222] = new Image(img_width, img_height);
+   images_gaussian_1gap[222].src = "tmp_1d_gaussian_slit0184.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[223] = new Image(img_width, img_height);
+   images_gaussian_1gap[223].src = "tmp_1d_gaussian_slit0185.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[224] = new Image(img_width, img_height);
+   images_gaussian_1gap[224].src = "tmp_1d_gaussian_slit0186.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[225] = new Image(img_width, img_height);
+   images_gaussian_1gap[225].src = "tmp_1d_gaussian_slit0187.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[226] = new Image(img_width, img_height);
+   images_gaussian_1gap[226].src = "tmp_1d_gaussian_slit0188.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[227] = new Image(img_width, img_height);
+   images_gaussian_1gap[227].src = "tmp_1d_gaussian_slit0189.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[228] = new Image(img_width, img_height);
+   images_gaussian_1gap[228].src = "tmp_1d_gaussian_slit0190.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[229] = new Image(img_width, img_height);
+   images_gaussian_1gap[229].src = "tmp_1d_gaussian_slit0191.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[230] = new Image(img_width, img_height);
+   images_gaussian_1gap[230].src = "tmp_1d_gaussian_slit0192.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[231] = new Image(img_width, img_height);
+   images_gaussian_1gap[231].src = "tmp_1d_gaussian_slit0193.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[232] = new Image(img_width, img_height);
+   images_gaussian_1gap[232].src = "tmp_1d_gaussian_slit0194.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[233] = new Image(img_width, img_height);
+   images_gaussian_1gap[233].src = "tmp_1d_gaussian_slit0195.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[234] = new Image(img_width, img_height);
+   images_gaussian_1gap[234].src = "tmp_1d_gaussian_slit0196.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[235] = new Image(img_width, img_height);
+   images_gaussian_1gap[235].src = "tmp_1d_gaussian_slit0197.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[236] = new Image(img_width, img_height);
+   images_gaussian_1gap[236].src = "tmp_1d_gaussian_slit0198.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[237] = new Image(img_width, img_height);
+   images_gaussian_1gap[237].src = "tmp_1d_gaussian_slit0199.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[238] = new Image(img_width, img_height);
+   images_gaussian_1gap[238].src = "tmp_1d_gaussian_slit0200.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[239] = new Image(img_width, img_height);
+   images_gaussian_1gap[239].src = "tmp_1d_gaussian_slit0201.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[240] = new Image(img_width, img_height);
+   images_gaussian_1gap[240].src = "tmp_1d_gaussian_slit0202.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[241] = new Image(img_width, img_height);
+   images_gaussian_1gap[241].src = "tmp_1d_gaussian_slit0203.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[242] = new Image(img_width, img_height);
+   images_gaussian_1gap[242].src = "tmp_1d_gaussian_slit0204.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[243] = new Image(img_width, img_height);
+   images_gaussian_1gap[243].src = "tmp_1d_gaussian_slit0205.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[244] = new Image(img_width, img_height);
+   images_gaussian_1gap[244].src = "tmp_1d_gaussian_slit0206.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[245] = new Image(img_width, img_height);
+   images_gaussian_1gap[245].src = "tmp_1d_gaussian_slit0207.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[246] = new Image(img_width, img_height);
+   images_gaussian_1gap[246].src = "tmp_1d_gaussian_slit0208.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[247] = new Image(img_width, img_height);
+   images_gaussian_1gap[247].src = "tmp_1d_gaussian_slit0209.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[248] = new Image(img_width, img_height);
+   images_gaussian_1gap[248].src = "tmp_1d_gaussian_slit0210.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[249] = new Image(img_width, img_height);
+   images_gaussian_1gap[249].src = "tmp_1d_gaussian_slit0211.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[250] = new Image(img_width, img_height);
+   images_gaussian_1gap[250].src = "tmp_1d_gaussian_slit0212.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[251] = new Image(img_width, img_height);
+   images_gaussian_1gap[251].src = "tmp_1d_gaussian_slit0213.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[252] = new Image(img_width, img_height);
+   images_gaussian_1gap[252].src = "tmp_1d_gaussian_slit0214.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[253] = new Image(img_width, img_height);
+   images_gaussian_1gap[253].src = "tmp_1d_gaussian_slit0215.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[254] = new Image(img_width, img_height);
+   images_gaussian_1gap[254].src = "tmp_1d_gaussian_slit0216.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[255] = new Image(img_width, img_height);
+   images_gaussian_1gap[255].src = "tmp_1d_gaussian_slit0217.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[256] = new Image(img_width, img_height);
+   images_gaussian_1gap[256].src = "tmp_1d_gaussian_slit0218.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[257] = new Image(img_width, img_height);
+   images_gaussian_1gap[257].src = "tmp_1d_gaussian_slit0219.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[258] = new Image(img_width, img_height);
+   images_gaussian_1gap[258].src = "tmp_1d_gaussian_slit0220.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[259] = new Image(img_width, img_height);
+   images_gaussian_1gap[259].src = "tmp_1d_gaussian_slit0221.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[260] = new Image(img_width, img_height);
+   images_gaussian_1gap[260].src = "tmp_1d_gaussian_slit0222.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[261] = new Image(img_width, img_height);
+   images_gaussian_1gap[261].src = "tmp_1d_gaussian_slit0223.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[262] = new Image(img_width, img_height);
+   images_gaussian_1gap[262].src = "tmp_1d_gaussian_slit0224.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[263] = new Image(img_width, img_height);
+   images_gaussian_1gap[263].src = "tmp_1d_gaussian_slit0225.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[264] = new Image(img_width, img_height);
+   images_gaussian_1gap[264].src = "tmp_1d_gaussian_slit0226.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[265] = new Image(img_width, img_height);
+   images_gaussian_1gap[265].src = "tmp_1d_gaussian_slit0227.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[266] = new Image(img_width, img_height);
+   images_gaussian_1gap[266].src = "tmp_1d_gaussian_slit0228.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[267] = new Image(img_width, img_height);
+   images_gaussian_1gap[267].src = "tmp_1d_gaussian_slit0229.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[268] = new Image(img_width, img_height);
+   images_gaussian_1gap[268].src = "tmp_1d_gaussian_slit0230.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[269] = new Image(img_width, img_height);
+   images_gaussian_1gap[269].src = "tmp_1d_gaussian_slit0231.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[270] = new Image(img_width, img_height);
+   images_gaussian_1gap[270].src = "tmp_1d_gaussian_slit0232.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[271] = new Image(img_width, img_height);
+   images_gaussian_1gap[271].src = "tmp_1d_gaussian_slit0233.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[272] = new Image(img_width, img_height);
+   images_gaussian_1gap[272].src = "tmp_1d_gaussian_slit0234.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[273] = new Image(img_width, img_height);
+   images_gaussian_1gap[273].src = "tmp_1d_gaussian_slit0235.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[274] = new Image(img_width, img_height);
+   images_gaussian_1gap[274].src = "tmp_1d_gaussian_slit0236.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[275] = new Image(img_width, img_height);
+   images_gaussian_1gap[275].src = "tmp_1d_gaussian_slit0237.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[276] = new Image(img_width, img_height);
+   images_gaussian_1gap[276].src = "tmp_1d_gaussian_slit0238.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[277] = new Image(img_width, img_height);
+   images_gaussian_1gap[277].src = "tmp_1d_gaussian_slit0239.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[278] = new Image(img_width, img_height);
+   images_gaussian_1gap[278].src = "tmp_1d_gaussian_slit0240.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[279] = new Image(img_width, img_height);
+   images_gaussian_1gap[279].src = "tmp_1d_gaussian_slit0241.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[280] = new Image(img_width, img_height);
+   images_gaussian_1gap[280].src = "tmp_1d_gaussian_slit0242.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[281] = new Image(img_width, img_height);
+   images_gaussian_1gap[281].src = "tmp_1d_gaussian_slit0243.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[282] = new Image(img_width, img_height);
+   images_gaussian_1gap[282].src = "tmp_1d_gaussian_slit0244.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[283] = new Image(img_width, img_height);
+   images_gaussian_1gap[283].src = "tmp_1d_gaussian_slit0245.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[284] = new Image(img_width, img_height);
+   images_gaussian_1gap[284].src = "tmp_1d_gaussian_slit0246.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[285] = new Image(img_width, img_height);
+   images_gaussian_1gap[285].src = "tmp_1d_gaussian_slit0247.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[286] = new Image(img_width, img_height);
+   images_gaussian_1gap[286].src = "tmp_1d_gaussian_slit0248.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[287] = new Image(img_width, img_height);
+   images_gaussian_1gap[287].src = "tmp_1d_gaussian_slit0249.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[288] = new Image(img_width, img_height);
+   images_gaussian_1gap[288].src = "tmp_1d_gaussian_slit0250.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[289] = new Image(img_width, img_height);
+   images_gaussian_1gap[289].src = "tmp_1d_gaussian_slit0251.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[290] = new Image(img_width, img_height);
+   images_gaussian_1gap[290].src = "tmp_1d_gaussian_slit0252.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[291] = new Image(img_width, img_height);
+   images_gaussian_1gap[291].src = "tmp_1d_gaussian_slit0253.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[292] = new Image(img_width, img_height);
+   images_gaussian_1gap[292].src = "tmp_1d_gaussian_slit0254.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[293] = new Image(img_width, img_height);
+   images_gaussian_1gap[293].src = "tmp_1d_gaussian_slit0255.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[294] = new Image(img_width, img_height);
+   images_gaussian_1gap[294].src = "tmp_1d_gaussian_slit0256.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[295] = new Image(img_width, img_height);
+   images_gaussian_1gap[295].src = "tmp_1d_gaussian_slit0257.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[296] = new Image(img_width, img_height);
+   images_gaussian_1gap[296].src = "tmp_1d_gaussian_slit0258.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[297] = new Image(img_width, img_height);
+   images_gaussian_1gap[297].src = "tmp_1d_gaussian_slit0259.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[298] = new Image(img_width, img_height);
+   images_gaussian_1gap[298].src = "tmp_1d_gaussian_slit0260.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[299] = new Image(img_width, img_height);
+   images_gaussian_1gap[299].src = "tmp_1d_gaussian_slit0261.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[300] = new Image(img_width, img_height);
+   images_gaussian_1gap[300].src = "tmp_1d_gaussian_slit0262.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[301] = new Image(img_width, img_height);
+   images_gaussian_1gap[301].src = "tmp_1d_gaussian_slit0263.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[302] = new Image(img_width, img_height);
+   images_gaussian_1gap[302].src = "tmp_1d_gaussian_slit0264.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[303] = new Image(img_width, img_height);
+   images_gaussian_1gap[303].src = "tmp_1d_gaussian_slit0265.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[304] = new Image(img_width, img_height);
+   images_gaussian_1gap[304].src = "tmp_1d_gaussian_slit0266.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[305] = new Image(img_width, img_height);
+   images_gaussian_1gap[305].src = "tmp_1d_gaussian_slit0267.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[306] = new Image(img_width, img_height);
+   images_gaussian_1gap[306].src = "tmp_1d_gaussian_slit0268.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[307] = new Image(img_width, img_height);
+   images_gaussian_1gap[307].src = "tmp_1d_gaussian_slit0269.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[308] = new Image(img_width, img_height);
+   images_gaussian_1gap[308].src = "tmp_1d_gaussian_slit0270.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[309] = new Image(img_width, img_height);
+   images_gaussian_1gap[309].src = "tmp_1d_gaussian_slit0271.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[310] = new Image(img_width, img_height);
+   images_gaussian_1gap[310].src = "tmp_1d_gaussian_slit0272.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[311] = new Image(img_width, img_height);
+   images_gaussian_1gap[311].src = "tmp_1d_gaussian_slit0273.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[312] = new Image(img_width, img_height);
+   images_gaussian_1gap[312].src = "tmp_1d_gaussian_slit0274.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[313] = new Image(img_width, img_height);
+   images_gaussian_1gap[313].src = "tmp_1d_gaussian_slit0275.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[314] = new Image(img_width, img_height);
+   images_gaussian_1gap[314].src = "tmp_1d_gaussian_slit0276.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[315] = new Image(img_width, img_height);
+   images_gaussian_1gap[315].src = "tmp_1d_gaussian_slit0277.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[316] = new Image(img_width, img_height);
+   images_gaussian_1gap[316].src = "tmp_1d_gaussian_slit0278.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[317] = new Image(img_width, img_height);
+   images_gaussian_1gap[317].src = "tmp_1d_gaussian_slit0279.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[318] = new Image(img_width, img_height);
+   images_gaussian_1gap[318].src = "tmp_1d_gaussian_slit0280.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[319] = new Image(img_width, img_height);
+   images_gaussian_1gap[319].src = "tmp_1d_gaussian_slit0281.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[320] = new Image(img_width, img_height);
+   images_gaussian_1gap[320].src = "tmp_1d_gaussian_slit0282.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[321] = new Image(img_width, img_height);
+   images_gaussian_1gap[321].src = "tmp_1d_gaussian_slit0283.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[322] = new Image(img_width, img_height);
+   images_gaussian_1gap[322].src = "tmp_1d_gaussian_slit0284.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[323] = new Image(img_width, img_height);
+   images_gaussian_1gap[323].src = "tmp_1d_gaussian_slit0285.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[324] = new Image(img_width, img_height);
+   images_gaussian_1gap[324].src = "tmp_1d_gaussian_slit0286.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[325] = new Image(img_width, img_height);
+   images_gaussian_1gap[325].src = "tmp_1d_gaussian_slit0287.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[326] = new Image(img_width, img_height);
+   images_gaussian_1gap[326].src = "tmp_1d_gaussian_slit0288.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[327] = new Image(img_width, img_height);
+   images_gaussian_1gap[327].src = "tmp_1d_gaussian_slit0289.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[328] = new Image(img_width, img_height);
+   images_gaussian_1gap[328].src = "tmp_1d_gaussian_slit0290.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[329] = new Image(img_width, img_height);
+   images_gaussian_1gap[329].src = "tmp_1d_gaussian_slit0291.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[330] = new Image(img_width, img_height);
+   images_gaussian_1gap[330].src = "tmp_1d_gaussian_slit0292.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[331] = new Image(img_width, img_height);
+   images_gaussian_1gap[331].src = "tmp_1d_gaussian_slit0293.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[332] = new Image(img_width, img_height);
+   images_gaussian_1gap[332].src = "tmp_1d_gaussian_slit0294.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[333] = new Image(img_width, img_height);
+   images_gaussian_1gap[333].src = "tmp_1d_gaussian_slit0295.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[334] = new Image(img_width, img_height);
+   images_gaussian_1gap[334].src = "tmp_1d_gaussian_slit0296.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[335] = new Image(img_width, img_height);
+   images_gaussian_1gap[335].src = "tmp_1d_gaussian_slit0297.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[336] = new Image(img_width, img_height);
+   images_gaussian_1gap[336].src = "tmp_1d_gaussian_slit0298.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[337] = new Image(img_width, img_height);
+   images_gaussian_1gap[337].src = "tmp_1d_gaussian_slit0299.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[338] = new Image(img_width, img_height);
+   images_gaussian_1gap[338].src = "tmp_1d_gaussian_slit0300.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[339] = new Image(img_width, img_height);
+   images_gaussian_1gap[339].src = "tmp_1d_gaussian_slit0301.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[340] = new Image(img_width, img_height);
+   images_gaussian_1gap[340].src = "tmp_1d_gaussian_slit0302.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[341] = new Image(img_width, img_height);
+   images_gaussian_1gap[341].src = "tmp_1d_gaussian_slit0303.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[342] = new Image(img_width, img_height);
+   images_gaussian_1gap[342].src = "tmp_1d_gaussian_slit0304.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[343] = new Image(img_width, img_height);
+   images_gaussian_1gap[343].src = "tmp_1d_gaussian_slit0305.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[344] = new Image(img_width, img_height);
+   images_gaussian_1gap[344].src = "tmp_1d_gaussian_slit0306.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[345] = new Image(img_width, img_height);
+   images_gaussian_1gap[345].src = "tmp_1d_gaussian_slit0307.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[346] = new Image(img_width, img_height);
+   images_gaussian_1gap[346].src = "tmp_1d_gaussian_slit0308.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[347] = new Image(img_width, img_height);
+   images_gaussian_1gap[347].src = "tmp_1d_gaussian_slit0309.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[348] = new Image(img_width, img_height);
+   images_gaussian_1gap[348].src = "tmp_1d_gaussian_slit0310.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[349] = new Image(img_width, img_height);
+   images_gaussian_1gap[349].src = "tmp_1d_gaussian_slit0311.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[350] = new Image(img_width, img_height);
+   images_gaussian_1gap[350].src = "tmp_1d_gaussian_slit0312.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[351] = new Image(img_width, img_height);
+   images_gaussian_1gap[351].src = "tmp_1d_gaussian_slit0313.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[352] = new Image(img_width, img_height);
+   images_gaussian_1gap[352].src = "tmp_1d_gaussian_slit0314.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[353] = new Image(img_width, img_height);
+   images_gaussian_1gap[353].src = "tmp_1d_gaussian_slit0315.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[354] = new Image(img_width, img_height);
+   images_gaussian_1gap[354].src = "tmp_1d_gaussian_slit0316.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[355] = new Image(img_width, img_height);
+   images_gaussian_1gap[355].src = "tmp_1d_gaussian_slit0317.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[356] = new Image(img_width, img_height);
+   images_gaussian_1gap[356].src = "tmp_1d_gaussian_slit0318.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[357] = new Image(img_width, img_height);
+   images_gaussian_1gap[357].src = "tmp_1d_gaussian_slit0319.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[358] = new Image(img_width, img_height);
+   images_gaussian_1gap[358].src = "tmp_1d_gaussian_slit0320.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[359] = new Image(img_width, img_height);
+   images_gaussian_1gap[359].src = "tmp_1d_gaussian_slit0321.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[360] = new Image(img_width, img_height);
+   images_gaussian_1gap[360].src = "tmp_1d_gaussian_slit0322.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[361] = new Image(img_width, img_height);
+   images_gaussian_1gap[361].src = "tmp_1d_gaussian_slit0323.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[362] = new Image(img_width, img_height);
+   images_gaussian_1gap[362].src = "tmp_1d_gaussian_slit0324.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[363] = new Image(img_width, img_height);
+   images_gaussian_1gap[363].src = "tmp_1d_gaussian_slit0325.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[364] = new Image(img_width, img_height);
+   images_gaussian_1gap[364].src = "tmp_1d_gaussian_slit0326.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[365] = new Image(img_width, img_height);
+   images_gaussian_1gap[365].src = "tmp_1d_gaussian_slit0327.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[366] = new Image(img_width, img_height);
+   images_gaussian_1gap[366].src = "tmp_1d_gaussian_slit0328.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[367] = new Image(img_width, img_height);
+   images_gaussian_1gap[367].src = "tmp_1d_gaussian_slit0329.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[368] = new Image(img_width, img_height);
+   images_gaussian_1gap[368].src = "tmp_1d_gaussian_slit0330.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[369] = new Image(img_width, img_height);
+   images_gaussian_1gap[369].src = "tmp_1d_gaussian_slit0331.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[370] = new Image(img_width, img_height);
+   images_gaussian_1gap[370].src = "tmp_1d_gaussian_slit0332.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[371] = new Image(img_width, img_height);
+   images_gaussian_1gap[371].src = "tmp_1d_gaussian_slit0333.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[372] = new Image(img_width, img_height);
+   images_gaussian_1gap[372].src = "tmp_1d_gaussian_slit0334.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[373] = new Image(img_width, img_height);
+   images_gaussian_1gap[373].src = "tmp_1d_gaussian_slit0335.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[374] = new Image(img_width, img_height);
+   images_gaussian_1gap[374].src = "tmp_1d_gaussian_slit0336.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[375] = new Image(img_width, img_height);
+   images_gaussian_1gap[375].src = "tmp_1d_gaussian_slit0337.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[376] = new Image(img_width, img_height);
+   images_gaussian_1gap[376].src = "tmp_1d_gaussian_slit0338.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[377] = new Image(img_width, img_height);
+   images_gaussian_1gap[377].src = "tmp_1d_gaussian_slit0339.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[378] = new Image(img_width, img_height);
+   images_gaussian_1gap[378].src = "tmp_1d_gaussian_slit0340.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[379] = new Image(img_width, img_height);
+   images_gaussian_1gap[379].src = "tmp_1d_gaussian_slit0341.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[380] = new Image(img_width, img_height);
+   images_gaussian_1gap[380].src = "tmp_1d_gaussian_slit0342.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[381] = new Image(img_width, img_height);
+   images_gaussian_1gap[381].src = "tmp_1d_gaussian_slit0343.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[382] = new Image(img_width, img_height);
+   images_gaussian_1gap[382].src = "tmp_1d_gaussian_slit0344.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[383] = new Image(img_width, img_height);
+   images_gaussian_1gap[383].src = "tmp_1d_gaussian_slit0345.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[384] = new Image(img_width, img_height);
+   images_gaussian_1gap[384].src = "tmp_1d_gaussian_slit0346.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[385] = new Image(img_width, img_height);
+   images_gaussian_1gap[385].src = "tmp_1d_gaussian_slit0347.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[386] = new Image(img_width, img_height);
+   images_gaussian_1gap[386].src = "tmp_1d_gaussian_slit0348.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[387] = new Image(img_width, img_height);
+   images_gaussian_1gap[387].src = "tmp_1d_gaussian_slit0349.png";
+        
+   t.innerHTML = "Preloading image ";
+   images_gaussian_1gap[388] = new Image(img_width, img_height);
+   images_gaussian_1gap[388].src = "tmp_1d_gaussian_slit0350.png";
+        
+   t.innerHTML = "";
+}
+
+function tick_gaussian_1gap()
+{
+   if (frame_gaussian_1gap > num_images_gaussian_1gap - 1)
+       frame_gaussian_1gap = 0;
+
+   document.movie.src = images_gaussian_1gap[frame_gaussian_1gap].src;
+   frame_gaussian_1gap += 1;
+   tt = setTimeout("tick_gaussian_1gap()", interval);
+}
+
+function startup_gaussian_1gap()
+{
+   preload_images_gaussian_1gap();
+   frame_gaussian_1gap = 0;
+   setTimeout("tick_gaussian_1gap()", interval);
+}
+
+function stopit()
+{ clearTimeout(tt); }
+
+function restart_gaussian_1gap()
+{ tt = setTimeout("tick_gaussian_1gap()", interval); }
+
+function slower()
+{ interval = interval/0.7; }
+
+function faster()
+{ interval = interval*0.7; }
+
+// --->
+</script>
+
+<form>
+&nbsp;
+<input type="button" value="Start movie" onClick="startup_gaussian_1gap()">
+<input type="button" value="Pause movie" onClick="stopit()">
+<input type="button" value="Restart movie" onClick="restart_gaussian_1gap()">
+&nbsp;
+<input type="button" value="Slower" onClick="slower()">
+<input type="button" value="Faster" onClick="faster()">
+</form>
+
+<p><div ID="progress"></div></p>
+<img src="tmp_1d_box_slit0000.png" name="movie" border=2/>
+
+</body>
+</html>

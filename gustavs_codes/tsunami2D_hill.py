@@ -24,8 +24,12 @@ class Simulations:
             self.solver = self.simulate_box()
         elif option == 'gaussian_1d':
             self.solver = self.simulate_gaussian_1d()
+        elif option == 'gaussian_1d_slit':
+            self.solver = self.simulate_gaussian_1d_slit()
         elif option == 'box_1d':
             self.solver = self.simulate_box_1d()
+        elif option == 'box_1d_slit':
+            self.solver = self.simulate_box_1d_slit()
         elif option == 'smooth_step':
             self.solver = self.simulate_smooth_step()
         elif option == 'exp_pol_1d':
@@ -686,14 +690,217 @@ class Simulations:
         print 'used time: ', t1-t0 
 
 
+    def simulate_gaussian_1d_slit(self):
+        """
+        Simulate an one-dimensional earthquake-generated 
+        tsunami over a sea bottom with a gaussian shaped hill with a gap.
+        """
+        
+        Lx = 800.0
+        Ly = 10.0
+        Nx = 200
+        Ny = 3
+        T = 14.0
+        dt = 0.04
+        
+        g = 9.81        # Acceleration of gravity (m/s^2)
+        
+        I0 = 0.0
+        Ia = 140.0
+        Im = 0.0
+        Is = 40.2
+        
+        B0 = -300.0
+        Ba = 275.0
+        Bmx = 0.5*Lx
+        Bs = 35.0
+            
+        zmin = -320.0
+        zmax = 150.0
+        
+        t0 = time.clock()
+
+        #epsilon = size of the gap
+        #eps = 0
+        eps = 10
+
+        #     Initial water surface with tsunami
+        def I(x, y):
+            return I0 + Ia*exp(-((x-Im)/Is)**2)
+
+        def ordinaryBottom(x,y):
+            return B0 + Ba*exp(-((x-Bmx)/Bs)**2)
+
+        def hole(x,y):
+            return B0
+
+        #     Shape of sea bottom
+        def bottom(x, y):
+            if type(x) == float64:
+                if (x >= Bmx-10) and (x <= Bmx+10):
+                    b_value = hole(x,y)
+                else:
+                    b_value = ordinaryBottom(x,y)
+            else:
+                b_value = zeros((x.shape[0], y.shape[1]))
+                for i in range(0, x.shape[0]):
+                    for j in range(0, y.shape[1]):
+                        xx = x[i,0]
+                        yy = y[0,j]
+                        if (xx >= Bmx-eps) and (xx <= Bmx+eps):
+                            b_value[i,j] = hole(xx,yy)
+                        else:
+                            b_value[i,j] = ordinaryBottom(xx,yy)
+            return b_value
+        
+        def q(x, y):
+            return -g*bottom(x, y)
+
+
+        def plot_u(u, x, xv, y, yv, t, n):
+          
+            b_a = zeros((xv.shape[0],yv.shape[1]))
+            b_a[:,:] = bottom(xv, yv)
+            st.plot(xv[:,0], u[:,0], '-', xv[:,0], b_a[:,0], '--', ylim=[zmin, zmax])
+            #show()
+            #hold('on')
+            
+            #axis([0.0,400.0,0.0,430.0,-500.0,300.0])
+            #show()
+            #time.sleep(5.0)
+            filename = 'tmp_1d_gaussian_slit%04d.png' % n
+            st.savefig(filename)
+        
+
+        #     Construct problem object
+        problem = Problem(I=I, V=None, f=None, q=q, b=0.0, Lx=Lx, 
+                          Ly=Ly, T=T)
+        
+        #     Construct solver object
+        solver = Solver(problem=problem, Nx=Nx, Ny=Ny,
+                        dt=dt, user_action=plot_u, 
+                        version=self.version)
+        
+        #     Solve the PDE
+        solver.solve()   
+        
+        t1 = time.clock()
+        print 'used time: ', t1-t0 
+
+    def simulate_box_1d_slit(self):
+        """
+        Simulate an one-dimensional earthquake-generated 
+        tsunami over a sea bottom with a box-shaped hill with a gap.
+        """
+        
+        Lx = 800.0
+        Ly = 10.0
+        Nx = 200
+        Ny = 3
+        T = 14.0
+        dt = 0.04
+        
+        g = 9.81        # Acceleration of gravity (m/s^2)
+        
+        I0 = 0.0
+        Ia = 140.0
+        Im = 0.0
+        Is = 40.2
+        
+        B0 = -300.0
+        Ba = 275.0
+        Bmx = 0.5*Lx
+        Bs = 0.10*Lx
+            
+        zmin = -320.0
+        zmax = 150.0
+        
+        t0 = time.clock()
+
+        #epsilon = size of the gap
+        #eps = 0
+        eps = 10
+
+        #     Initial water surface with tsunami
+        def I(x, y):
+            return I0 + Ia*exp(-((x-Im)/Is)**2)
+        
+        #     shape of sea bottom
+
+        def ordinaryBottom(x,y):
+            if (x >= Bmx-Bs) and (x <= Bmx+Bs):
+                b_value = B0 + Ba
+            else:
+                b_value = B0
+            return b_value
+                
+        def hole(x,y):
+            return B0
+
+        #     Shape of sea bottom
+        def bottom(x, y):
+            if type(x) == float64:
+                if (x >= Bmx-eps) and (x <= Bmx+eps):
+                    b_value = hole(x,y)
+                else:
+                    b_value = ordinaryBottom(x,y)
+            else:
+                b_value = zeros((x.shape[0], y.shape[1]))
+                for i in range(0, x.shape[0]):
+                    for j in range(0, y.shape[1]):
+                        xx = x[i,0]
+                        yy = y[0,j]
+                        if (xx >= Bmx-eps) and (xx <= Bmx+eps)
+                            b_value[i,j] = hole(xx,yy)
+                        else:
+                            b_value[i,j] = ordinaryBottom(xx,yy)
+            return b_value
+        
+        def q(x, y):
+            return -g*bottom(x, y)
+
+
+        def plot_u(u, x, xv, y, yv, t, n):
+          
+            b_a = zeros((xv.shape[0],yv.shape[1]))
+            b_a[:,:] = bottom(xv, yv)
+            st.plot(xv[:,0], u[:,0], '-', xv[:,0], b_a[:,0], '--', ylim=[zmin, zmax])
+            #show()
+            #hold('on')
+            
+            #axis([0.0,400.0,0.0,430.0,-500.0,300.0])
+            #show()
+            #time.sleep(5.0)
+            filename = 'tmp_1d_box_slit%04d.png' % n
+            st.savefig(filename)
+        
+
+        #     Construct problem object
+        problem = Problem(I=I, V=None, f=None, q=q, b=0.0, Lx=Lx, 
+                          Ly=Ly, T=T)
+        
+        #     Construct solver object
+        solver = Solver(problem=problem, Nx=Nx, Ny=Ny,
+                        dt=dt, user_action=plot_u, 
+                        version=self.version)
+        
+        #     Solve the PDE
+        solver.solve()   
+        
+        t1 = time.clock()
+        print 'used time: ', t1-t0 
+
+
 
 def main(): 
     sim = Simulations(version='vectorized',\
                           q_average='arithmetic')
     #sim.simulate('gaussian_1d')
-    sim.simulate('box_1d')
+    #sim.simulate('box_1d')
     #sim.simulate('smooth_step')
     #sim.simulate('exp_pol_1d')
+    #sim.simulate('gaussian_1d_slit')
+    sim.simulate('box_1d_slit')
 
 if __name__ == '__main__':
     main()
