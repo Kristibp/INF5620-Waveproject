@@ -1,8 +1,0 @@
-# Get from repository
-git pull origin master
-# Push to repository
-git push git@github.com:Kristibp/INF5620-Waveproject.git
-
-
-# Clone project
-git clone git@github.com:Kristibp/INF5620-Waveproject.git
