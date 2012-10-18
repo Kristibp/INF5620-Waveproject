@@ -1,0 +1,8 @@
+*.aux
+*.idx
+*.log 
+*.out
+*.pyg
+*.toc
+HOWTO
+*~
