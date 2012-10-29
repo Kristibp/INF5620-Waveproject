@@ -1,0 +1,21 @@
+
+Hei!
+
+Dette var et veldig ryddig prosjekt. Lettest å finne frem i og beste
+rapport (til nå). Her får man tiltro til at tingene er gjort riktig.
+Det lille jeg lurte på fant jeg raskt ut ved å titte på koden.
+
+Noen av de spektakulære simuleringene med skarp bunn og raske endringer
+er nok utenfor gyldighetsområdet til likningene, hvis man tenker at
+u er heving av havorverflate, men hva gjør vel det når man får kule plot?
+Man kan alternativt tenke andre tolkninger av u og da er diskontinuerlig
+medium og store sprang i q som dere kjører høyst relevant (acoustic
+approx of seismic waves for eksempel).
+
+Dere har masse artige cases - kunne dere vise de top 2-3 på 5 min live?
+Det er bra underholdning og interessant.
+
+Liten sak: Carnot number -> Courant number ;-)
+
+Hans Petter
+
